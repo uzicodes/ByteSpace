@@ -3,9 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ByteSpace — Learn, Create, Grow',
+  title: 'ByteSpace',
   description: 'Discover expert-led courses and build the skills to create your future with ByteSpace.',
-  generator: 'v0.app',
   icons: {
     icon: [
       { url: '/favicon/favicon.ico' },

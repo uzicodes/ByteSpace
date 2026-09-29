@@ -7,14 +7,14 @@ import {
   ChevronDown,
   Code2,
   Grid2X2,
-  Search,
   Sparkles,
   Star,
   Users,
 } from 'lucide-react'
 import { Brand, Navbar } from './navbar'
+import { Hero } from './hero'
 
-export { Brand, Navbar }
+export { Brand, Navbar, Hero }
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                              */
@@ -194,103 +194,6 @@ function ImagePlaceholder({
   )
 }
 
-
-/* ------------------------------------------------------------------ */
-/*  Hero                                                              */
-/* ------------------------------------------------------------------ */
-
-export function Hero() {
-  return (
-    <section className="hero-grid relative overflow-hidden bg-[#073ee5] px-6 pb-20 pt-36 text-white lg:px-10">
-      {/* ---- decorative lime blobs / organic shapes ---- */}
-      {/* Top-left squiggle / C-shape */}
-      <div className="absolute left-[-30px] top-16 h-28 w-28 rotate-[-15deg] rounded-[60%_40%_50%_50%] bg-lime-300 opacity-90 sm:left-[2%] sm:h-36 sm:w-36" />
-      <div className="absolute left-[6px] top-[76px] h-16 w-16 rotate-[-15deg] rounded-[60%_40%_50%_50%] bg-[#073ee5] sm:left-[4.5%] sm:h-20 sm:w-20" />
-
-      {/* Top-left small O */}
-      <div className="absolute left-[8%] top-[55%] hidden h-16 w-16 rounded-full bg-lime-300 opacity-90 sm:block" />
-      <div className="absolute left-[9.2%] top-[57%] hidden h-10 w-10 rounded-full bg-[#073ee5] sm:block" />
-
-      {/* Right side big O */}
-      <div className="absolute right-[-20px] top-20 h-24 w-24 rounded-full bg-lime-300 opacity-90 sm:right-[3%] sm:h-32 sm:w-32" />
-      <div className="absolute right-[2px] top-[88px] h-14 w-14 rounded-full bg-[#073ee5] sm:right-[5.2%] sm:h-20 sm:w-20" />
-
-      {/* Small blob right-bottom */}
-      <div className="absolute bottom-12 right-[10%] hidden h-10 w-20 rotate-[-20deg] rounded-full bg-lime-300 opacity-80 sm:block" />
-
-      {/* Bottom-left squiggle */}
-      <div className="absolute bottom-20 left-[3%] hidden h-14 w-28 rotate-[12deg] rounded-full bg-lime-300 opacity-80 sm:block" />
-
-      {/* ---- Hero content ---- */}
-      <div className="relative mx-auto max-w-4xl text-center">
-        <h1 className="mx-auto max-w-[935px] text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-semibold tracking-[-0.01em] leading-[120%] text-center">
-          <span className="block">Get Access to Hundreds</span>
-          <span className="block mt-1 sm:mt-2">Courses Available</span>
-        </h1>
-
-        <p className="mx-auto mt-5 max-w-5xl text-[15px] sm:text-[17px] lg:text-[18px] leading-[160%] text-blue-100/90 font-light tracking-normal text-center sm:whitespace-nowrap">
-          Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
-        </p>
-
-        {/* Search bar */}
-        <div className="mx-auto mt-7 flex w-full max-w-[580px] items-center justify-center gap-4 px-2">
-          <div className="flex h-[52px] flex-1 items-center rounded-full bg-white pl-5 pr-4 shadow-sm">
-            <Search className="size-5 text-slate-400 shrink-0" />
-            <input
-              aria-label="Search courses"
-              className="min-w-0 flex-1 bg-transparent px-3 text-[15px] text-slate-800 placeholder:text-slate-400 outline-none"
-              placeholder="Course, topic, creator"
-            />
-          </div>
-          <button
-            className="flex h-[52px] w-[104px] shrink-0 items-center justify-center rounded-full bg-[#E1F959] text-[18px] font-semibold text-slate-900 transition-transform hover:-translate-y-0.5 hover:bg-[#d6f043]"
-          >
-            Search
-          </button>
-        </div>
-      </div>
-
-      {/* ---- Hero image area with floating cards ---- */}
-      <div className="relative mx-auto mt-14 flex max-w-3xl items-end justify-center gap-4">
-        {/* Left floating card – "Happy Students" */}
-        <div className="hidden rounded-xl bg-white p-4 text-left text-sm text-slate-800 shadow-xl sm:block">
-          <b className="text-sm">Happy Students</b>
-          <div className="mt-2 flex -space-x-1.5">
-            <AvatarPlaceholder className="size-7 ring-2 ring-white" />
-            <AvatarPlaceholder className="size-7 ring-2 ring-white" />
-            <AvatarPlaceholder className="size-7 ring-2 ring-white" />
-          </div>
-          <div className="mt-2 text-lime-600">★★★★★</div>
-        </div>
-
-        {/* Centre person placeholder */}
-        <div className="relative h-48 w-52 rounded-t-[45%] bg-gradient-to-br from-lime-300 to-lime-500 sm:h-60 sm:w-64">
-          {/* Silhouette placeholder – user will swap with actual image */}
-          <div className="absolute inset-x-5 bottom-0 top-10 rounded-t-[45%] bg-gradient-to-b from-amber-100/40 to-amber-700/30 opacity-80" />
-
-          {/* Right floating card – "Learning Progress 55%" */}
-          <div className="absolute right-[-32px] top-10 hidden w-36 rounded-lg bg-white p-4 text-left text-slate-900 shadow-xl sm:block">
-            <span className="text-xs text-slate-500">Learning Progress</span>
-            <strong className="block text-2xl">55%</strong>
-            <div className="mt-1.5 h-1.5 w-full rounded-full bg-slate-100">
-              <div className="h-1.5 w-[55%] rounded-full bg-lime-300" />
-            </div>
-          </div>
-        </div>
-
-        {/* Right floating card – "New skills" */}
-        <div className="hidden rounded-xl bg-white p-4 text-left text-sm text-slate-800 shadow-xl sm:block">
-          <b className="text-sm">New skills</b>
-          <div className="mt-2 flex -space-x-1">
-            <span className="size-5 rounded-full bg-rose-300" />
-            <span className="size-5 rounded-full bg-blue-300" />
-            <span className="size-5 rounded-full bg-amber-300" />
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 /* ------------------------------------------------------------------ */
 /*  Logo Strip                                                        */

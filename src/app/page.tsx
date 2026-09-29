@@ -1,5 +1,15 @@
 import { Navbar } from '@/src/components/navbar'
-import { Community, CTA, CreateManage, Courses, Footer, Growth, Hero, LogoStrip, Paths } from '@/src/components/home-sections'
+import { Hero } from '@/src/components/hero'
+import {
+  Community,
+  CTA,
+  CreateManage,
+  Courses,
+  Footer,
+  Growth,
+  LogoStrip,
+  Paths,
+} from '@/src/components/home-sections'
 
 export default function Page() {
   return (

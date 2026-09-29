@@ -236,7 +236,7 @@
 }
 
 :root { color-scheme: light; }
-.hero-grid { background-image: linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px); background-size: 72px 72px; }
+.hero-grid { background-image: linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px); background-size: 120px 120px; }
 .brand-mark { color: #c8ff00; font-size: 18px; line-height: 1; transform: rotate(180deg); display: inline-block; }
 .blob { position: absolute; border-radius: 999px; background: #c8ff00; filter: blur(1px); }
 button, a { -webkit-tap-highlight-color: transparent; }

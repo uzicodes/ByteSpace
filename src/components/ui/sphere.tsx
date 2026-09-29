@@ -15,7 +15,9 @@ export function HeroSphere({ className = '', ...props }: HeroSphereProps) {
       className={className}
       {...props}
     >
-      <circle cx="574.5" cy="574.5" r="414.5" stroke="#CBFC01" strokeWidth="320" />
+      <circle cx="574.5" cy="574.5" r="434.5" stroke="#CBFC01" strokeWidth="260" />
     </svg>
   );
 }
+
+export default HeroSphere;
