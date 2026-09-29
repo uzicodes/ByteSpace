@@ -2,14 +2,9 @@
 
 import {
   ArrowRight,
-  BookOpen,
   Check,
   ChevronDown,
-  Code2,
-  Grid2X2,
-  Sparkles,
   Star,
-  Users,
 } from 'lucide-react'
 import { Brand, Navbar } from './navbar'
 import { Hero } from './hero'
@@ -19,83 +14,6 @@ export { Brand, Navbar, Hero }
 /* ------------------------------------------------------------------ */
 /*  Data                                                              */
 /* ------------------------------------------------------------------ */
-
-const categories = [
-  'Design',
-  'Development',
-  'IT & Software',
-  'Business',
-  'Marketing',
-  'Photography',
-]
-
-const filters = [
-  'Featured',
-  'UI/UX',
-  'Drawing & Painting',
-  'Marketing',
-  'Animation',
-  'Social Media',
-  'User Experience',
-  'Content Marketing',
-  'Digital Illustration',
-  'Film & Video',
-  'Crafts',
-  'Healthcare & Entrepreneurship',
-  'Creative Design',
-  'Photography',
-]
-
-const courses = [
-  {
-    title: 'Learn Figma from Basic',
-    category: 'Design',
-    image:
-      'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=700&q=80',
-    price: '$25.00',
-    rating: '4.5',
-  },
-  {
-    title: 'Build Digital Asset',
-    category: 'Development',
-    image:
-      'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=700&q=80',
-    price: '$26.00',
-    rating: '4.8',
-  },
-  {
-    title: 'The Power of Big Data',
-    category: 'IT & Software',
-    image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80',
-    price: '$25.00',
-    rating: '4.5',
-  },
-  {
-    title: 'Balancing Productivity on...',
-    category: 'Business',
-    image:
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80',
-    price: '$25.00',
-    rating: '4.7',
-  },
-  {
-    title: 'Mastering Money Manage...',
-    category: 'Finance',
-    image:
-      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=700&q=80',
-    price: '$25.00',
-    rating: '4.6',
-  },
-  {
-    title: 'From Idea to Startup Succ...',
-    category: 'Business',
-    image:
-      'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=700&q=80',
-    price: '$25.00',
-    rating: '4.9',
-  },
-]
 
 const testimonials = [
   {
@@ -194,132 +112,6 @@ function ImagePlaceholder({
   )
 }
 
-
-/* ------------------------------------------------------------------ */
-/*  Courses                                                           */
-/* ------------------------------------------------------------------ */
-
-export function CourseCard({
-  course,
-}: {
-  course: (typeof courses)[number]
-}) {
-  return (
-    <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
-      <img
-        src={course.image}
-        alt={course.title}
-        className="h-44 w-full rounded-xl object-cover"
-      />
-      <div className="p-3">
-        <h3 className="truncate text-base font-bold text-slate-900">
-          {course.title}
-        </h3>
-        <div className="mt-2 flex items-center justify-between text-sm text-slate-400">
-          <span>{course.category}</span>
-          <span className="flex items-center gap-1">
-            <Star className="size-3.5 fill-amber-400 text-amber-400" />{' '}
-            {course.rating}
-          </span>
-        </div>
-        <div className="mt-4 flex items-center justify-between">
-          <span className="text-sm font-bold text-blue-600">
-            {course.price}
-          </span>
-          <span className="flex -space-x-1.5">
-            <AvatarPlaceholder className="size-6 ring-1 ring-white" />
-            <AvatarPlaceholder className="size-6 ring-1 ring-white" />
-            <AvatarPlaceholder className="size-6 ring-1 ring-white" />
-          </span>
-        </div>
-      </div>
-    </article>
-  )
-}
-
-export function Courses() {
-  return (
-    <section id="courses" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-          Discover Your Passion,
-          <br />
-          Build Your Skills
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-[16px] sm:text-[18px] leading-[160%] text-slate-500 font-normal tracking-normal text-center">
-          Find courses that fit your interests and goals. Learn from experts and
-          grow with a community that keeps you moving forward.
-        </p>
-      </div>
-
-      {/* Filter pills */}
-      <div className="mx-auto mt-8 flex max-w-5xl flex-wrap justify-center gap-2.5">
-        {filters.map((filter, index) => (
-          <button
-            key={filter}
-            className={`rounded-full px-4 py-2 text-sm font-medium ${
-              index === 0
-                ? 'bg-lime-300 text-slate-900'
-                : 'bg-slate-100 text-slate-500'
-            }`}
-          >
-            {filter}
-          </button>
-        ))}
-      </div>
-
-      {/* Course grid */}
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {courses.map((course) => (
-          <CourseCard key={course.title} course={course} />
-        ))}
-      </div>
-    </section>
-  )
-}
-
-/* ------------------------------------------------------------------ */
-/*  Learning Paths                                                    */
-/* ------------------------------------------------------------------ */
-
-export function Paths() {
-  const icons = [
-    <Sparkles key="a" className="size-5" />,
-    <Code2 key="b" className="size-5" />,
-    <Grid2X2 key="c" className="size-5" />,
-    <BookOpen key="d" className="size-5" />,
-    <Users key="e" className="size-5" />,
-    <Sparkles key="f" className="size-5" />,
-  ]
-
-  return (
-    <section id="paths" className="bg-slate-50 px-6 py-20 lg:px-10">
-      <div className="mx-auto max-w-7xl text-center">
-        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl lg:text-4xl">
-          Explore Diverse Learning Paths at ByteSpace
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-[16px] sm:text-[18px] leading-[160%] text-slate-500 font-normal tracking-normal text-center">
-          Whether you are just beginning or advancing your career, discover the
-          right path for your goals.
-        </p>
-
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {categories.map((item, index) => (
-            <div
-              key={item}
-              className="rounded-xl border border-slate-200 bg-white p-6 text-sm font-semibold text-slate-700 transition-shadow hover:shadow-md"
-            >
-              <div className="mx-auto mb-3 flex size-10 items-center justify-center rounded-full bg-lime-300 text-slate-900">
-                {icons[index]}
-              </div>
-              {item}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 /* ------------------------------------------------------------------ */
 /*  Growth – "Your Path to Professional Growth Starts Here!"          */
