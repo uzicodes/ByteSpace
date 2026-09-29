@@ -7,10 +7,151 @@ export function Hero() {
       {/* Background Half-Circle Sphere */}
       <HeroSphere className="pointer-events-none absolute -bottom-30 left-1/2 -translate-x-1/2 z-0 max-w-none" />
 
+      <div
+        className="pointer-events-none absolute left-[-120px] top-[120px] z-10 h-[387px] w-[387px]"
+        style={{
+          backgroundColor: '#D4FB20',
+          maskImage: 'url(/elements/1.png)',
+          WebkitMaskImage: 'url(/elements/1.png)',
+          maskSize: 'contain',
+          WebkitMaskSize: 'contain',
+          maskRepeat: 'no-repeat',
+          WebkitMaskRepeat: 'no-repeat',
+        }}
+      />
+
+      <div
+        className="pointer-events-none absolute z-10"
+        style={{
+          left: 'calc(50% - 175px/2 - 449.5px)',
+          top: '46.58%',
+          width: '175px',
+          height: '175px',
+          transform: 'matrix(-1, 0, 0, 1, 0, 0)',
+        }}
+      >
+        <div
+          aria-label="Decorative spiral"
+          role="img"
+          className="h-full w-full"
+          style={{
+            backgroundColor: '#F5F5F6',
+            maskImage: 'url(/elements/2.png)',
+            WebkitMaskImage: 'url(/elements/2.png)',
+            maskSize: 'contain',
+            WebkitMaskSize: 'contain',
+            maskRepeat: 'no-repeat',
+            WebkitMaskRepeat: 'no-repeat',
+          }}
+        />
+      </div>
+
+      <div
+        className="pointer-events-none absolute z-10"
+        style={{
+          left: 'calc(50% - 342px/2 - 470px)',
+          top: '66.6%',
+          width: '310px',
+          height: '310px',
+        }}
+      >
+        <div
+          aria-label="Decorative cone"
+          role="img"
+          className="h-full w-full"
+          style={{
+            backgroundColor: '#F5F5F6',
+            maskImage: 'url(/elements/3.png)',
+            WebkitMaskImage: 'url(/elements/3.png)',
+            maskSize: 'contain',
+            WebkitMaskSize: 'contain',
+            maskRepeat: 'no-repeat',
+            WebkitMaskRepeat: 'no-repeat',
+          }}
+        />
+      </div>
+
+        <div
+          className="pointer-events-none absolute z-10"
+          style={{
+            left: 'calc(50% - 188px/2 + 480px)',
+            top: '44.3%',
+            width: '188px',
+            height: '188px',
+          }}
+        >
+          <div
+            aria-label="Decorative cone"
+            role="img"
+            className="h-full w-full"
+            style={{
+              backgroundColor: '#F5F5F6',
+              maskImage: 'url(/elements/4.png)',
+              WebkitMaskImage: 'url(/elements/4.png)',
+              maskSize: 'contain',
+              WebkitMaskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              WebkitMaskRepeat: 'no-repeat',
+            }}
+          />
+        </div>
+
+      <div
+        className="pointer-events-none absolute z-10"
+        style={{
+          left: 'calc(50% - 330px/2 + 547px)',
+          top: '69%',
+          bottom: '-1.23%',
+          width: '330px',
+        }}
+      >
+        <div
+          aria-label="Decorative lower-right shape"
+          role="img"
+          className="h-full w-full"
+          style={{
+            backgroundColor: '#F5F5F6',
+            maskImage: 'url(/elements/5.png)',
+            WebkitMaskImage: 'url(/elements/5.png)',
+            maskSize: 'contain',
+            WebkitMaskSize: 'contain',
+            maskRepeat: 'no-repeat',
+            WebkitMaskRepeat: 'no-repeat',
+          }}
+        />
+      </div>
+
+      <div
+        className="pointer-events-none absolute z-10"
+        style={{
+          left: 'calc(50% - 370px/2 + 771px)',
+          top: '17.58%',
+          bottom: '46.29%',
+          width: '370px',
+        }}
+      >
+        <div
+          aria-label="Decorative lime shape"
+          role="img"
+          className="h-full w-full"
+          style={{
+            backgroundColor: '#D4FB20',
+            maskImage: 'url(/elements/6.png)',
+            WebkitMaskImage: 'url(/elements/6.png)',
+            maskSize: 'contain',
+            WebkitMaskSize: 'contain',
+            maskRepeat: 'no-repeat',
+            WebkitMaskRepeat: 'no-repeat',
+            transform: 'scale(1.14)',
+            transformOrigin: 'center',
+          }}
+        />
+      </div>
+
       {/* Floating stats card */}
       <div
         className="pointer-events-none absolute z-30 flex flex-col items-start justify-center gap-2 rounded-[16px] bg-white/90 px-4 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)] backdrop-blur-[10px]"
-        style={{ left: '404px', top: '580px', width: '208px', height: '70px' }}
+        style={{ left: '430px', top: '580px', width: '208px', height: '70px' }}
       >
         <div className="text-[13px] font-semibold leading-[1.2] text-slate-900">UI/UX Design</div>
         <div className="flex items-center gap-2 text-[11px] font-medium leading-[1.2] text-slate-700">
@@ -22,7 +163,7 @@ export function Hero() {
 
       <div
         className="pointer-events-none absolute z-30 flex flex-col items-start justify-center gap-2 rounded-[16px] bg-white/90 p-3.5 shadow-[0_12px_30px_rgba(0,0,0,0.08)] backdrop-blur-[10px]"
-        style={{ left: '370px', top: '710px', width: '236px', height: '111px' }}
+        style={{ left: '420px', top: '710px', width: '236px', height: '111px' }}
       >
         <div className="text-[13px] font-semibold leading-none text-slate-900">Happy Students</div>
 
