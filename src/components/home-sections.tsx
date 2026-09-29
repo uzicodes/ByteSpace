@@ -196,32 +196,6 @@ function ImagePlaceholder({
 
 
 /* ------------------------------------------------------------------ */
-/*  Logo Strip                                                        */
-/* ------------------------------------------------------------------ */
-
-export function LogoStrip() {
-  return (
-    <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-4 bg-slate-50 px-6 py-8 text-sm font-semibold text-slate-500">
-      <span className="flex items-center gap-2">
-        <span className="text-xl text-lime-500">◉</span> Logopsum
-      </span>
-      <span className="flex items-center gap-2">
-        <span className="text-xl text-lime-500">✺</span> Logopsum
-      </span>
-      <span className="flex items-center gap-2">
-        <span className="text-xl text-lime-500">◈</span> Logopsum
-      </span>
-      <span className="flex items-center gap-2">
-        <span className="text-xl text-lime-500">✹</span> Logopsum
-      </span>
-      <span className="flex items-center gap-2">
-        <span className="text-xl text-lime-500">◌</span> Logopsum
-      </span>
-    </div>
-  )
-}
-
-/* ------------------------------------------------------------------ */
 /*  Courses                                                           */
 /* ------------------------------------------------------------------ */
 

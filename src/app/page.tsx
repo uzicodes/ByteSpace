@@ -1,5 +1,6 @@
 import { Navbar } from '@/src/components/navbar'
 import { Hero } from '@/src/components/hero'
+import { LogoStrip } from '@/src/components/logo-strip'
 import {
   Community,
   CTA,
@@ -7,7 +8,6 @@ import {
   Courses,
   Footer,
   Growth,
-  LogoStrip,
   Paths,
 } from '@/src/components/home-sections'
 
