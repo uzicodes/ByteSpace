@@ -15,18 +15,26 @@ export function CTA() {
           top: '-145px',
         }}
       >
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundColor: '#D4FB20',
-            maskImage: 'url(/elements/1.png)',
-            WebkitMaskImage: 'url(/elements/1.png)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-          }}
-        />
+        <div className="relative h-full w-full isolate">
+          <img
+            src="/elements/1.png"
+            alt=""
+            className="h-full w-full object-contain"
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundColor: '#D4FB20',
+              mixBlendMode: 'hard-light',
+              maskImage: 'url(/elements/1.png)',
+              WebkitMaskImage: 'url(/elements/1.png)',
+              maskSize: 'contain',
+              WebkitMaskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              WebkitMaskRepeat: 'no-repeat',
+            }}
+          />
+        </div>
       </div>
 
       {/* Top-Left Small White Spiral Element (public/elements/2.png) */}
@@ -42,18 +50,26 @@ export function CTA() {
           transform: 'matrix(-1, 0, 0, 1, 0, 0)',
         }}
       >
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundColor: '#F5F5F6',
-            maskImage: 'url(/elements/2.png)',
-            WebkitMaskImage: 'url(/elements/2.png)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-          }}
-        />
+        <div className="relative h-full w-full isolate">
+          <img
+            src="/elements/2.png"
+            alt=""
+            className="h-full w-full object-contain"
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundColor: '#F5F5F6',
+              mixBlendMode: 'hard-light',
+              maskImage: 'url(/elements/2.png)',
+              WebkitMaskImage: 'url(/elements/2.png)',
+              maskSize: 'contain',
+              WebkitMaskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              WebkitMaskRepeat: 'no-repeat',
+            }}
+          />
+        </div>
       </div>
 
       {/* Left Shuttle Gray/50 Cone Element (public/elements/7.png) */}
@@ -68,18 +84,26 @@ export function CTA() {
           top: '225px',
         }}
       >
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundColor: '#F5F5F6',
-            maskImage: 'url(/elements/7.png)',
-            WebkitMaskImage: 'url(/elements/7.png)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-          }}
-        />
+        <div className="relative h-full w-full isolate">
+          <img
+            src="/elements/7.png"
+            alt=""
+            className="h-full w-full object-contain"
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundColor: '#F5F5F6',
+              mixBlendMode: 'hard-light',
+              maskImage: 'url(/elements/7.png)',
+              WebkitMaskImage: 'url(/elements/7.png)',
+              maskSize: 'contain',
+              WebkitMaskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              WebkitMaskRepeat: 'no-repeat',
+            }}
+          />
+        </div>
       </div>
 
       {/* Bottom-Left Lime Ring Element (public/elements/3.png) */}
@@ -94,18 +118,26 @@ export function CTA() {
           top: '61.27%',
         }}
       >
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundColor: '#D4FB20',
-            maskImage: 'url(/elements/3.png)',
-            WebkitMaskImage: 'url(/elements/3.png)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-          }}
-        />
+        <div className="relative h-full w-full isolate">
+          <img
+            src="/elements/3.png"
+            alt=""
+            className="h-full w-full object-contain"
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundColor: '#D4FB20',
+              mixBlendMode: 'hard-light',
+              maskImage: 'url(/elements/3.png)',
+              WebkitMaskImage: 'url(/elements/3.png)',
+              maskSize: 'contain',
+              WebkitMaskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              WebkitMaskRepeat: 'no-repeat',
+            }}
+          />
+        </div>
       </div>
 
       {/* Top-Right Lime Pyramid Element (public/elements/4.png) */}
@@ -120,18 +152,26 @@ export function CTA() {
           top: '0px',
         }}
       >
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundColor: '#D4FB20',
-            maskImage: 'url(/elements/4.png)',
-            WebkitMaskImage: 'url(/elements/4.png)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-          }}
-        />
+        <div className="relative h-full w-full isolate">
+          <img
+            src="/elements/4.png"
+            alt=""
+            className="h-full w-full object-contain"
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundColor: '#D4FB20',
+              mixBlendMode: 'hard-light',
+              maskImage: 'url(/elements/4.png)',
+              WebkitMaskImage: 'url(/elements/4.png)',
+              maskSize: 'contain',
+              WebkitMaskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              WebkitMaskRepeat: 'no-repeat',
+            }}
+          />
+        </div>
       </div>
 
       {/* Top-Right Shuttle Gray/50 Cylinder Element (public/elements/6.png) */}
@@ -140,24 +180,32 @@ export function CTA() {
         role="img"
         className="pointer-events-none absolute z-10"
         style={{
-          width: '380px',
-          height: '380px',
-          left: 'calc(50% - 380px/2 + 735px)',
-          top: '35px',
+          width: '370px',
+          height: '370px',
+          left: 'calc(50% - 370px/2 + 691px)',
+          top: '1.23%',
         }}
       >
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundColor: '#F5F5F6',
-            maskImage: 'url(/elements/6.png)',
-            WebkitMaskImage: 'url(/elements/6.png)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-          }}
-        />
+        <div className="relative h-full w-full isolate">
+          <img
+            src="/elements/6.png"
+            alt=""
+            className="h-full w-full object-contain"
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundColor: '#F5F5F6',
+              mixBlendMode: 'hard-light',
+              maskImage: 'url(/elements/6.png)',
+              WebkitMaskImage: 'url(/elements/6.png)',
+              maskSize: 'contain',
+              WebkitMaskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              WebkitMaskRepeat: 'no-repeat',
+            }}
+          />
+        </div>
       </div>
 
       {/* Bottom-Right Lime Spiral Element (public/elements/5.png) */}
@@ -172,18 +220,26 @@ export function CTA() {
           top: '59.22%',
         }}
       >
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundColor: '#D4FB20',
-            maskImage: 'url(/elements/5.png)',
-            WebkitMaskImage: 'url(/elements/5.png)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-          }}
-        />
+        <div className="relative h-full w-full isolate">
+          <img
+            src="/elements/5.png"
+            alt=""
+            className="h-full w-full object-contain"
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundColor: '#D4FB20',
+              mixBlendMode: 'hard-light',
+              maskImage: 'url(/elements/5.png)',
+              WebkitMaskImage: 'url(/elements/5.png)',
+              maskSize: 'contain',
+              WebkitMaskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              WebkitMaskRepeat: 'no-repeat',
+            }}
+          />
+        </div>
       </div>
 
       {/* Content */}

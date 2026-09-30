@@ -4,10 +4,8 @@ import { LogoStrip } from '@/src/components/logo-strip'
 import { Courses } from '@/src/components/course-section'
 import { Growth } from '@/src/components/growth-section'
 import { CTA } from '@/src/components/cta'
-import {
-  Community,
-  Footer,
-} from '@/src/components/home-sections'
+import { Testimonials } from '@/src/components/testimonials'
+import { Footer } from '@/src/components/home-sections'
 
 export default function Page() {
   return (
@@ -18,7 +16,7 @@ export default function Page() {
       <Courses />
       <Growth />
       <CTA />
-      <Community />
+      <Testimonials />
       <Footer />
     </main>
   )

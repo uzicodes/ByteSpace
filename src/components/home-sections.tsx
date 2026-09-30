@@ -4,37 +4,16 @@ import {
   ArrowRight,
   Check,
   ChevronDown,
-  Star,
 } from 'lucide-react'
 import { Brand, Navbar } from './navbar'
 import { Hero } from './hero'
 
 export { Brand, Navbar, Hero }
+export { Testimonials, Community } from './testimonials'
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                              */
 /* ------------------------------------------------------------------ */
-
-const testimonials = [
-  {
-    name: 'Sarah M.',
-    role: 'Entrepreneur & Learner',
-    text: '"ByteSpace made learning feel simple and inspiring. I have grown so much since joining this community."',
-    stars: 5,
-  },
-  {
-    name: 'James L.',
-    role: 'Product Designer',
-    text: '"The courses are incredibly well-structured and the instructors are truly world-class. Highly recommend!"',
-    stars: 5,
-  },
-  {
-    name: 'Alex B.',
-    role: 'Tech Enthusiast',
-    text: '"I love how ByteSpace blends practical projects with theory. It keeps me engaged and actually learning."',
-    stars: 5,
-  },
-]
 
 const manageFeatures = [
   'Plan Your Lessons',
@@ -69,30 +48,6 @@ export function Button({
     >
       {children}
     </button>
-  )
-}
-
-function StarRating({ count = 5 }: { count?: number }) {
-  return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} className="size-4 fill-amber-400 text-amber-400" />
-      ))}
-    </div>
-  )
-}
-
-/** Placeholder grey box used wherever a person/avatar image would go */
-function AvatarPlaceholder({
-  className = '',
-}: {
-  className?: string
-}) {
-  return (
-    <div
-      className={`rounded-full bg-slate-300 ${className}`}
-      aria-hidden="true"
-    />
   )
 }
 
@@ -163,68 +118,6 @@ export function CreateManage() {
   )
 }
 
-
-/* ------------------------------------------------------------------ */
-/*  Community – Testimonials                                          */
-/* ------------------------------------------------------------------ */
-
-export function Community() {
-  return (
-    <section id="community" className="px-6 py-24 lg:px-10">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
-        {/* Heading */}
-        <div>
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl lg:text-5xl">
-            Discover What Our
-            <br />
-            Community Is Saying
-          </h2>
-          <p className="mt-4 max-w-sm text-[16px] sm:text-[18px] leading-[160%] text-slate-500 font-normal tracking-normal">
-            Real stories from people who are learning, building, and growing
-            with ByteSpace.
-          </p>
-        </div>
-
-        {/* Testimonial cards */}
-        <div className="grid gap-5 sm:grid-cols-3">
-          {testimonials.map((person, index) => (
-            <article
-              key={person.name}
-              className="rounded-2xl bg-slate-50 p-6 transition-shadow hover:shadow-md"
-            >
-              {/* Avatar placeholder */}
-              <AvatarPlaceholder
-                className={`mb-4 size-12 ${
-                  index === 0
-                    ? 'bg-amber-300'
-                    : index === 1
-                      ? 'bg-slate-400'
-                      : 'bg-blue-300'
-                }`}
-              />
-
-              <h3 className="text-base font-bold text-slate-900">
-                {person.name}
-              </h3>
-              <p className="mt-0.5 text-sm font-semibold text-blue-600">
-                {person.role}
-              </p>
-
-              {/* Star rating */}
-              <div className="mt-3">
-                <StarRating count={person.stars} />
-              </div>
-
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                {person.text}
-              </p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 /* ------------------------------------------------------------------ */
 /*  Footer                                                            */
