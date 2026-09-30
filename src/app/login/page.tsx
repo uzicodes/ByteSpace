@@ -18,7 +18,7 @@ export default function LoginPage() {
       <div className="relative mx-auto min-h-[960px] w-full max-w-[1440px] px-6 pb-16 lg:px-0">
         {/* Header_Frame */}
         <header
-          className="flex h-[120px] w-full items-center lg:absolute lg:left-0 lg:top-0 lg:w-[1440px] lg:px-[120px]"
+          className="relative z-50 flex h-[120px] w-full items-center lg:absolute lg:left-0 lg:top-0 lg:w-[1440px] lg:px-[120px]"
           style={{
             height: '120px',
           }}
@@ -27,12 +27,12 @@ export default function LoginPage() {
             <Link
               href="/"
               aria-label="ByteSpace Home"
-              className="transition-opacity hover:opacity-80"
+              className="inline-flex cursor-pointer items-center transition-transform hover:scale-105 active:scale-95"
             >
               <img
                 src="/logo.png"
                 alt="ByteSpace"
-                className="h-8 sm:h-9 w-auto object-contain"
+                className="h-8 sm:h-9 w-auto object-contain cursor-pointer"
               />
             </Link>
           </div>
@@ -722,8 +722,8 @@ export default function LoginPage() {
                 >
                   New user?
                 </span>
-                <a
-                  href="#signup"
+                <Link
+                  href="/register"
                   className="transition-all hover:underline"
                   style={{
                     width: '130px',
@@ -740,7 +740,7 @@ export default function LoginPage() {
                   }}
                 >
                   Create an account
-                </a>
+                </Link>
               </div>
             </div>
           </div>
