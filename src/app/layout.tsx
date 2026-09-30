@@ -1,7 +1,7 @@
-import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import GlobalLoader from '@/src/components/loader'
+import SmoothScrollProvider from '@/src/components/smooth-scroll'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -55,10 +55,8 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <Suspense fallback={null}>
-          <GlobalLoader />
-        </Suspense>
-        {children}
+        <GlobalLoader />
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

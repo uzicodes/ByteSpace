@@ -1,45 +1,115 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
+import React, { useEffect, useState, useRef } from 'react'
+import { usePathname } from 'next/navigation'
 
 export function GlobalLoader() {
   const pathname = usePathname()
-  const searchParams = useSearchParams()
+
+  // Always initialize as visible and loading on mount / full refresh / SSR
   const [loading, setLoading] = useState(true)
   const [visible, setVisible] = useState(true)
+  const isCancelledRef = useRef(false)
+  const isInitialMount = useRef(true)
 
-  // Initial page load listener: wait until full window load and DOM ready
+  const checkAllElementsLoaded = (minDuration: number = 1000) => {
+    // 1. Wait for web fonts if supported
+    const fontsPromise =
+      typeof document !== 'undefined' && 'fonts' in document
+        ? (document as unknown as { fonts: { ready: Promise<void> } }).fonts.ready.catch(() => {})
+        : Promise.resolve()
+
+    // 2. Check all critical images in the DOM
+    const imagesPromise = new Promise<void>((resolve) => {
+      if (typeof document === 'undefined') return resolve()
+
+      // Give a 60ms tick for Next.js/React to mount the page's DOM elements
+      setTimeout(() => {
+        const images = Array.from(document.querySelectorAll('img'))
+        if (images.length === 0) return resolve()
+
+        let pending = images.length
+        const onDone = () => {
+          pending--
+          if (pending <= 0) resolve()
+        }
+
+        images.forEach((img) => {
+          if (img.complete && img.naturalHeight !== 0) {
+            onDone()
+          } else {
+            img.addEventListener('load', onDone, { once: true })
+            img.addEventListener('error', onDone, { once: true })
+          }
+        })
+
+        // Safety timeout so slow external assets never hang the screen indefinitely
+        setTimeout(resolve, 3000)
+      }, 60)
+    })
+
+    // 3. Document ready state / window load
+    const pageLoadPromise = new Promise<void>((resolve) => {
+      if (typeof document === 'undefined' || document.readyState === 'complete') {
+        resolve()
+      } else {
+        window.addEventListener('load', () => resolve(), { once: true })
+        setTimeout(resolve, 3000)
+      }
+    })
+
+    // 4. Guaranteed minimum visual display duration
+    const minTimerPromise = new Promise<void>((resolve) =>
+      setTimeout(resolve, minDuration)
+    )
+
+    Promise.all([
+      fontsPromise,
+      imagesPromise,
+      pageLoadPromise,
+      minTimerPromise,
+    ]).then(() => {
+      if (isCancelledRef.current) return
+      setLoading(false)
+      setTimeout(() => {
+        if (!isCancelledRef.current) {
+          setVisible(false)
+        }
+      }, 450)
+    })
+  }
+
+  // Handle initial page load / hard refresh
   useEffect(() => {
-    const handleComplete = () => {
-      const timer = setTimeout(() => {
-        setLoading(false)
-        const hideTimer = setTimeout(() => setVisible(false), 450)
-        return () => clearTimeout(hideTimer)
-      }, 550)
-      return () => clearTimeout(timer)
+    isCancelledRef.current = false
+
+    if (isInitialMount.current) {
+      isInitialMount.current = false
+      checkAllElementsLoaded(1100)
+    } else {
+      // Trigger on pathname change (route navigation)
+      setVisible(true)
+      setLoading(true)
+      checkAllElementsLoaded(650)
     }
 
-    if (document.readyState === 'complete') {
-      handleComplete()
-    } else {
-      window.addEventListener('load', handleComplete)
-      return () => window.removeEventListener('load', handleComplete)
+    return () => {
+      // When unmounting or route changing, reset cancellation flag
     }
+  }, [pathname])
+
+  // Listen for beforeunload / browser refresh so loader starts prior to reload
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      setVisible(true)
+      setLoading(true)
+    }
+
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
   }, [])
 
-  // Route change listener
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false)
-      const hideTimer = setTimeout(() => setVisible(false), 400)
-      return () => clearTimeout(hideTimer)
-    }, 450)
-
-    return () => clearTimeout(timer)
-  }, [pathname, searchParams])
-
-  // Intercept all internal link clicks to trigger loader smoothly prior to route switch
+  // Intercept all internal navigation link clicks to trigger loader immediately
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest('a')
@@ -48,7 +118,7 @@ export function GlobalLoader() {
       const href = target.getAttribute('href')
       if (!href) return
 
-      // Ignore hash links, external links, downloads, new tabs
+      // Ignore hash anchors, external links, downloads, new tab links
       if (
         href.startsWith('#') ||
         href.startsWith('mailto:') ||
@@ -59,7 +129,6 @@ export function GlobalLoader() {
         return
       }
 
-      // Check if it's an internal route that differs from current URL
       try {
         const url = new URL(href, window.location.href)
         if (
@@ -71,12 +140,13 @@ export function GlobalLoader() {
           setLoading(true)
         }
       } catch {
-        // invalid URL, ignore
+        // ignore invalid URL
       }
     }
 
-    document.addEventListener('click', handleAnchorClick)
-    return () => document.removeEventListener('click', handleAnchorClick)
+    document.addEventListener('click', handleAnchorClick, { capture: true })
+    return () =>
+      document.removeEventListener('click', handleAnchorClick, { capture: true })
   }, [])
 
   if (!visible) return null
@@ -84,8 +154,10 @@ export function GlobalLoader() {
   return (
     <div
       aria-hidden="true"
-      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#073ee5] transition-all duration-400 ease-in-out ${
-        loading ? 'opacity-100' : 'pointer-events-none opacity-0 scale-[1.02]'
+      className={`fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#073ee5] transition-all duration-500 ease-in-out ${
+        loading
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none scale-[1.03]'
       }`}
       style={{
         backgroundColor: '#073ee5',
@@ -108,11 +180,11 @@ export function GlobalLoader() {
           <div className="absolute size-20 animate-spin rounded-full border-2 border-transparent border-t-[#D4FB20] border-r-[#D4FB20]/30 [animation-duration:1.4s]" />
 
           {/* Pulse backdrop circle */}
-          <div className="size-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center shadow-lg shadow-black/10">
+          <div className="flex size-16 items-center justify-center rounded-full bg-white/10 shadow-lg shadow-black/10 backdrop-blur-md">
             <img
               src="/logo.png"
               alt="ByteSpace"
-              className="h-9 w-auto object-contain transition-transform duration-300 animate-pulse"
+              className="h-9 w-auto object-contain animate-pulse transition-transform duration-300"
             />
           </div>
         </div>
