@@ -240,3 +240,18 @@
 .brand-mark { color: #c8ff00; font-size: 18px; line-height: 1; transform: rotate(180deg); display: inline-block; }
 .blob { position: absolute; border-radius: 999px; background: #c8ff00; filter: blur(1px); }
 button, a { -webkit-tap-highlight-color: transparent; }
+
+@keyframes loader-progress {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(0.7);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}

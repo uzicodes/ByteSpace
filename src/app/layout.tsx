@@ -1,5 +1,7 @@
+import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import GlobalLoader from '@/src/components/loader'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -53,6 +55,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <Suspense fallback={null}>
+          <GlobalLoader />
+        </Suspense>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
