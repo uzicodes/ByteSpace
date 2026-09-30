@@ -1,11 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 
 export function Brand({ light = false }: { light?: boolean }) {
   return (
-    <div
+    <Link
+      href="/"
       className={`flex items-center gap-2.5 ${
         light ? 'text-white' : 'text-slate-900'
       }`}
@@ -16,7 +18,7 @@ export function Brand({ light = false }: { light?: boolean }) {
         className="h-6 sm:h-7 w-auto object-contain"
       />
       <span className="font-brand">ByteSpace</span>
-    </div>
+    </Link>
   )
 }
 
@@ -34,7 +36,9 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-6 text-sm text-white md:flex">
-          <a href="#login" className="transition-colors hover:text-white/80">Sign in</a>
+          <Link href="/login" className="transition-colors hover:text-white/80">
+            Sign in
+          </Link>
           <a href="#signup" className="transition-colors hover:text-white/80">Join us</a>
           <button aria-label="Cart" className="transition-opacity hover:opacity-80">
             <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +61,9 @@ export function Navbar() {
           <a href="#Home">Home</a>
           <a href="#courses">Categories</a>
           <a href="#creators">Creators</a>
-          <a href="#login">Sign in</a>
+          <Link href="/login" onClick={() => setOpen(false)}>
+            Sign in
+          </Link>
           <a href="#signup">Join us</a>
           <a href="#cart" className="flex items-center gap-2 pt-1 text-white/90">
             <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
