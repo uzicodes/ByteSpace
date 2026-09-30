@@ -3,9 +3,9 @@ import { Hero } from '@/src/components/hero'
 import { LogoStrip } from '@/src/components/logo-strip'
 import { Courses } from '@/src/components/course-section'
 import { Growth } from '@/src/components/growth-section'
+import { CTA } from '@/src/components/cta'
 import {
   Community,
-  CTA,
   Footer,
 } from '@/src/components/home-sections'
 

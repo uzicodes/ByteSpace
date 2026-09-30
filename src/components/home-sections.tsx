@@ -163,48 +163,6 @@ export function CreateManage() {
   )
 }
 
-/* ------------------------------------------------------------------ */
-/*  CTA – "Unlock Your Potential as a Creator with ByteSpace"         */
-/* ------------------------------------------------------------------ */
-
-export function CTA() {
-  return (
-    <section className="hero-grid relative overflow-hidden bg-[#073ee5] px-6 py-24 text-white lg:px-10">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
-        {/* Left – text */}
-        <div className="text-center lg:text-left">
-          <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-            Unlock Your Potential as a
-            <br />
-            Creator with ByteSpace
-          </h2>
-          <p className="mx-auto mt-5 max-w-lg text-[16px] sm:text-[18px] leading-[160%] text-blue-100 lg:mx-0 font-normal tracking-normal">
-            Discover the tools and resources you need to bring your vision to
-            life. Join a community of creators, share your expertise, and inspire
-            others to learn and grow.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
-            <Button>
-              Join ByteSpace{' '}
-              <ArrowRight className="ml-2 inline size-4" />
-            </Button>
-            <Button variant="outline">Learn More</Button>
-          </div>
-        </div>
-
-        {/* Right – image collage */}
-        <div className="grid grid-cols-3 gap-3">
-          <ImagePlaceholder
-            className="col-span-2 row-span-2 h-56"
-            rounded="rounded-2xl"
-          />
-          <ImagePlaceholder className="h-[108px]" rounded="rounded-2xl" />
-          <ImagePlaceholder className="h-[108px]" rounded="rounded-2xl" />
-        </div>
-      </div>
-    </section>
-  )
-}
 
 /* ------------------------------------------------------------------ */
 /*  Community – Testimonials                                          */
