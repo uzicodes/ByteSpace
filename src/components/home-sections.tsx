@@ -10,6 +10,7 @@ import { Hero } from './hero'
 
 export { Brand, Navbar, Hero }
 export { Testimonials, Community } from './testimonials'
+export { Footer } from './footer'
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                              */
@@ -118,77 +119,3 @@ export function CreateManage() {
   )
 }
 
-
-/* ------------------------------------------------------------------ */
-/*  Footer                                                            */
-/* ------------------------------------------------------------------ */
-
-export function Footer() {
-  return (
-    <footer className="border-t border-slate-200 bg-white px-6 py-14 lg:px-10">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
-        {/* Brand column */}
-        <div>
-          <Brand />
-          <p className="mt-4 max-w-xs text-sm leading-6 text-slate-500">
-            Your space to learn, create, and grow with people who believe in the
-            power of curiosity.
-          </p>
-
-          {/* Email subscribe */}
-          <div className="mt-5 flex max-w-xs rounded-full border border-slate-200 p-1">
-            <input
-              className="min-w-0 flex-1 px-4 text-sm outline-none"
-              placeholder="Enter your email"
-            />
-            <Button className="px-5 py-2">Submit</Button>
-          </div>
-
-          {/* Social icons */}
-          <div className="mt-5 flex gap-3">
-            {['𝕏', 'in', 'f', '▶'].map((icon) => (
-              <a
-                key={icon}
-                href="#"
-                className="flex size-9 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-500 transition-colors hover:bg-lime-300 hover:text-slate-900"
-              >
-                {icon}
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Link columns */}
-        {[
-          ['Explore', 'Courses', 'Categories', 'Community'],
-          ['Resources', 'Blog', 'Help center', 'Events'],
-          ['Company', 'About us', 'Careers', 'Contact'],
-        ].map(([heading, ...links]) => (
-          <div key={heading}>
-            <h3 className="text-base font-bold text-slate-900">{heading}</h3>
-            <div className="mt-4 flex flex-col gap-3 text-sm text-slate-500">
-              {links.map((link) => (
-                <a href="#" key={link} className="hover:text-slate-800">
-                  {link}
-                </a>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Bottom bar */}
-      <div className="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-slate-100 pt-6 text-sm text-slate-400 sm:flex-row">
-        <span>© 2024 ByteSpace. All rights reserved.</span>
-        <div className="flex gap-4">
-          <a href="#" className="hover:text-slate-600">
-            Privacy Policy
-          </a>
-          <a href="#" className="hover:text-slate-600">
-            Terms of Use
-          </a>
-        </div>
-      </div>
-    </footer>
-  )
-}

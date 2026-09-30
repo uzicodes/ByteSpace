@@ -5,7 +5,7 @@ import { Courses } from '@/src/components/course-section'
 import { Growth } from '@/src/components/growth-section'
 import { CTA } from '@/src/components/cta'
 import { Testimonials } from '@/src/components/testimonials'
-import { Footer } from '@/src/components/home-sections'
+import { Footer } from '@/src/components/footer'
 
 export default function Page() {
   return (
