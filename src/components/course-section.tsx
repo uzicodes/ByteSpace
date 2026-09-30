@@ -39,7 +39,7 @@ const tertiaryFilters = [
   { label: 'Cooking', width: 'w-[94px]' },
 ]
 
-const courses = [
+export const courses = [
   {
     title: 'Learn Figma from Basic',
     category: 'Design',

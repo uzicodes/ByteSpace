@@ -192,16 +192,11 @@ export function Hero() {
         </div>
       </div>
 
-      <div
-        className="pointer-events-none absolute z-30 flex flex-col items-start justify-start gap-2 rounded-[16px] bg-white/90 p-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)] backdrop-blur-[10px]"
-        style={{ left: '880px', top: '550px', width: '210px', height: '118px' }}
-      >
+      <div className="pointer-events-none absolute left-[880px] top-[550px] z-30 flex h-[118px] w-[210px] flex-col items-start justify-start gap-2 rounded-[16px] bg-white/90 p-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)] backdrop-blur-[10px]">
         <div className="text-[12px] font-medium leading-[120%] text-[#242528]">Learning Progress</div>
-
         <div className="flex items-center gap-3">
           <div className="text-[38px] font-semibold leading-none tracking-[-0.04em] text-slate-900">55%</div>
         </div>
-
         <div className="relative h-2 w-[180px] overflow-hidden rounded-full bg-[#E8E8EA]">
           <div className="absolute inset-y-0 left-0 w-[55%] rounded-full bg-[#D4FB20]" />
         </div>
