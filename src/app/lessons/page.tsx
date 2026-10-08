@@ -1,47 +1,73 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react'
-import Link from 'next/link'
+import React, { useState } from 'react';
+import Link from 'next/link';
 import {
+  Play,
+  Share2,
   BarChart3,
   Star,
   Users,
-  Share2,
-  Play,
-  FileText,
   Video,
+  FileText,
   Award,
   MessageSquare,
-  CheckCircle2,
-} from 'lucide-react'
-import { Navbar } from '@/src/components/navbar'
-import { Footer } from '@/src/components/footer'
+} from 'lucide-react';
+import { Navbar } from '@/src/components/navbar';
+import { Footer } from '@/src/components/footer';
 
-export default function CourseDetailsPage() {
-  const [activeTab, setActiveTab] = useState<'About' | 'Lessons' | 'Reviews'>('About')
-  const [isPlaying, setIsPlaying] = useState(false)
+export default function CourseLessonsPage() {
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const keyPoints = [
-    'Foundational Concepts',
-    'Design Principles Mastery',
-    'Advanced Techniques in Digital Creation',
-    'Project Showcase and Critique',
-    'Optimizing for Various Platforms',
-    'Digital Asset Management Best Practices',
-    'Monetization Strategies',
-    'Capstone Project: Building Your Portfolio',
-  ]
+  const modulesList = [
+    {
+      num: 'Module 1',
+      title: 'Module 1: Introduction to Digital Assets',
+      description:
+        "Lay the groundwork with lessons like 'Understanding Digital Elements' and 'Navigating Design Software Tools.' Dive into the essentials of digital asset creation.",
+    },
+    {
+      num: 'Module 2',
+      title: 'Module 2: Design Principles for Impact',
+      description:
+        "Master the principles that drive impactful designs with lessons such as 'Color Theory in Digital Design' and 'Typography Essentials.' Elevate your visual communication skills.",
+    },
+    {
+      num: 'Module 4',
+      title: 'Module 4: User-Centric Design Strategies',
+      description:
+        "Understand 'Design Thinking in Digital Creation' and delve into 'User Experience (UX) Essentials.' Craft digital assets with a focus on user-centric design.",
+    },
+    {
+      num: 'Module 5',
+      title: 'Module 5: Interactive Media and Engagement',
+      description:
+        "Engage your audience with lessons like 'Creating Interactive Presentations' and 'Integrating Multimedia Elements.' Master the art of creating immersive digital experiences.",
+    },
+    {
+      num: 'Module 6',
+      title: 'Module 6: Project Showcase and Critique',
+      description:
+        "Perfect your presentation skills with 'Effective Presentation Techniques' and embrace collaboration with 'Peer Critique and Collaboration.' Showcase your work with confidence.",
+    },
+    {
+      num: 'Module 7',
+      title: 'Module 7: Optimizing Digital Assets for Various Platforms',
+      description:
+        "Adapt your digital creations for 'Mobile Platforms' and optimize for 'Social Media.' Ensure widespread accessibility and engagement across diverse digital landscapes.",
+    },
+  ];
 
   const syllabusLessons = [
     { num: '01', title: 'Introduction to Digital Assets', duration: '12 mins' },
     { num: '02', title: 'Design Principles for Impacts', duration: '21 mins' },
     { num: '03', title: 'Advanced Techniques in Digital Creation', duration: '16 mins' },
-  ]
+  ];
 
   return (
-    <div className="min-h-screen w-full bg-[#FFFFFF] text-[#242528] selection:bg-[#D4FB20] selection:text-[#242528]">
+    <div className="relative min-h-screen w-full bg-[#FFFFFF] text-[#242528] selection:bg-[#D4FB20] selection:text-[#242528]">
       {/* ======================================================== */}
-      {/* 1. HERO HEADER BANNER (Height: 957px, Persian Blue)      */}
+      {/* 1. HERO HEADER BANNER (957px Persian Blue #003BE2)       */}
       {/* ======================================================== */}
       <section className="relative h-[800px] lg:h-[957px] w-full overflow-hidden bg-[#003BE2]">
         {/* Blueprint Grid Lines (120px increments, 0.12 opacity) */}
@@ -157,7 +183,6 @@ export default function CourseDetailsPage() {
                 by purepearl studio
               </p>
 
-              {/* Meta Badges Row (576px × 40px, gap: 16px) */}
               {/* Meta Badges Row (576px × 40px, gap: 16px, order: 2) */}
               <div
                 className="flex flex-wrap items-center gap-4 lg:w-[576px] lg:h-[40px]"
@@ -340,7 +365,7 @@ export default function CourseDetailsPage() {
       <main className="relative z-20 mx-auto -mt-[380px] sm:-mt-[440px] lg:-mt-[541px] w-full max-w-[1240px] px-4 pb-24 sm:px-6">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           {/* ==================================================== */}
-          {/* LEFT COLUMN: VIDEO PLAYER + COURSE DETAILS TABS      */}
+          {/* LEFT COLUMN: VIDEO PLAYER + COURSE LESSONS CONTENT   */}
           {/* ==================================================== */}
           <div className="flex w-full flex-col items-start gap-10 lg:w-[725px]">
             {/* Video Preview Card (720px × 479px in Figma) */}
@@ -381,16 +406,11 @@ export default function CourseDetailsPage() {
               </button>
             </div>
 
-            {/* Navigation Tabs (About / Lessons / Reviews) */}
+            {/* Navigation Tabs (About / Lesson / Reviews) */}
             <div className="flex items-center gap-4 pt-12 sm:pt-16 lg:pt-20">
-              <button
-                type="button"
-                onClick={() => setActiveTab('About')}
-                className={`flex h-[43px] w-[76px] items-center justify-center rounded-[24px] transition-all ${
-                  activeTab === 'About'
-                    ? 'bg-[#D4FB20] text-[#242528]'
-                    : 'bg-[#F5F5F6] text-[#4B4C53] hover:bg-[#E5E6E8]'
-                }`}
+              <Link
+                href="/details"
+                className="flex h-[43px] w-[76px] items-center justify-center rounded-[24px] bg-[#F5F5F6] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
                 style={{
                   fontFamily: "'Satoshi', sans-serif",
                   fontWeight: 500,
@@ -399,29 +419,25 @@ export default function CourseDetailsPage() {
                 }}
               >
                 About
-              </button>
+              </Link>
 
-              <Link
-                href="/lessons"
-                className="flex h-[43px] w-[89px] items-center justify-center rounded-[24px] bg-[#F5F5F6] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
+              <button
+                type="button"
+                className="flex h-[43px] w-[82px] items-center justify-center rounded-[24px] bg-[#D4FB20] text-[#242528] transition-all"
                 style={{
+                  boxSizing: 'border-box',
                   fontFamily: "'Satoshi', sans-serif",
                   fontWeight: 500,
                   fontSize: '16px',
                   lineHeight: '120%',
                 }}
               >
-                Lessons
-              </Link>
+                Lesson
+              </button>
 
               <button
                 type="button"
-                onClick={() => setActiveTab('Reviews')}
-                className={`flex h-[43px] w-[90px] items-center justify-center rounded-[24px] transition-all ${
-                  activeTab === 'Reviews'
-                    ? 'bg-[#D4FB20] text-[#242528]'
-                    : 'bg-[#F5F5F6] text-[#4B4C53] hover:bg-[#E5E6E8]'
-                }`}
+                className="flex h-[43px] w-[90px] items-center justify-center rounded-[24px] bg-[#F5F5F6] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
                 style={{
                   fontFamily: "'Satoshi', sans-serif",
                   fontWeight: 500,
@@ -433,109 +449,290 @@ export default function CourseDetailsPage() {
               </button>
             </div>
 
-            {/* Detailed Description */}
-            <div className="flex flex-col items-start gap-4">
-              <h2
-                className="font-semibold text-[#242528]"
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontSize: '20px',
-                  lineHeight: '120%',
-                  letterSpacing: '-0.01em',
-                }}
-              >
-                Description
-              </h2>
-              <p
-                className="text-[#4B4C53]"
-                style={{
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: '160%',
-                }}
-              >
-                Embark on an enlightening exploration into the world of digital creation with our
-                comprehensive course, &quot;Build Digital Assets: A Comprehensive Guide.&quot; This transformative
-                learning experience invites you to delve deep into the intricacies of crafting impactful digital
-                content. From laying the groundwork with foundational concepts to mastering advanced
-                techniques, this guide is meticulously curated to empower you with the skills essential for
-                navigating the dynamic landscape of digital asset creation. In the initial modules, you&apos;ll
-                establish a solid foundation by immersing yourself in the foundational concepts that form
-                the backbone of digital asset creation. Understand the fundamental elements that constitute
-                compelling digital content and gain proficiency in leveraging these elements to communicate
-                effectively in the digital realm. As you progress through the course, you&apos;ll ascend to higher
-                levels of expertise, delving into the nuances of design principles that drive impactful creations.
-                Uncover the secrets behind effective visual communication, exploring color theory, typography,
-                and layout strategies that elevate your digital assets to new heights. Engage in hands-on
-                exercises that reinforce your understanding, allowing you to apply these principles in practical
-                scenarios.
-              </p>
-            </div>
-
-            {/* Sneak Peak Section */}
-            <div className="flex w-full flex-col items-start gap-4 pt-2">
-              <h2
-                className="font-semibold text-[#242528]"
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontSize: '20px',
-                  lineHeight: '120%',
-                  letterSpacing: '-0.01em',
-                }}
-              >
-                Sneak Peak
-              </h2>
-
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 w-full">
-                {['/details/3.jpg', '/details/4.jpg', '/details/5.jpg', '/details/6.jpg'].map(
-                  (imgSrc, index) => (
-                    <div
-                      key={index}
-                      className="group relative h-[125px] w-full overflow-hidden rounded-[16px] bg-[#D9D9D9] shadow-sm transition-all duration-300 hover:shadow-md"
-                    >
-                      <img
-                        src={imgSrc}
-                        alt={`Sneak peak preview ${index + 1}`}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                  )
-                )}
+            {/* Main Lessons Content Column (width: 723px, gap: 24px) */}
+            <div className="flex w-full flex-col items-start gap-6 lg:w-[723px]">
+              {/* 1. Explore the Modules Section */}
+              <div className="flex flex-col items-start gap-2">
+                <h2
+                  className="font-semibold text-[#242528]"
+                  style={{
+                    width: '199px',
+                    height: '24px',
+                    fontFamily: "'Poppins', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                    fontSize: '20px',
+                    lineHeight: '120%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    letterSpacing: '-0.01em',
+                  }}
+                >
+                  Explore the Modules
+                </h2>
+                <p
+                  className="text-[#4B4C53]"
+                  style={{
+                    width: '100%',
+                    maxWidth: '723px',
+                    fontFamily: "'Satoshi', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '160%',
+                  }}
+                >
+                  Immerse yourself in the course content as we break down each module into comprehensive
+                  lessons, providing practical insights and hands-on experiences.
+                </p>
               </div>
-            </div>
 
-            {/* Key Points Section */}
-            <div className="flex flex-col items-start gap-4 pt-4">
-              <h2
-                className="font-semibold text-[#242528]"
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontSize: '20px',
-                  lineHeight: '120%',
-                  letterSpacing: '-0.01em',
-                }}
-              >
-                Key Points
-              </h2>
+              {/* 2. Lesson List Header */}
+              <div className="pt-2">
+                <h2
+                  className="font-semibold text-[#242528]"
+                  style={{
+                    width: '106px',
+                    height: '24px',
+                    fontFamily: "'Poppins', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                    fontSize: '20px',
+                    lineHeight: '120%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    letterSpacing: '-0.01em',
+                  }}
+                >
+                  Lesson List
+                </h2>
+              </div>
 
-              <div className="flex flex-col items-start gap-3">
-                {keyPoints.map((point) => (
-                  <div key={point} className="flex items-center gap-2">
-                    <CheckCircle2 className="size-6 shrink-0 fill-[#003BE2] text-white" />
-                    <span
+              {/* 3. Modules List (Modules 1, 2, 4, 5, 6, 7) */}
+              <div className="flex w-full flex-col items-start gap-4">
+                {modulesList.map((module) => (
+                  <div
+                    key={module.num}
+                    className="flex w-full flex-row items-center gap-[13px] rounded-[16px] p-2 transition-colors hover:bg-black/[0.02]"
+                    style={{
+                      width: '100%',
+                      maxWidth: '723px',
+                      minHeight: '75px',
+                    }}
+                  >
+                    {/* Icon Box: 72px × 72px #D4FB20 */}
+                    <div
+                      className="shrink-0 shadow-sm"
                       style={{
-                        fontFamily: "'Satoshi', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '16px',
-                        lineHeight: '160%',
-                        color: '#4B4C53',
+                        boxSizing: 'border-box',
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: '16px',
+                        gap: '8px',
+                        width: '72px',
+                        height: '72px',
+                        background: '#D4FB20',
+                        borderRadius: '24px',
+                        flex: 'none',
+                        order: 0,
+                        flexGrow: 0,
                       }}
                     >
-                      {point}
-                    </span>
+                      <Video className="size-8 text-[#242528]" />
+                    </div>
+
+                    {/* Module Title & Description Stack */}
+                    <div
+                      className="flex flex-col items-start gap-1"
+                      style={{
+                        width: '100%',
+                        maxWidth: '638px',
+                        minHeight: '75px',
+                      }}
+                    >
+                      <h3
+                        className="font-medium text-[#242528]"
+                        style={{
+                          fontFamily: "'Satoshi', sans-serif",
+                          fontStyle: 'normal',
+                          fontWeight: 500,
+                          fontSize: '16px',
+                          lineHeight: '120%',
+                          display: 'flex',
+                          alignItems: 'center',
+                        }}
+                      >
+                        {module.title}
+                      </h3>
+                      <p
+                        className="text-[#4B4C53]"
+                        style={{
+                          fontFamily: "'Satoshi', sans-serif",
+                          fontStyle: 'normal',
+                          fontWeight: 400,
+                          fontSize: '16px',
+                          lineHeight: '160%',
+                        }}
+                      >
+                        {module.description}
+                      </p>
+                    </div>
                   </div>
                 ))}
+              </div>
+
+              {/* 4. Lesson Content Section */}
+              <div className="flex flex-col items-start gap-2 pt-4">
+                <h2
+                  className="font-semibold text-[#242528]"
+                  style={{
+                    width: '154px',
+                    height: '24px',
+                    fontFamily: "'Poppins', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                    fontSize: '20px',
+                    lineHeight: '120%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    letterSpacing: '-0.01em',
+                  }}
+                >
+                  Lesson Content
+                </h2>
+                <p
+                  className="text-[#4B4C53]"
+                  style={{
+                    width: '100%',
+                    maxWidth: '723px',
+                    fontFamily: "'Satoshi', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '160%',
+                  }}
+                >
+                  Engage with each lesson through captivating video content, detailed textual
+                  explanations, and interactive elements. Download resources, complete assignments, and test
+                  your understanding with quizzes.
+                </p>
+              </div>
+
+              {/* 5. Lesson Progress Tracking Section */}
+              <div className="flex flex-col items-start gap-2 pt-4">
+                <h2
+                  className="whitespace-nowrap font-semibold text-[#242528]"
+                  style={{
+                    width: 'auto',
+                    minWidth: '252px',
+                    height: '24px',
+                    fontFamily: "'Poppins', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                    fontSize: '20px',
+                    lineHeight: '120%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    letterSpacing: '-0.01em',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  Lesson Progress Tracking
+                </h2>
+                <p
+                  className="text-[#4B4C53]"
+                  style={{
+                    width: '100%',
+                    maxWidth: '723px',
+                    fontFamily: "'Satoshi', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '160%',
+                  }}
+                >
+                  Witness your growth as you complete lessons, with an intuitive progress tracking
+                  feature guiding you through your learning journey.
+                </p>
+              </div>
+
+              {/* 6. Learning Progress Card (723px × 116px, 55%) */}
+              <div
+                className="w-full shadow-sm"
+                style={{
+                  boxSizing: 'border-box',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  padding: '16px',
+                  gap: '8px',
+                  width: '100%',
+                  maxWidth: '723px',
+                  minHeight: '116px',
+                  background: '#FFFFFF',
+                  border: '1px solid #CED0D3',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  borderRadius: '16px',
+                }}
+              >
+                <span
+                  style={{
+                    width: '115px',
+                    height: '17px',
+                    fontFamily: "'Satoshi', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 500,
+                    fontSize: '14px',
+                    lineHeight: '120%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: '#242528',
+                  }}
+                >
+                  Learning Progress
+                </span>
+
+                <span
+                  style={{
+                    width: '72px',
+                    height: '43px',
+                    fontFamily: "'Poppins', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                    fontSize: '36px',
+                    lineHeight: '120%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    letterSpacing: '-0.01em',
+                    color: '#242528',
+                  }}
+                >
+                  55%
+                </span>
+
+                {/* Progress Bar Track */}
+                <div
+                  className="relative w-full overflow-hidden"
+                  style={{
+                    width: '100%',
+                    maxWidth: '691px',
+                    height: '8px',
+                    background: '#E5E6E8',
+                    borderRadius: '24px',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '55%',
+                      height: '8px',
+                      background: '#D4FB20',
+                      borderRadius: '24px',
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -616,7 +813,7 @@ export default function CourseDetailsPage() {
                 </div>
               </div>
 
-              {/* Ready to Dive In & Pricing Stack */}
+              {/* Pricing & CTA */}
               <div className="flex w-full flex-col items-start gap-4 pt-2">
                 <p
                   className="text-[#4B4C53]"
@@ -630,8 +827,7 @@ export default function CourseDetailsPage() {
                   Ready to Dive In? Enroll Now and Start Building Your Digital Future!
                 </p>
 
-                {/* Price Display */}
-                <div className="flex items-baseline gap-1">
+                <div className="flex items-baseline gap-2">
                   <span
                     className="font-semibold text-[#003BE2]"
                     style={{
@@ -819,10 +1015,10 @@ export default function CourseDetailsPage() {
       </main>
 
       {/* ======================================================== */}
-      {/* 3. FOOTER (Exact Figma Spec Component)                   */}
+      {/* 3. GLOBAL FOOTER                                         */}
       {/* ======================================================== */}
       <Footer />
     </div>
-  )
+  );
 }
 
