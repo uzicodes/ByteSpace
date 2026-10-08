@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import {
   Search,
   ChevronDown,
@@ -500,9 +501,10 @@ export default function CoursePage() {
       <section className="mx-auto w-full max-w-[1200px] px-4 pt-[152px] pb-[192px] sm:px-6">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {filteredCourses.map((course) => (
-            <article
+            <Link
+              href="/details"
               key={course.id}
-              className="group box-border flex h-[384px] w-full max-w-[373px] flex-col justify-between rounded-[24px] border border-[#CED0D3] bg-[#FFFFFF] p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              className="group box-border flex h-[384px] w-full max-w-[373px] flex-col justify-between rounded-[24px] border border-[#CED0D3] bg-[#FFFFFF] p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block"
             >
               {/* Thumbnail Frame */}
               <div className="relative h-[195.14px] w-full overflow-hidden rounded-[12px] bg-[#443131]">
@@ -640,7 +642,7 @@ export default function CoursePage() {
                   </span>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
