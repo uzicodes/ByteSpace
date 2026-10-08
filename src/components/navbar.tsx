@@ -30,9 +30,9 @@ export function Navbar() {
         <Brand light />
 
         <nav className="hidden items-center gap-8 text-sm text-white/80 md:flex">
-          <a href="#Home">Home</a>
-          <a href="#courses">Categories</a>
-          <a href="#creators">Creators</a>
+          <Link href="/" className="transition-colors hover:text-white">Home</Link>
+          <Link href="/course" className="transition-colors hover:text-white">Courses</Link>
+          <Link href="/#creators" className="transition-colors hover:text-white">Creators</Link>
         </nav>
 
         <div className="hidden items-center gap-6 text-sm text-white md:flex">
@@ -60,9 +60,9 @@ export function Navbar() {
 
       {open && (
         <div className="mx-4 flex flex-col gap-4 rounded-2xl bg-blue-900 p-5 text-sm text-white md:hidden">
-          <a href="#Home">Home</a>
-          <a href="#courses">Categories</a>
-          <a href="#creators">Creators</a>
+          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link href="/course" onClick={() => setOpen(false)}>Courses</Link>
+          <Link href="/#creators" onClick={() => setOpen(false)}>Creators</Link>
           <Link href="/login" onClick={() => setOpen(false)}>
             Sign in
           </Link>
