@@ -92,8 +92,8 @@ export default function LoginPage() {
                 width: '146.72px',
                 height: '146.72px',
                 backgroundColor: '#D4FB20',
-                maskImage: 'url(/elements/3.png)',
-                WebkitMaskImage: 'url(/elements/3.png)',
+                maskImage: 'url(/elements/3.webp)',
+                WebkitMaskImage: 'url(/elements/3.webp)',
                 maskSize: 'contain',
                 WebkitMaskSize: 'contain',
                 maskRepeat: 'no-repeat',
@@ -110,8 +110,8 @@ export default function LoginPage() {
                 width: '188.93px',
                 height: '188.93px',
                 backgroundColor: '#D4FB20',
-                maskImage: 'url(/elements/4.png)',
-                WebkitMaskImage: 'url(/elements/4.png)',
+                maskImage: 'url(/elements/4.webp)',
+                WebkitMaskImage: 'url(/elements/4.webp)',
                 maskSize: 'contain',
                 WebkitMaskSize: 'contain',
                 maskRepeat: 'no-repeat',
@@ -129,7 +129,7 @@ export default function LoginPage() {
               {/* Image Preview */}
               <div className="relative h-[160px] w-full overflow-hidden rounded-[12px] bg-slate-100">
                 <img
-                  src="/courses/2.jpg"
+                  src="/courses/2.webp"
                   alt="Build Digital Asset"
                   className="h-full w-full object-cover"
                 />
@@ -158,7 +158,7 @@ export default function LoginPage() {
                     {[1, 2, 3, 4].map((avatar) => (
                       <img
                         key={avatar}
-                        src={`/courses/dp/${avatar}.png`}
+                        src={`/courses/dp/${avatar}.webp`}
                         alt=""
                         className="size-7 rounded-full border-2 border-white object-cover"
                       />
@@ -187,7 +187,7 @@ export default function LoginPage() {
               {/* Image Preview with Badges */}
               <div className="relative h-[175px] w-full overflow-hidden rounded-[12px] bg-slate-900">
                 <img
-                  src="/courses/3.jpg"
+                  src="/courses/3.webp"
                   alt="The Power of Big Data"
                   className="h-full w-full object-cover"
                 />
@@ -230,7 +230,7 @@ export default function LoginPage() {
                     {[1, 2, 3, 4].map((avatar) => (
                       <img
                         key={avatar}
-                        src={`/courses/dp/${avatar}.png`}
+                        src={`/courses/dp/${avatar}.webp`}
                         alt=""
                         className="size-7 rounded-full border-2 border-white object-cover"
                       />
@@ -280,7 +280,7 @@ export default function LoginPage() {
                 {[1, 2, 3, 4, 5, 6, 7].map((num) => (
                   <img
                     key={num}
-                    src={`/dp_images/happy_students/${num}.png`}
+                    src={`/dp_images/happy_students/${num}.webp`}
                     alt=""
                     style={{ width: '43px', height: '43px' }}
                     className="h-[43px] w-[43px] rounded-full border-2 border-white object-cover bg-slate-200"
@@ -304,8 +304,8 @@ export default function LoginPage() {
                 left: '298px',
                 top: '288px',
                 backgroundColor: '#F5F5F6',
-                maskImage: 'url(/elements/2.png)',
-                WebkitMaskImage: 'url(/elements/2.png)',
+                maskImage: 'url(/elements/2.webp)',
+                WebkitMaskImage: 'url(/elements/2.webp)',
                 maskSize: 'contain',
                 WebkitMaskSize: 'contain',
                 maskRepeat: 'no-repeat',

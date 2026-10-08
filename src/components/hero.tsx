@@ -11,8 +11,8 @@ export function Hero() {
         className="pointer-events-none absolute left-[-120px] top-[120px] z-10 h-[387px] w-[387px]"
         style={{
           backgroundColor: '#D4FB20',
-          maskImage: 'url(/elements/1.png)',
-          WebkitMaskImage: 'url(/elements/1.png)',
+          maskImage: 'url(/elements/1.webp)',
+          WebkitMaskImage: 'url(/elements/1.webp)',
           maskSize: 'contain',
           WebkitMaskSize: 'contain',
           maskRepeat: 'no-repeat',
@@ -36,8 +36,8 @@ export function Hero() {
           className="h-full w-full"
           style={{
             backgroundColor: '#F5F5F6',
-            maskImage: 'url(/elements/2.png)',
-            WebkitMaskImage: 'url(/elements/2.png)',
+            maskImage: 'url(/elements/2.webp)',
+            WebkitMaskImage: 'url(/elements/2.webp)',
             maskSize: 'contain',
             WebkitMaskSize: 'contain',
             maskRepeat: 'no-repeat',
@@ -61,8 +61,8 @@ export function Hero() {
           className="h-full w-full"
           style={{
             backgroundColor: '#F5F5F6',
-            maskImage: 'url(/elements/3.png)',
-            WebkitMaskImage: 'url(/elements/3.png)',
+            maskImage: 'url(/elements/3.webp)',
+            WebkitMaskImage: 'url(/elements/3.webp)',
             maskSize: 'contain',
             WebkitMaskSize: 'contain',
             maskRepeat: 'no-repeat',
@@ -86,8 +86,8 @@ export function Hero() {
             className="h-full w-full"
             style={{
               backgroundColor: '#F5F5F6',
-              maskImage: 'url(/elements/4.png)',
-              WebkitMaskImage: 'url(/elements/4.png)',
+              maskImage: 'url(/elements/4.webp)',
+              WebkitMaskImage: 'url(/elements/4.webp)',
               maskSize: 'contain',
               WebkitMaskSize: 'contain',
               maskRepeat: 'no-repeat',
@@ -111,8 +111,8 @@ export function Hero() {
           className="h-full w-full"
           style={{
             backgroundColor: '#F5F5F6',
-            maskImage: 'url(/elements/5.png)',
-            WebkitMaskImage: 'url(/elements/5.png)',
+            maskImage: 'url(/elements/5.webp)',
+            WebkitMaskImage: 'url(/elements/5.webp)',
             maskSize: 'contain',
             WebkitMaskSize: 'contain',
             maskRepeat: 'no-repeat',
@@ -136,8 +136,8 @@ export function Hero() {
           className="h-full w-full"
           style={{
             backgroundColor: '#D4FB20',
-            maskImage: 'url(/elements/6.png)',
-            WebkitMaskImage: 'url(/elements/6.png)',
+            maskImage: 'url(/elements/6.webp)',
+            WebkitMaskImage: 'url(/elements/6.webp)',
             maskSize: 'contain',
             WebkitMaskSize: 'contain',
             maskRepeat: 'no-repeat',
@@ -181,7 +181,7 @@ export function Hero() {
           {[1, 2, 3, 4, 5, 6, 7].map((num) => (
             <img
               key={num}
-              src={`/dp_images/happy_students/${num}.png`}
+              src={`/dp_images/happy_students/${num}.webp`}
               alt="Happy student"
               className="h-8 w-8 rounded-full border-2 border-white object-cover bg-slate-200"
             />
@@ -205,7 +205,7 @@ export function Hero() {
       {/* Person Image */}
       <div className="pointer-events-none absolute -bottom-6 sm:-bottom-8 left-1/2 z-10 -translate-x-1/2 w-[300px] sm:w-[380px] md:w-[480px] md:h-[450px]">
         <img
-          src="/person-1.png"
+          src="/person-1.webp"
           alt="Student with laptop"
           className="h-full w-full object-contain object-bottom"
           style={{

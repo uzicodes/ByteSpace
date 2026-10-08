@@ -371,7 +371,7 @@ export default function CourseLessonsPage() {
             {/* Video Preview Card (720px × 479px in Figma) */}
             <div className="relative h-[320px] sm:h-[420px] lg:h-[479px] w-full overflow-hidden rounded-[24px] border border-[#CED0D3]/30 bg-[#443131] shadow-2xl">
               <img
-                src="/details/1.jpg"
+                src="/details/1.webp"
                 alt="Course Video Preview"
                 className="h-full w-full object-cover"
               />
@@ -951,7 +951,7 @@ export default function CourseLessonsPage() {
               <div className="flex w-full flex-col items-start gap-4">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/details/2.jpg"
+                    src="/details/2.webp"
                     alt="PurePearl Studio"
                     className="size-[52px] rounded-full object-cover border border-[#CED0D3]"
                   />

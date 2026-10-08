@@ -346,7 +346,7 @@ export default function CourseDetailsPage() {
             {/* Video Preview Card (720px × 479px in Figma) */}
             <div className="relative h-[320px] sm:h-[420px] lg:h-[479px] w-full overflow-hidden rounded-[24px] border border-[#CED0D3]/30 bg-[#443131] shadow-2xl">
               <img
-                src="/details/1.jpg"
+                src="/details/1.webp"
                 alt="Course Video Preview"
                 className="h-full w-full object-cover"
               />
@@ -488,7 +488,7 @@ export default function CourseDetailsPage() {
               </h2>
 
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 w-full">
-                {['/details/3.jpg', '/details/4.jpg', '/details/5.jpg', '/details/6.jpg'].map(
+                {['/details/3.webp', '/details/4.webp', '/details/5.webp', '/details/6.webp'].map(
                   (imgSrc, index) => (
                     <div
                       key={index}
@@ -755,7 +755,7 @@ export default function CourseDetailsPage() {
               <div className="flex w-full flex-col items-start gap-4">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/details/2.jpg"
+                    src="/details/2.webp"
                     alt="PurePearl Studio"
                     className="size-[52px] rounded-full object-cover border border-[#CED0D3]"
                   />

@@ -40,7 +40,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/1.jpg',
+    image: '/courses/1.webp',
   },
   {
     id: 2,
@@ -53,7 +53,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/2.jpg',
+    image: '/courses/2.webp',
   },
   {
     id: 3,
@@ -66,7 +66,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/3.jpg',
+    image: '/courses/3.webp',
   },
   {
     id: 4,
@@ -79,7 +79,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/4.jpg',
+    image: '/courses/4.webp',
   },
   {
     id: 5,
@@ -92,7 +92,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/5.jpg',
+    image: '/courses/5.webp',
   },
   {
     id: 6,
@@ -105,7 +105,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/6.jpg',
+    image: '/courses/6.webp',
   },
   {
     id: 7,
@@ -118,7 +118,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/1.jpg',
+    image: '/courses/1.webp',
   },
   {
     id: 8,
@@ -131,7 +131,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/2.jpg',
+    image: '/courses/2.webp',
   },
   {
     id: 9,
@@ -144,7 +144,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/3.jpg',
+    image: '/courses/3.webp',
   },
   {
     id: 10,
@@ -157,7 +157,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/4.jpg',
+    image: '/courses/4.webp',
   },
   {
     id: 11,
@@ -170,7 +170,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/5.jpg',
+    image: '/courses/5.webp',
   },
   {
     id: 12,
@@ -183,7 +183,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/6.jpg',
+    image: '/courses/6.webp',
   },
   {
     id: 13,
@@ -196,7 +196,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/1.jpg',
+    image: '/courses/1.webp',
   },
   {
     id: 14,
@@ -209,7 +209,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/2.jpg',
+    image: '/courses/2.webp',
   },
   {
     id: 15,
@@ -222,7 +222,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/3.jpg',
+    image: '/courses/3.webp',
   },
   {
     id: 16,
@@ -235,7 +235,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/4.jpg',
+    image: '/courses/4.webp',
   },
   {
     id: 17,
@@ -248,7 +248,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/5.jpg',
+    image: '/courses/5.webp',
   },
   {
     id: 18,
@@ -261,7 +261,7 @@ const courseData = [
     level: 'Beginner',
     rating: '4.5',
     price: '$25',
-    image: '/courses/6.jpg',
+    image: '/courses/6.webp',
   },
 ]
 
@@ -600,7 +600,7 @@ export default function CoursePage() {
                     {[1, 2, 3, 4].map((avatar) => (
                       <img
                         key={avatar}
-                        src={`/courses/dp/${avatar}.png`}
+                        src={`/courses/dp/${avatar}.webp`}
                         alt=""
                         className="size-8 rounded-full border-2 border-[#FFFFFF] object-cover"
                       />

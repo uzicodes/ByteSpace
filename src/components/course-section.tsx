@@ -43,42 +43,42 @@ export const courses = [
   {
     title: 'Learn Figma from Basic',
     category: 'Design',
-    image: '/courses/1.jpg',
+    image: '/courses/1.webp',
     price: '$25.00',
     rating: '4.5',
   },
   {
     title: 'Build Digital Asset',
     category: 'Development',
-    image: '/courses/2.jpg',
+    image: '/courses/2.webp',
     price: '$26.00',
     rating: '4.8',
   },
   {
     title: 'The Power of Big Data',
     category: 'IT & Software',
-    image: '/courses/3.jpg',
+    image: '/courses/3.webp',
     price: '$25.00',
     rating: '4.5',
   },
   {
     title: 'Balancing Productivity on...',
     category: 'Business',
-    image: '/courses/4.jpg',
+    image: '/courses/4.webp',
     price: '$25.00',
     rating: '4.7',
   },
   {
     title: 'Mastering Money Manage...',
     category: 'Finance',
-    image: '/courses/5.jpg',
+    image: '/courses/5.webp',
     price: '$25.00',
     rating: '4.6',
   },
   {
     title: 'From Idea to Startup Succ...',
     category: 'Business',
-    image: '/courses/6.jpg',
+    image: '/courses/6.webp',
     price: '$25.00',
     rating: '4.9',
   },
@@ -128,7 +128,7 @@ export function CourseCard({
             {[1, 2, 3, 4].map((avatar) => (
               <img
                 key={avatar}
-                src={`/courses/dp/${avatar}.png`}
+                src={`/courses/dp/${avatar}.webp`}
                 alt=""
                 className="size-8 rounded-full border-2 border-white object-cover"
               />

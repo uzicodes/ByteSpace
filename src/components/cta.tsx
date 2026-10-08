@@ -3,7 +3,7 @@
 export function CTA() {
   return (
     <section className="hero-grid relative min-h-[488px] overflow-hidden bg-[#003BE2] px-6 py-20 text-white lg:px-10">
-      {/* Top-Left Lime Spiral Element (public/elements/1.png) */}
+      {/* Top-Left Lime Spiral Element (public/elements/1.webp) */}
       <div
         aria-label="Decorative lime spiral"
         role="img"
@@ -17,7 +17,7 @@ export function CTA() {
       >
         <div className="relative h-full w-full isolate">
           <img
-            src="/elements/1.png"
+            src="/elements/1.webp"
             alt=""
             className="h-full w-full object-contain"
           />
@@ -26,8 +26,8 @@ export function CTA() {
             style={{
               backgroundColor: '#D4FB20',
               mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/1.png)',
-              WebkitMaskImage: 'url(/elements/1.png)',
+              maskImage: 'url(/elements/1.webp)',
+              WebkitMaskImage: 'url(/elements/1.webp)',
               maskSize: 'contain',
               WebkitMaskSize: 'contain',
               maskRepeat: 'no-repeat',
@@ -37,7 +37,7 @@ export function CTA() {
         </div>
       </div>
 
-      {/* Top-Left Small White Spiral Element (public/elements/2.png) */}
+      {/* Top-Left Small White Spiral Element (public/elements/2.webp) */}
       <div
         aria-label="Decorative small white spiral"
         role="img"
@@ -52,7 +52,7 @@ export function CTA() {
       >
         <div className="relative h-full w-full isolate">
           <img
-            src="/elements/2.png"
+            src="/elements/2.webp"
             alt=""
             className="h-full w-full object-contain"
           />
@@ -61,8 +61,8 @@ export function CTA() {
             style={{
               backgroundColor: '#F5F5F6',
               mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/2.png)',
-              WebkitMaskImage: 'url(/elements/2.png)',
+              maskImage: 'url(/elements/2.webp)',
+              WebkitMaskImage: 'url(/elements/2.webp)',
               maskSize: 'contain',
               WebkitMaskSize: 'contain',
               maskRepeat: 'no-repeat',
@@ -72,7 +72,7 @@ export function CTA() {
         </div>
       </div>
 
-      {/* Left Shuttle Gray/50 Cone Element (public/elements/7.png) */}
+      {/* Left Shuttle Gray/50 Cone Element (public/elements/7.webp) */}
       <div
         aria-label="Decorative cone"
         role="img"
@@ -86,7 +86,7 @@ export function CTA() {
       >
         <div className="relative h-full w-full isolate">
           <img
-            src="/elements/7.png"
+            src="/elements/7.webp"
             alt=""
             className="h-full w-full object-contain"
           />
@@ -95,8 +95,8 @@ export function CTA() {
             style={{
               backgroundColor: '#F5F5F6',
               mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/7.png)',
-              WebkitMaskImage: 'url(/elements/7.png)',
+              maskImage: 'url(/elements/7.webp)',
+              WebkitMaskImage: 'url(/elements/7.webp)',
               maskSize: 'contain',
               WebkitMaskSize: 'contain',
               maskRepeat: 'no-repeat',
@@ -106,7 +106,7 @@ export function CTA() {
         </div>
       </div>
 
-      {/* Bottom-Left Lime Ring Element (public/elements/3.png) */}
+      {/* Bottom-Left Lime Ring Element (public/elements/3.webp) */}
       <div
         aria-label="Decorative lime ring"
         role="img"
@@ -120,7 +120,7 @@ export function CTA() {
       >
         <div className="relative h-full w-full isolate">
           <img
-            src="/elements/3.png"
+            src="/elements/3.webp"
             alt=""
             className="h-full w-full object-contain"
           />
@@ -129,8 +129,8 @@ export function CTA() {
             style={{
               backgroundColor: '#D4FB20',
               mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/3.png)',
-              WebkitMaskImage: 'url(/elements/3.png)',
+              maskImage: 'url(/elements/3.webp)',
+              WebkitMaskImage: 'url(/elements/3.webp)',
               maskSize: 'contain',
               WebkitMaskSize: 'contain',
               maskRepeat: 'no-repeat',
@@ -140,7 +140,7 @@ export function CTA() {
         </div>
       </div>
 
-      {/* Top-Right Lime Pyramid Element (public/elements/4.png) */}
+      {/* Top-Right Lime Pyramid Element (public/elements/4.webp) */}
       <div
         aria-label="Decorative lime pyramid"
         role="img"
@@ -154,7 +154,7 @@ export function CTA() {
       >
         <div className="relative h-full w-full isolate">
           <img
-            src="/elements/4.png"
+            src="/elements/4.webp"
             alt=""
             className="h-full w-full object-contain"
           />
@@ -163,8 +163,8 @@ export function CTA() {
             style={{
               backgroundColor: '#D4FB20',
               mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/4.png)',
-              WebkitMaskImage: 'url(/elements/4.png)',
+              maskImage: 'url(/elements/4.webp)',
+              WebkitMaskImage: 'url(/elements/4.webp)',
               maskSize: 'contain',
               WebkitMaskSize: 'contain',
               maskRepeat: 'no-repeat',
@@ -174,7 +174,7 @@ export function CTA() {
         </div>
       </div>
 
-      {/* Top-Right Shuttle Gray/50 Cylinder Element (public/elements/6.png) */}
+      {/* Top-Right Shuttle Gray/50 Cylinder Element (public/elements/6.webp) */}
       <div
         aria-label="Decorative cylinder"
         role="img"
@@ -188,7 +188,7 @@ export function CTA() {
       >
         <div className="relative h-full w-full isolate">
           <img
-            src="/elements/6.png"
+            src="/elements/6.webp"
             alt=""
             className="h-full w-full object-contain"
           />
@@ -197,8 +197,8 @@ export function CTA() {
             style={{
               backgroundColor: '#F5F5F6',
               mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/6.png)',
-              WebkitMaskImage: 'url(/elements/6.png)',
+              maskImage: 'url(/elements/6.webp)',
+              WebkitMaskImage: 'url(/elements/6.webp)',
               maskSize: 'contain',
               WebkitMaskSize: 'contain',
               maskRepeat: 'no-repeat',
@@ -208,7 +208,7 @@ export function CTA() {
         </div>
       </div>
 
-      {/* Bottom-Right Lime Spiral Element (public/elements/5.png) */}
+      {/* Bottom-Right Lime Spiral Element (public/elements/5.webp) */}
       <div
         aria-label="Decorative lime spiral"
         role="img"
@@ -222,7 +222,7 @@ export function CTA() {
       >
         <div className="relative h-full w-full isolate">
           <img
-            src="/elements/5.png"
+            src="/elements/5.webp"
             alt=""
             className="h-full w-full object-contain"
           />
@@ -231,8 +231,8 @@ export function CTA() {
             style={{
               backgroundColor: '#D4FB20',
               mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/5.png)',
-              WebkitMaskImage: 'url(/elements/5.png)',
+              maskImage: 'url(/elements/5.webp)',
+              WebkitMaskImage: 'url(/elements/5.webp)',
               maskSize: 'contain',
               WebkitMaskSize: 'contain',
               maskRepeat: 'no-repeat',
