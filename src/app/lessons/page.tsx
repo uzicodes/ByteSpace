@@ -163,10 +163,9 @@ export default function CourseLessonsPage() {
                 </p>
               </div>
 
-              {/* Creator: by purepearl studio (157px × 22px) */}
+              {/* Creator: by purepearl studio */}
               <p
                 style={{
-                  width: '157px',
                   height: '22px',
                   fontFamily: "'Satoshi', sans-serif",
                   fontWeight: 500,
@@ -180,7 +179,13 @@ export default function CourseLessonsPage() {
                   flexGrow: 0,
                 }}
               >
-                by purepearl studio
+                by{' '}
+                <Link
+                  href="/creator_profile"
+                  className="ml-1 font-medium text-[#D4FB20] hover:underline transition-colors"
+                >
+                  purepearl studio
+                </Link>
               </p>
 
               {/* Meta Badges Row (576px × 40px, gap: 16px, order: 2) */}
@@ -950,11 +955,13 @@ export default function CourseLessonsPage() {
               {/* Creator Profile Section */}
               <div className="flex w-full flex-col items-start gap-4">
                 <div className="flex items-center gap-3">
-                  <img
-                    src="/details/2.webp"
-                    alt="PurePearl Studio"
-                    className="size-[52px] rounded-full object-cover border border-[#CED0D3]"
-                  />
+                  <Link href="/creator_profile">
+                    <img
+                      src="/details/2.webp"
+                      alt="PurePearl Studio"
+                      className="size-[52px] rounded-full object-cover border border-[#CED0D3] hover:opacity-90 transition-opacity"
+                    />
+                  </Link>
                   <div className="flex flex-col items-start">
                     <h4
                       className="font-medium text-[#242528]"
@@ -964,7 +971,12 @@ export default function CourseLessonsPage() {
                         lineHeight: '120%',
                       }}
                     >
-                      PurePearl Studio
+                      <Link
+                        href="/creator_profile"
+                        className="hover:text-[#003BE2] transition-colors"
+                      >
+                        PurePearl Studio
+                      </Link>
                     </h4>
                     <span
                       className="text-[#4B4C53]"
