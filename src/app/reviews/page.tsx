@@ -1,47 +1,86 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react'
-import Link from 'next/link'
+import React, { useState } from 'react';
+import Link from 'next/link';
 import {
+  Play,
+  Share2,
   BarChart3,
   Star,
   Users,
-  Share2,
-  Play,
-  FileText,
   Video,
+  FileText,
   Award,
   MessageSquare,
-  CheckCircle2,
-} from 'lucide-react'
-import { Navbar } from '@/src/components/navbar'
-import { Footer } from '@/src/components/footer'
+} from 'lucide-react';
+import { Navbar } from '@/src/components/navbar';
+import { Footer } from '@/src/components/footer';
 
-export default function CourseDetailsPage() {
-  const [activeTab, setActiveTab] = useState<'About' | 'Lessons' | 'Reviews'>('About')
-  const [isPlaying, setIsPlaying] = useState(false)
+export default function CourseReviewsPage() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [selectedRating, setSelectedRating] = useState<string>('All');
 
-  const keyPoints = [
-    'Foundational Concepts',
-    'Design Principles Mastery',
-    'Advanced Techniques in Digital Creation',
-    'Project Showcase and Critique',
-    'Optimizing for Various Platforms',
-    'Digital Asset Management Best Practices',
-    'Monetization Strategies',
-    'Capstone Project: Building Your Portfolio',
-  ]
+  const ratingBars = [
+    { stars: 5, count: 720, widthPx: '260.23px', percentage: '92.3%' },
+    { stars: 4, count: 120, widthPx: '102.91px', percentage: '36.5%' },
+    { stars: 3, count: 21, widthPx: '26.72px', percentage: '9.5%' },
+    { stars: 2, count: 12, widthPx: '9.89px', percentage: '3.5%' },
+    { stars: 1, count: 16, widthPx: '14.84px', percentage: '5.3%' },
+  ];
+
+  const reviewsList = [
+    {
+      id: 1,
+      name: 'PurePearl Studio',
+      role: 'UI/UX Designer',
+      time: 'a year ago',
+      rating: 5,
+      avatar: '/details/2.webp',
+      comment:
+        '"The course provided me with a comprehensive understanding of digital asset creation. The lessons were in-depth, practical, and immediately applicable to my work. Highly recommended!"',
+    },
+    {
+      id: 2,
+      name: 'Albert Flores',
+      role: 'UI/UX Designer',
+      time: 'a year ago',
+      rating: 5,
+      avatar: '/testimonials/1.webp',
+      comment:
+        '"This course transformed my approach to digital design. The combination of theory, hands-on exercises, and real-world applications made it a truly enriching experience. Excited to implement what I\'ve learned!"',
+    },
+    {
+      id: 3,
+      name: 'Cody Fisher',
+      role: 'UI/UX Designer',
+      time: 'a year ago',
+      rating: 5,
+      avatar: '/testimonials/2.webp',
+      comment:
+        '"The project showcase and critique module created a collaborative environment where I could showcase my work, receive valuable feedback, and refine my skills. It added a unique and valuable dimension to the learning process."',
+    },
+    {
+      id: 4,
+      name: 'Brooklyn Simmons',
+      role: 'UI/UX Designer',
+      time: 'a year ago',
+      rating: 5,
+      avatar: '/testimonials/3.webp',
+      comment:
+        '"The lessons on optimizing digital assets for various platforms were particularly insightful. The course adapts to the evolving digital landscape, and the engaging content kept me motivated throughout."',
+    },
+  ];
 
   const syllabusLessons = [
     { num: '01', title: 'Introduction to Digital Assets', duration: '12 mins' },
     { num: '02', title: 'Design Principles for Impacts', duration: '21 mins' },
     { num: '03', title: 'Advanced Techniques in Digital Creation', duration: '16 mins' },
-  ]
+  ];
 
   return (
-    <div className="min-h-screen w-full bg-[#FFFFFF] text-[#242528] selection:bg-[#D4FB20] selection:text-[#242528]">
+    <div className="relative min-h-screen w-full bg-[#FFFFFF] text-[#242528] selection:bg-[#D4FB20] selection:text-[#242528]">
       {/* ======================================================== */}
-      {/* 1. HERO HEADER BANNER (Height: 957px, Persian Blue)      */}
+      {/* 1. HERO HEADER BANNER (957px Persian Blue #003BE2)       */}
       {/* ======================================================== */}
       <section className="relative h-[800px] lg:h-[957px] w-full overflow-hidden bg-[#003BE2]">
         {/* Blueprint Grid Lines (120px increments, 0.12 opacity) */}
@@ -157,7 +196,6 @@ export default function CourseDetailsPage() {
                 by purepearl studio
               </p>
 
-              {/* Meta Badges Row (576px × 40px, gap: 16px) */}
               {/* Meta Badges Row (576px × 40px, gap: 16px, order: 2) */}
               <div
                 className="flex flex-wrap items-center gap-4 lg:w-[576px] lg:h-[40px]"
@@ -340,7 +378,7 @@ export default function CourseDetailsPage() {
       <main className="relative z-20 mx-auto -mt-[380px] sm:-mt-[440px] lg:-mt-[541px] w-full max-w-[1240px] px-4 pb-24 sm:px-6">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           {/* ==================================================== */}
-          {/* LEFT COLUMN: VIDEO PLAYER + COURSE DETAILS TABS      */}
+          {/* LEFT COLUMN: VIDEO PLAYER + COURSE REVIEWS CONTENT   */}
           {/* ==================================================== */}
           <div className="flex w-full flex-col items-start gap-10 lg:w-[725px]">
             {/* Video Preview Card (720px × 479px in Figma) */}
@@ -381,16 +419,11 @@ export default function CourseDetailsPage() {
               </button>
             </div>
 
-            {/* Navigation Tabs (About / Lessons / Reviews) */}
+            {/* Navigation Tabs (About / Lesson / Reviews) */}
             <div className="flex items-center gap-4 pt-12 sm:pt-16 lg:pt-20">
-              <button
-                type="button"
-                onClick={() => setActiveTab('About')}
-                className={`flex h-[43px] w-[76px] items-center justify-center rounded-[24px] transition-all ${
-                  activeTab === 'About'
-                    ? 'bg-[#D4FB20] text-[#242528]'
-                    : 'bg-[#F5F5F6] text-[#4B4C53] hover:bg-[#E5E6E8]'
-                }`}
+              <Link
+                href="/details"
+                className="flex h-[43px] w-[76px] items-center justify-center rounded-[24px] bg-[#F5F5F6] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
                 style={{
                   fontFamily: "'Satoshi', sans-serif",
                   fontWeight: 500,
@@ -399,11 +432,11 @@ export default function CourseDetailsPage() {
                 }}
               >
                 About
-              </button>
+              </Link>
 
               <Link
                 href="/lessons"
-                className="flex h-[43px] w-[89px] items-center justify-center rounded-[24px] bg-[#F5F5F6] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
+                className="flex h-[43px] w-[82px] items-center justify-center rounded-[24px] bg-[#F5F5F6] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
                 style={{
                   fontFamily: "'Satoshi', sans-serif",
                   fontWeight: 500,
@@ -411,13 +444,14 @@ export default function CourseDetailsPage() {
                   lineHeight: '120%',
                 }}
               >
-                Lessons
+                Lesson
               </Link>
 
-              <Link
-                href="/reviews"
-                className="flex h-[43px] w-[90px] items-center justify-center rounded-[24px] bg-[#F5F5F6] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
+              <button
+                type="button"
+                className="flex h-[43px] w-[90px] items-center justify-center rounded-[24px] bg-[#D4FB20] text-[#242528] transition-all"
                 style={{
+                  boxSizing: 'border-box',
                   fontFamily: "'Satoshi', sans-serif",
                   fontWeight: 500,
                   fontSize: '16px',
@@ -425,110 +459,339 @@ export default function CourseDetailsPage() {
                 }}
               >
                 Reviews
-              </Link>
+              </button>
             </div>
 
-            {/* Detailed Description */}
-            <div className="flex flex-col items-start gap-4">
-              <h2
-                className="font-semibold text-[#242528]"
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontSize: '20px',
-                  lineHeight: '120%',
-                  letterSpacing: '-0.01em',
-                }}
-              >
-                Description
-              </h2>
-              <p
-                className="text-[#4B4C53]"
-                style={{
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: '160%',
-                }}
-              >
-                Embark on an enlightening exploration into the world of digital creation with our
-                comprehensive course, &quot;Build Digital Assets: A Comprehensive Guide.&quot; This transformative
-                learning experience invites you to delve deep into the intricacies of crafting impactful digital
-                content. From laying the groundwork with foundational concepts to mastering advanced
-                techniques, this guide is meticulously curated to empower you with the skills essential for
-                navigating the dynamic landscape of digital asset creation. In the initial modules, you&apos;ll
-                establish a solid foundation by immersing yourself in the foundational concepts that form
-                the backbone of digital asset creation. Understand the fundamental elements that constitute
-                compelling digital content and gain proficiency in leveraging these elements to communicate
-                effectively in the digital realm. As you progress through the course, you&apos;ll ascend to higher
-                levels of expertise, delving into the nuances of design principles that drive impactful creations.
-                Uncover the secrets behind effective visual communication, exploring color theory, typography,
-                and layout strategies that elevate your digital assets to new heights. Engage in hands-on
-                exercises that reinforce your understanding, allowing you to apply these principles in practical
-                scenarios.
-              </p>
-            </div>
-
-            {/* Sneak Peak Section */}
-            <div className="flex w-full flex-col items-start gap-4 pt-2">
-              <h2
-                className="font-semibold text-[#242528]"
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontSize: '20px',
-                  lineHeight: '120%',
-                  letterSpacing: '-0.01em',
-                }}
-              >
-                Sneak Peak
-              </h2>
-
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 w-full">
-                {['/details/3.webp', '/details/4.webp', '/details/5.webp', '/details/6.webp'].map(
-                  (imgSrc, index) => (
-                    <div
-                      key={index}
-                      className="group relative h-[125px] w-full overflow-hidden rounded-[16px] bg-[#D9D9D9] shadow-sm transition-all duration-300 hover:shadow-md"
-                    >
-                      <img
-                        src={imgSrc}
-                        alt={`Sneak peak preview ${index + 1}`}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                  )
-                )}
+            {/* Main Reviews Column (width: 723px, gap: 24px) */}
+            <div className="flex w-full flex-col items-start gap-6 lg:w-[723px]">
+              {/* 1. What Learners Are Saying */}
+              <div className="flex flex-col items-start gap-2">
+                <h2
+                  className="font-semibold text-[#242528]"
+                  style={{
+                    width: '257px',
+                    height: '24px',
+                    fontFamily: "'Poppins', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                    fontSize: '20px',
+                    lineHeight: '120%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    letterSpacing: '-0.01em',
+                  }}
+                >
+                  What Learners Are Saying
+                </h2>
+                <p
+                  className="text-[#4B4C53]"
+                  style={{
+                    width: '100%',
+                    maxWidth: '723px',
+                    fontFamily: "'Satoshi', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '160%',
+                  }}
+                >
+                  Discover what our learners have to say about their experience with &apos;Build Digital
+                  Assets: A Comprehensive Guide.&apos; Read reviews and ratings from individuals who have
+                  embarked on the transformative journey of mastering digital asset creation.
+                </p>
               </div>
-            </div>
 
-            {/* Key Points Section */}
-            <div className="flex flex-col items-start gap-4 pt-4">
-              <h2
-                className="font-semibold text-[#242528]"
+              {/* 2. Rating Breakdown Card (723px × 226px) */}
+              <div
+                className="w-full shadow-sm"
                 style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontSize: '20px',
-                  lineHeight: '120%',
-                  letterSpacing: '-0.01em',
+                  boxSizing: 'border-box',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  padding: '40px',
+                  gap: '24px',
+                  width: '100%',
+                  maxWidth: '723px',
+                  minHeight: '226px',
+                  background: '#FFFFFF',
+                  border: '1px solid #CED0D3',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  borderRadius: '16px',
                 }}
               >
-                Key Points
-              </h2>
+                {/* Left Ratings Score Pill (129px × 140px, #D4FB20) */}
+                <div
+                  className="shrink-0 shadow-sm"
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '24px 20px',
+                    width: '129px',
+                    height: '140px',
+                    background: '#D4FB20',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    borderRadius: '8px',
+                    flex: 'none',
+                    order: 0,
+                    flexGrow: 0,
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "'Satoshi', sans-serif",
+                      fontStyle: 'normal',
+                      fontWeight: 500,
+                      fontSize: '14px',
+                      lineHeight: '120%',
+                      color: '#242528',
+                    }}
+                  >
+                    Ratings
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'Poppins', sans-serif",
+                      fontStyle: 'normal',
+                      fontWeight: 600,
+                      fontSize: '36px',
+                      lineHeight: '120%',
+                      letterSpacing: '-0.01em',
+                      color: '#242528',
+                      marginTop: '4px',
+                    }}
+                  >
+                    4.7
+                  </span>
+                </div>
 
-              <div className="flex flex-col items-start gap-3">
-                {keyPoints.map((point) => (
-                  <div key={point} className="flex items-center gap-2">
-                    <CheckCircle2 className="size-6 shrink-0 fill-[#003BE2] text-white" />
-                    <span
+                {/* Right Breakdown Rows (490px × 146px) */}
+                <div
+                  className="flex w-full flex-col justify-between gap-1"
+                  style={{
+                    maxWidth: '490px',
+                    minHeight: '146px',
+                    flex: 'none',
+                    order: 1,
+                    flexGrow: 1,
+                  }}
+                >
+                  {ratingBars.map((bar) => (
+                    <div
+                      key={bar.stars}
+                      className="flex w-full items-center justify-between gap-4"
+                      style={{ height: '26px' }}
+                    >
+                      {/* Bar Track (282px × 8px) */}
+                      <div
+                        className="relative h-2 w-full overflow-hidden rounded-full bg-[#E5E6E8]"
+                        style={{ maxWidth: '282px' }}
+                      >
+                        <div
+                          className="h-full rounded-full bg-[#D4FB20]"
+                          style={{ width: bar.widthPx }}
+                        />
+                      </div>
+
+                      {/* 5 Stars Icons Stack (136px × 24px) */}
+                      <div
+                        className="flex shrink-0 items-center gap-1"
+                        style={{ width: '136px' }}
+                      >
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`size-5 shrink-0 ${
+                              i < bar.stars
+                                ? 'fill-[#4B4C53] text-[#4B4C53]'
+                                : 'fill-transparent text-[#CED0D3]'
+                            }`}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Count (40px) */}
+                      <span
+                        className="w-10 text-right"
+                        style={{
+                          fontFamily: "'Satoshi', sans-serif",
+                          fontWeight: 400,
+                          fontSize: '16px',
+                          lineHeight: '160%',
+                          color: '#4B4C53',
+                        }}
+                      >
+                        {bar.count}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 3. Individual Reviews Header */}
+              <div className="pt-2">
+                <h2
+                  className="font-semibold text-[#242528]"
+                  style={{
+                    width: '190px',
+                    height: '24px',
+                    fontFamily: "'Poppins', sans-serif",
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                    fontSize: '20px',
+                    lineHeight: '120%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    letterSpacing: '-0.01em',
+                  }}
+                >
+                  Individual Reviews:
+                </h2>
+              </div>
+
+              {/* 4. Filter Pills Row (723px × 48px, gap: 16px) */}
+              <div
+                className="flex flex-wrap items-center gap-4"
+                style={{
+                  width: '100%',
+                  maxWidth: '723px',
+                  minHeight: '48px',
+                }}
+              >
+                {/* All Rating Pill */}
+                <button
+                  type="button"
+                  onClick={() => setSelectedRating('All')}
+                  className={`flex h-[43px] items-center justify-center rounded-[24px] px-4 py-3 transition-all ${
+                    selectedRating === 'All'
+                      ? 'bg-[#D4FB20] text-[#242528]'
+                      : 'bg-[#F5F5F6] text-[#4B4C53] hover:bg-[#E5E6E8]'
+                  }`}
+                  style={{
+                    width: '97px',
+                    fontFamily: "'Satoshi', sans-serif",
+                    fontWeight: 500,
+                    fontSize: '16px',
+                    lineHeight: '120%',
+                  }}
+                >
+                  All rating
+                </button>
+
+                {/* Rating 5-1 Pills */}
+                {['5', '4', '3', '2', '1'].map((starNum) => (
+                  <button
+                    key={starNum}
+                    type="button"
+                    onClick={() => setSelectedRating(starNum)}
+                    className={`flex h-12 items-center justify-center gap-1 rounded-[24px] px-4 py-3 transition-all ${
+                      selectedRating === starNum
+                        ? 'bg-[#D4FB20] text-[#242528]'
+                        : 'bg-[#F5F5F6] text-[#4B4C53] hover:bg-[#E5E6E8]'
+                    }`}
+                    style={{
+                      minWidth: starNum === '1' ? '66px' : starNum === '4' ? '71px' : '70px',
+                      fontFamily: "'Satoshi', sans-serif",
+                      fontWeight: 500,
+                      fontSize: '16px',
+                      lineHeight: '120%',
+                    }}
+                  >
+                    <Star
+                      className={`size-5 fill-current ${
+                        selectedRating === starNum ? 'text-[#242528]' : 'text-[#4B4C53]'
+                      }`}
+                    />
+                    <span>{starNum}</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* 5. Individual Review Cards */}
+              <div className="flex w-full flex-col items-start gap-6">
+                {reviewsList.map((review) => (
+                  <div
+                    key={review.id}
+                    className="box-border flex w-full flex-col items-start gap-6 rounded-[24px] border border-[#CED0D3] bg-[#FFFFFF] p-8 sm:p-10 shadow-sm transition-shadow hover:shadow-md"
+                    style={{
+                      width: '100%',
+                      maxWidth: '723px',
+                      minHeight: '276px',
+                    }}
+                  >
+                    {/* Header Row: User Info + Stars + Timestamp */}
+                    <div className="flex w-full flex-col justify-between gap-4 sm:flex-row sm:items-center">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={review.avatar}
+                          alt={review.name}
+                          className="size-[52px] rounded-full object-cover border border-[#CED0D3]"
+                        />
+                        <div className="flex flex-col items-start">
+                          <h4
+                            className="font-medium text-[#242528]"
+                            style={{
+                              fontFamily: "'Satoshi', sans-serif",
+                              fontSize: '18px',
+                              lineHeight: '120%',
+                            }}
+                          >
+                            {review.name}
+                          </h4>
+                          <span
+                            className="text-[#4B4C53]"
+                            style={{
+                              fontFamily: "'Satoshi', sans-serif",
+                              fontWeight: 400,
+                              fontSize: '16px',
+                              lineHeight: '160%',
+                            }}
+                          >
+                            {review.role}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Stars & Date Stack */}
+                      <div className="flex flex-col items-start sm:items-end gap-1">
+                        <div className="flex items-center gap-1">
+                          {[...Array(review.rating)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className="size-5 fill-[#4B4C53] text-[#4B4C53]"
+                            />
+                          ))}
+                        </div>
+                        <span
+                          className="text-[#4B4C53]"
+                          style={{
+                            fontFamily: "'Satoshi', sans-serif",
+                            fontSize: '16px',
+                            lineHeight: '150%',
+                          }}
+                        >
+                          {review.time}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Review Body */}
+                    <p
+                      className="text-[#4B4C53]"
                       style={{
                         fontFamily: "'Satoshi', sans-serif",
                         fontWeight: 400,
                         fontSize: '16px',
-                        lineHeight: '160%',
-                        color: '#4B4C53',
+                        lineHeight: '150%',
                       }}
                     >
-                      {point}
-                    </span>
+                      {review.comment}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -611,7 +874,7 @@ export default function CourseDetailsPage() {
                 </div>
               </div>
 
-              {/* Ready to Dive In & Pricing Stack */}
+              {/* Pricing & CTA */}
               <div className="flex w-full flex-col items-start gap-4 pt-2">
                 <p
                   className="text-[#4B4C53]"
@@ -625,8 +888,7 @@ export default function CourseDetailsPage() {
                   Ready to Dive In? Enroll Now and Start Building Your Digital Future!
                 </p>
 
-                {/* Price Display */}
-                <div className="flex items-baseline gap-1">
+                <div className="flex items-baseline gap-2">
                   <span
                     className="font-semibold text-[#003BE2]"
                     style={{
@@ -814,10 +1076,10 @@ export default function CourseDetailsPage() {
       </main>
 
       {/* ======================================================== */}
-      {/* 3. FOOTER (Exact Figma Spec Component)                   */}
+      {/* 3. GLOBAL FOOTER                                         */}
       {/* ======================================================== */}
       <Footer />
     </div>
-  )
+  );
 }
 

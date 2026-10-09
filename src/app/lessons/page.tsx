@@ -435,8 +435,8 @@ export default function CourseLessonsPage() {
                 Lesson
               </button>
 
-              <button
-                type="button"
+              <Link
+                href="/reviews"
                 className="flex h-[43px] w-[90px] items-center justify-center rounded-[24px] bg-[#F5F5F6] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
                 style={{
                   fontFamily: "'Satoshi', sans-serif",
@@ -446,7 +446,7 @@ export default function CourseLessonsPage() {
                 }}
               >
                 Reviews
-              </button>
+              </Link>
             </div>
 
             {/* Main Lessons Content Column (width: 723px, gap: 24px) */}
