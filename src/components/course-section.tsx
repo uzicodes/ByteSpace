@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import {
   BarChart3,
   Star,
@@ -92,10 +93,12 @@ export function CourseCard({
   return (
     <article className="relative mx-auto box-border h-[384px] w-full max-w-[373px] overflow-hidden rounded-[24px] border border-[#CED0D3] bg-white p-4">
       <div className="relative h-[195.14px] w-full overflow-hidden rounded-[12px] bg-[#443131]">
-        <img
+        <Image
           src={course.image}
           alt={course.title}
-          className="h-full w-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 341px"
+          className="object-cover"
         />
         <div className="absolute left-[13px] bottom-[19px] flex items-start gap-3">
           {['17 Lessons', '2 hours 16 mins', '59 Comments'].map((label, index) => (
@@ -126,10 +129,12 @@ export function CourseCard({
           </span>
           <span className="flex h-8 items-center -space-x-2">
             {[1, 2, 3, 4].map((avatar) => (
-              <img
+              <Image
                 key={avatar}
                 src={`/courses/dp/${avatar}.webp`}
                 alt=""
+                width={32}
+                height={32}
                 className="size-8 rounded-full border-2 border-white object-cover"
               />
             ))}
@@ -232,9 +237,11 @@ export function Courses() {
             >
               <div className="flex w-[63px] flex-col items-center gap-3">
                 <div className="flex h-[60px] w-[60px] items-center justify-center rounded-[40px] bg-[#D4FB20] p-3">
-                  <img
+                  <Image
                     src={`/courses/learning-path/${index + 1}.svg`}
-                    alt=""
+                    alt={item}
+                    width={36}
+                    height={36}
                     className="size-9 object-contain"
                   />
                 </div>

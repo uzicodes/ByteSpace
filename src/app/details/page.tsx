@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   BarChart3,
   Star,
@@ -145,10 +146,13 @@ export default function CourseDetailsPage() {
           <div className="flex w-full flex-col items-start gap-10 lg:w-[725px]">
             {/* Video Preview Card (720px × 479px in Figma) */}
             <div className="relative h-[320px] sm:h-[420px] lg:h-[479px] w-full overflow-hidden rounded-[24px] border border-[#CED0D3]/30 bg-[#443131] shadow-2xl">
-              <img
+              <Image
                 src="/details/1.webp"
                 alt="Course Video Preview"
-                className="h-full w-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 725px"
+                priority
+                className="object-cover"
               />
 
               {/* Video Overlay with Center Glassmorphic Play Button */}
@@ -271,10 +275,12 @@ export default function CourseDetailsPage() {
                       key={index}
                       className="group relative h-[125px] w-full overflow-hidden rounded-[16px] bg-[#D9D9D9] shadow-sm transition-all duration-300 hover:shadow-md"
                     >
-                      <img
+                      <Image
                         src={imgSrc}
                         alt={`Sneak peak preview ${index + 1}`}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 640px) 50vw, 170px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   )
@@ -532,9 +538,11 @@ export default function CourseDetailsPage() {
               <div className="flex w-full flex-col items-start gap-4">
                 <div className="flex items-center gap-3">
                   <Link href="/creator_profile">
-                    <img
+                    <Image
                       src="/details/2.webp"
                       alt="PurePearl Studio"
+                      width={52}
+                      height={52}
                       className="size-[52px] rounded-full object-cover border border-[#CED0D3] hover:opacity-90 transition-opacity"
                     />
                   </Link>

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 
 export function Footer() {
   const [email, setEmail] = useState('')
@@ -50,9 +51,11 @@ export function Footer() {
                   height: '37px',
                 }}
               >
-                <img
+                <Image
                   src="/logo.png"
                   alt="ByteSpace logo"
+                  width={29}
+                  height={32}
                   className="h-[31.5px] w-[28.88px] object-contain"
                 />
                 <span

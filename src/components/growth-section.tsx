@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Check } from 'lucide-react'
 import { CourseCard, courses } from './course-section'
 
@@ -74,9 +75,11 @@ export function Growth() {
           </div>
 
           <div className="relative h-[552px] w-full">
-            <img
+            <Image
               src="/person-1.webp"
               alt="Student learning with a laptop"
+              width={577}
+              height={540}
               className="absolute left-0 top-3 z-20 h-[540px] w-[577px] object-contain object-bottom"
               style={{ filter: 'drop-shadow(51px 73px 72px rgba(0,0,0,0.13)) drop-shadow(25px 37px 36px rgba(0,0,0,0.1))' }}
             />
@@ -132,7 +135,7 @@ export function Growth() {
               </div>
               <div className="flex h-[43px] items-start -space-x-4">
                 {[1, 2, 3, 4, 5, 6, 7].map((avatar) => (
-                  <img key={avatar} src={`/dp_images/happy_students/${avatar}.webp`} alt="" className="size-[43px] rounded-full border-2 border-white object-cover" />
+                  <Image key={avatar} src={`/dp_images/happy_students/${avatar}.webp`} alt="" width={43} height={43} className="size-[43px] rounded-full border-2 border-white object-cover" />
                 ))}
                 <span className="flex size-[43px] items-center justify-center rounded-full border-2 border-white bg-[#D4FB20] font-sans text-[12px] font-bold text-[#242528]">2K+</span>
               </div>
@@ -140,9 +143,11 @@ export function Growth() {
           </div>
 
           <div className="relative z-10 h-[596px] w-[435px] shrink-0 -translate-x-[600px] -mr-[514px]">
-            <img
+            <Image
               src="/person-2.webp"
               alt="Creator working at a laptop"
+              width={577}
+              height={540}
               className="absolute inset-0 h-[540px] w-[577px] object-contain object-center"
               style={{ filter: 'drop-shadow(51px 73px 72px rgba(0,0,0,0.13)) drop-shadow(25px 37px 36px rgba(0,0,0,0.1))', transform: 'scale(1.38)', transformOrigin: 'center' }}
             />

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState, useRef } from 'react'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 export function GlobalLoader() {
@@ -181,10 +182,13 @@ export function GlobalLoader() {
 
           {/* Pulse backdrop circle */}
           <div className="flex size-16 items-center justify-center rounded-full bg-white/10 shadow-lg shadow-black/10 backdrop-blur-md">
-            <img
+            <Image
               src="/logo.png"
               alt="ByteSpace"
+              width={36}
+              height={36}
               className="h-9 w-auto object-contain animate-pulse transition-transform duration-300"
+              priority
             />
           </div>
         </div>

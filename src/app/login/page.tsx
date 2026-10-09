@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { BarChart3, Star } from 'lucide-react'
 
 const TORUS_STYLE: React.CSSProperties = {
@@ -68,10 +69,13 @@ export default function LoginPage() {
               aria-label="ByteSpace Home"
               className="inline-flex cursor-pointer items-center transition-transform hover:scale-105 active:scale-95"
             >
-              <img
+              <Image
                 src="/logo.png"
                 alt="ByteSpace"
+                width={36}
+                height={36}
                 className="h-8 sm:h-9 w-auto object-contain cursor-pointer"
+                priority
               />
             </Link>
           </div>
@@ -109,10 +113,12 @@ export default function LoginPage() {
             >
               {/* Image Preview */}
               <div className="relative h-[160px] w-full overflow-hidden rounded-[12px] bg-slate-100">
-                <img
+                <Image
                   src="/courses/2.webp"
                   alt="Build Digital Asset"
-                  className="h-full w-full object-cover"
+                  fill
+                  sizes="335px"
+                  className="object-cover"
                 />
                 <div className="absolute bottom-2.5 left-2.5 flex items-start gap-2">
                   <span className="flex h-[24px] items-center justify-center rounded-[24px] bg-[rgba(246,246,246,0.7)] px-2.5 text-[11px] font-medium leading-[120%] text-[#4F4F4F] backdrop-blur-[4px]">
@@ -137,10 +143,12 @@ export default function LoginPage() {
                   </span>
                   <span className="flex h-7 items-center -space-x-1.5">
                     {[1, 2, 3, 4].map((avatar) => (
-                      <img
+                      <Image
                         key={avatar}
                         src={`/courses/dp/${avatar}.webp`}
                         alt=""
+                        width={28}
+                        height={28}
                         className="size-7 rounded-full border-2 border-white object-cover"
                       />
                     ))}
@@ -167,10 +175,12 @@ export default function LoginPage() {
             >
               {/* Image Preview with Badges */}
               <div className="relative h-[175px] w-full overflow-hidden rounded-[12px] bg-slate-900">
-                <img
+                <Image
                   src="/courses/3.webp"
                   alt="The Power of Big Data"
-                  className="h-full w-full object-cover"
+                  fill
+                  sizes="350px"
+                  className="object-cover"
                 />
                 <div className="absolute bottom-2.5 left-2.5 flex items-start gap-1.5">
                   <span className="flex h-[24px] items-center justify-center rounded-[24px] bg-[rgba(246,246,246,0.7)] px-2 text-[10.5px] font-medium leading-[120%] text-[#4F4F4F] backdrop-blur-[4px]">
@@ -209,10 +219,12 @@ export default function LoginPage() {
                   </span>
                   <span className="flex h-8 items-center -space-x-1.5">
                     {[1, 2, 3, 4].map((avatar) => (
-                      <img
+                      <Image
                         key={avatar}
                         src={`/courses/dp/${avatar}.webp`}
                         alt=""
+                        width={28}
+                        height={28}
                         className="size-7 rounded-full border-2 border-white object-cover"
                       />
                     ))}
@@ -245,11 +257,12 @@ export default function LoginPage() {
               </div>
               <div className="-ml-1 mt-0.5 flex items-center -space-x-4">
                 {[1, 2, 3, 4, 5, 6, 7].map((num) => (
-                  <img
+                  <Image
                     key={num}
                     src={`/dp_images/happy_students/${num}.webp`}
                     alt=""
-                    style={{ width: '43px', height: '43px' }}
+                    width={43}
+                    height={43}
                     className="h-[43px] w-[43px] rounded-full border-2 border-white object-cover bg-slate-200"
                   />
                 ))}
@@ -366,9 +379,11 @@ export default function LoginPage() {
                   aria-label="Sign in with Facebook"
                   className="box-border flex h-[72px] w-[72px] items-center justify-center rounded-[24px] border border-[#D1D1D1] bg-white transition-all hover:bg-slate-50 hover:shadow-sm active:scale-95"
                 >
-                  <img
+                  <Image
                     src="/fb.svg"
                     alt="Facebook"
+                    width={34}
+                    height={34}
                     className="h-[34px] w-[34px] object-contain"
                   />
                 </button>
@@ -379,9 +394,11 @@ export default function LoginPage() {
                   aria-label="Sign in with Google"
                   className="box-border flex h-[72px] w-[72px] items-center justify-center rounded-[24px] border border-[#D1D1D1] bg-white transition-all hover:bg-slate-50 hover:shadow-sm active:scale-95"
                 >
-                  <img
+                  <Image
                     src="/google.svg"
                     alt="Google"
+                    width={34}
+                    height={33}
                     className="h-[34px] w-[33px] object-contain"
                   />
                 </button>

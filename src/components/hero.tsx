@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Search } from 'lucide-react'
 import { HeroSphere } from './ui/sphere'
 
@@ -163,10 +164,12 @@ export function Hero() {
 
         <div className="flex items-center -space-x-2">
           {[1, 2, 3, 4, 5, 6, 7].map((num) => (
-            <img
+            <Image
               key={num}
               src={`/dp_images/happy_students/${num}.webp`}
               alt="Happy student"
+              width={32}
+              height={32}
               className="h-8 w-8 rounded-full border-2 border-white object-cover bg-slate-200"
             />
           ))}
@@ -188,9 +191,12 @@ export function Hero() {
 
       {/* Person Image */}
       <div className="pointer-events-none absolute -bottom-6 sm:-bottom-8 left-1/2 z-10 -translate-x-1/2 w-[300px] sm:w-[380px] md:w-[480px] md:h-[450px]">
-        <img
+        <Image
           src="/person-1.webp"
           alt="Student with laptop"
+          width={480}
+          height={450}
+          priority
           className="h-full w-full object-contain object-bottom"
           style={{
             filter: [

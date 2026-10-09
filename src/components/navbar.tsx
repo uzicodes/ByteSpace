@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
 export function Brand({ light = false }: { light?: boolean }) {
@@ -12,10 +13,13 @@ export function Brand({ light = false }: { light?: boolean }) {
         light ? 'text-white' : 'text-slate-900'
       }`}
     >
-      <img
+      <Image
         src="/logo.png"
         alt="ByteSpace"
+        width={28}
+        height={28}
         className="h-6 sm:h-7 w-auto object-contain"
+        priority
       />
       <span className="font-brand">ByteSpace</span>
     </Link>

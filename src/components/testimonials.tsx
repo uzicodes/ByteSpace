@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 const testimonials = [
   {
     image: '/testimonials/1.webp',
@@ -70,9 +72,11 @@ export function Testimonials() {
               className="relative z-10 flex w-[374px] max-w-full h-[432px] flex-col items-start gap-6 rounded-[24px] border border-black/[0.03] bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_16px_32px_-8px_rgba(0,0,0,0.08)] hover:border-black/[0.07]"
             >
               {/* Ellipse */}
-              <img
+              <Image
                 src={person.image}
                 alt={person.name}
+                width={80}
+                height={80}
                 className="size-20 rounded-full object-cover shrink-0"
               />
 

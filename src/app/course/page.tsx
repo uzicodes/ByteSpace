@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   Search,
   ChevronDown,
@@ -485,10 +486,12 @@ export default function CoursePage() {
             >
               {/* Thumbnail Frame */}
               <div className="relative h-[195.14px] w-full overflow-hidden rounded-[12px] bg-[#443131]">
-                <img
+                <Image
                   src={course.image}
                   alt={course.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 341px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 
                 {/* Floating Meta Pills */}
@@ -575,10 +578,12 @@ export default function CoursePage() {
                   {/* 4 Overlapping Avatars + 26+ Badge */}
                   <div className="flex items-center -space-x-2">
                     {[1, 2, 3, 4].map((avatar) => (
-                      <img
+                      <Image
                         key={avatar}
                         src={`/courses/dp/${avatar}.webp`}
                         alt=""
+                        width={32}
+                        height={32}
                         className="size-8 rounded-full border-2 border-[#FFFFFF] object-cover"
                       />
                     ))}

@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 
 const createMaskStyle = (imagePath: string, bgColor: string): React.CSSProperties => ({
   backgroundColor: bgColor,
@@ -82,9 +83,11 @@ export function CTA() {
         style={CONTAINER_STYLE_1}
       >
         <div className="relative h-full w-full isolate">
-          <img
+          <Image
             src="/elements/1.webp"
-            alt=""
+            alt="Decorative lime spiral"
+            width={385}
+            height={385}
             className="h-full w-full object-contain"
           />
           <div
@@ -102,9 +105,11 @@ export function CTA() {
         style={CONTAINER_STYLE_2}
       >
         <div className="relative h-full w-full isolate">
-          <img
+          <Image
             src="/elements/2.webp"
-            alt=""
+            alt="Decorative small white spiral"
+            width={175}
+            height={175}
             className="h-full w-full object-contain"
           />
           <div
@@ -122,9 +127,11 @@ export function CTA() {
         style={CONTAINER_STYLE_7}
       >
         <div className="relative h-full w-full isolate">
-          <img
+          <Image
             src="/elements/7.webp"
-            alt=""
+            alt="Decorative cone"
+            width={188}
+            height={188}
             className="h-full w-full object-contain"
           />
           <div
@@ -142,9 +149,11 @@ export function CTA() {
         style={CONTAINER_STYLE_3}
       >
         <div className="relative h-full w-full isolate">
-          <img
+          <Image
             src="/elements/3.webp"
-            alt=""
+            alt="Decorative lime ring"
+            width={342}
+            height={342}
             className="h-full w-full object-contain"
           />
           <div
@@ -162,9 +171,11 @@ export function CTA() {
         style={CONTAINER_STYLE_4}
       >
         <div className="relative h-full w-full isolate">
-          <img
+          <Image
             src="/elements/4.webp"
-            alt=""
+            alt="Decorative lime pyramid"
+            width={188}
+            height={188}
             className="h-full w-full object-contain"
           />
           <div
@@ -182,9 +193,11 @@ export function CTA() {
         style={CONTAINER_STYLE_6}
       >
         <div className="relative h-full w-full isolate">
-          <img
+          <Image
             src="/elements/6.webp"
-            alt=""
+            alt="Decorative cylinder"
+            width={370}
+            height={370}
             className="h-full w-full object-contain"
           />
           <div
@@ -202,9 +215,11 @@ export function CTA() {
         style={CONTAINER_STYLE_5}
       >
         <div className="relative h-full w-full isolate">
-          <img
+          <Image
             src="/elements/5.webp"
-            alt=""
+            alt="Decorative lime spiral"
+            width={330}
+            height={330}
             className="h-full w-full object-contain"
           />
           <div

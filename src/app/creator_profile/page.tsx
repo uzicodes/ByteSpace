@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   SlidersHorizontal,
   BarChart3,
@@ -133,9 +134,11 @@ export default function CreatorProfilePage() {
               {/* Creator Head Row: Avatar + Title Stack */}
               <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
                 {/* 96px × 96px Avatar */}
-                <img
+                <Image
                   src="/details/2.webp"
                   alt="PurePearl Studio"
+                  width={96}
+                  height={96}
                   className="size-24 rounded-[24px] object-cover border-2 border-white/20 shadow-md"
                 />
 
@@ -321,9 +324,11 @@ export default function CreatorProfilePage() {
               >
                 {/* Thumbnail Frame (341px × 195.14px) */}
                 <div className="relative h-[195.14px] w-full overflow-hidden rounded-[12px] bg-[#443131]">
-                  <img
+                  <Image
                     src={course.image}
                     alt={course.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 341px"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
 
@@ -411,10 +416,12 @@ export default function CreatorProfilePage() {
                     {/* 4 Overlapping Avatars + 26+ Badge */}
                     <div className="flex items-center -space-x-2">
                       {[1, 2, 3, 4].map((avatar) => (
-                        <img
+                        <Image
                           key={avatar}
                           src={`/courses/dp/${avatar}.webp`}
                           alt=""
+                          width={32}
+                          height={32}
                           className="size-8 rounded-full border-2 border-[#FFFFFF] object-cover"
                         />
                       ))}
