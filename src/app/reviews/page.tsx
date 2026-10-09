@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -31,7 +31,7 @@ const PLAY_BUTTON_STYLE: React.CSSProperties = {
 };
 
 export default function CourseReviewsPage() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const isPlayingRef = useRef(false);
   const [selectedRating, setSelectedRating] = useState<string>('All');
 
   const ratingBars = [
@@ -197,7 +197,9 @@ export default function CourseReviewsPage() {
               {/* Video Overlay with Center Glassmorphic Play Button */}
               <button
                 type="button"
-                onClick={() => setIsPlaying(!isPlaying)}
+                onClick={() => {
+                  isPlayingRef.current = !isPlayingRef.current;
+                }}
                 aria-label="Play course preview"
                 className="group absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-[104px] w-[104px] items-center justify-center rounded-[24px] p-4 transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl"
                 style={PLAY_BUTTON_STYLE}
