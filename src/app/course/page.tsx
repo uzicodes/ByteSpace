@@ -265,6 +265,12 @@ const courseData = [
   },
 ]
 
+const BLUEPRINT_GRID_STYLE: React.CSSProperties = {
+  backgroundImage:
+    'linear-gradient(rgba(255, 255, 255, 0.9) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.9) 2px, transparent 2px)',
+  backgroundSize: '120px 120px',
+}
+
 export default function CoursePage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [activeCategory, setActiveCategory] = useState('Featured')
@@ -283,25 +289,11 @@ export default function CoursePage() {
       {/* ======================================================== */}
       {/* 1. HERO FRAME (Height: 360px, Persian Blue #003BE2)      */}
       {/* ======================================================== */}
-      <div
-        className="absolute left-0 top-0 h-[360px] w-full overflow-hidden"
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '360px',
-          left: '0px',
-          top: '0px',
-          background: '#003BE2',
-        }}
-      >
+      <div className="absolute left-0 top-0 h-[360px] w-full overflow-hidden bg-[#003BE2]">
         {/* Blueprint Grid Lines (120px increments, 0.12 opacity) */}
         <div
           className="pointer-events-none absolute inset-0 opacity-12"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255, 255, 255, 0.9) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.9) 2px, transparent 2px)',
-            backgroundSize: '120px 120px',
-          }}
+          style={BLUEPRINT_GRID_STYLE}
         />
 
         {/* Navbar */}
@@ -452,22 +444,7 @@ export default function CoursePage() {
       {/* ======================================================== */}
       {/* 3. CATEGORY PILLS BAR (Tab_Categories: top: 512px)       */}
       {/* ======================================================== */}
-      <section
-        className="w-[1200px] max-w-[calc(100%-32px)] overflow-x-auto no-scrollbar sm:max-w-none"
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          padding: '0px',
-          gap: '16px',
-          position: 'absolute',
-          width: '1200px',
-          height: '43px',
-          left: 'calc(50% - 1200px/2)',
-          top: '512px',
-        }}
-      >
+      <section className="absolute top-[512px] left-1/2 -translate-x-1/2 flex h-[43px] w-[1200px] max-w-[calc(100%-32px)] items-center justify-between gap-4 p-0 overflow-x-auto no-scrollbar sm:max-w-none">
         {categoryTabs.map((category) => {
           const isActive = activeCategory === category.name
           return (
@@ -650,21 +627,7 @@ export default function CoursePage() {
       {/* ======================================================== */}
       {/* 5. PAGINATION ROW (Exact Figma: top: 3208px)             */}
       {/* ======================================================== */}
-      <section
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '0px',
-          gap: '24px',
-          position: 'absolute',
-          width: '314px',
-          height: '48px',
-          left: '588px',
-          top: '3208px',
-        }}
-      >
+      <section className="absolute top-[3208px] left-1/2 -translate-x-1/2 flex h-[48px] w-[314px] items-center justify-center gap-6 p-0">
         {/* Previous Button */}
         <button
           type="button"

@@ -1,6 +1,66 @@
 import { Search } from 'lucide-react'
 import { HeroSphere } from './ui/sphere'
 
+const createMaskStyle = (
+  imagePath: string,
+  bgColor: string,
+  extra?: React.CSSProperties
+): React.CSSProperties => ({
+  backgroundColor: bgColor,
+  maskImage: `url(${imagePath})`,
+  WebkitMaskImage: `url(${imagePath})`,
+  maskSize: 'contain',
+  WebkitMaskSize: 'contain',
+  maskRepeat: 'no-repeat',
+  WebkitMaskRepeat: 'no-repeat',
+  ...extra,
+})
+
+const HERO_MASK_1 = createMaskStyle('/elements/1.webp', '#D4FB20')
+const HERO_CONTAINER_2: React.CSSProperties = {
+  left: 'calc(50% - 175px/2 - 449.5px)',
+  top: '46.58%',
+  width: '175px',
+  height: '175px',
+  transform: 'matrix(-1, 0, 0, 1, 0, 0)',
+}
+const HERO_MASK_2 = createMaskStyle('/elements/2.webp', '#F5F5F6')
+
+const HERO_CONTAINER_3: React.CSSProperties = {
+  left: 'calc(50% - 342px/2 - 470px)',
+  top: '66.6%',
+  width: '310px',
+  height: '310px',
+}
+const HERO_MASK_3 = createMaskStyle('/elements/3.webp', '#F5F5F6')
+
+const HERO_CONTAINER_4: React.CSSProperties = {
+  left: 'calc(50% - 188px/2 + 480px)',
+  top: '44.3%',
+  width: '188px',
+  height: '188px',
+}
+const HERO_MASK_4 = createMaskStyle('/elements/4.webp', '#F5F5F6')
+
+const HERO_CONTAINER_5: React.CSSProperties = {
+  left: 'calc(50% - 330px/2 + 547px)',
+  top: '69%',
+  bottom: '-1.23%',
+  width: '330px',
+}
+const HERO_MASK_5 = createMaskStyle('/elements/5.webp', '#F5F5F6')
+
+const HERO_CONTAINER_6: React.CSSProperties = {
+  left: 'calc(50% - 370px/2 + 771px)',
+  top: '17.58%',
+  bottom: '46.29%',
+  width: '370px',
+}
+const HERO_MASK_6 = createMaskStyle('/elements/6.webp', '#D4FB20', {
+  transform: 'scale(1.14)',
+  transformOrigin: 'center',
+})
+
 export function Hero() {
   return (
     <section className="hero-grid relative min-h-[848px] overflow-hidden bg-[#073ee5] px-6 pb-20 pt-24 text-white sm:pt-28 lg:min-h-[848px] lg:px-10">
@@ -9,142 +69,66 @@ export function Hero() {
 
       <div
         className="pointer-events-none absolute left-[-120px] top-[120px] z-10 h-[387px] w-[387px]"
-        style={{
-          backgroundColor: '#D4FB20',
-          maskImage: 'url(/elements/1.webp)',
-          WebkitMaskImage: 'url(/elements/1.webp)',
-          maskSize: 'contain',
-          WebkitMaskSize: 'contain',
-          maskRepeat: 'no-repeat',
-          WebkitMaskRepeat: 'no-repeat',
-        }}
+        style={HERO_MASK_1}
       />
 
       <div
         className="pointer-events-none absolute z-10"
-        style={{
-          left: 'calc(50% - 175px/2 - 449.5px)',
-          top: '46.58%',
-          width: '175px',
-          height: '175px',
-          transform: 'matrix(-1, 0, 0, 1, 0, 0)',
-        }}
+        style={HERO_CONTAINER_2}
       >
         <div
           aria-label="Decorative spiral"
           role="img"
           className="h-full w-full"
-          style={{
-            backgroundColor: '#F5F5F6',
-            maskImage: 'url(/elements/2.webp)',
-            WebkitMaskImage: 'url(/elements/2.webp)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-          }}
+          style={HERO_MASK_2}
         />
       </div>
 
       <div
         className="pointer-events-none absolute z-10"
-        style={{
-          left: 'calc(50% - 342px/2 - 470px)',
-          top: '66.6%',
-          width: '310px',
-          height: '310px',
-        }}
+        style={HERO_CONTAINER_3}
       >
         <div
           aria-label="Decorative cone"
           role="img"
           className="h-full w-full"
-          style={{
-            backgroundColor: '#F5F5F6',
-            maskImage: 'url(/elements/3.webp)',
-            WebkitMaskImage: 'url(/elements/3.webp)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-          }}
+          style={HERO_MASK_3}
         />
       </div>
 
+      <div
+        className="pointer-events-none absolute z-10"
+        style={HERO_CONTAINER_4}
+      >
         <div
-          className="pointer-events-none absolute z-10"
-          style={{
-            left: 'calc(50% - 188px/2 + 480px)',
-            top: '44.3%',
-            width: '188px',
-            height: '188px',
-          }}
-        >
-          <div
-            aria-label="Decorative cone"
-            role="img"
-            className="h-full w-full"
-            style={{
-              backgroundColor: '#F5F5F6',
-              maskImage: 'url(/elements/4.webp)',
-              WebkitMaskImage: 'url(/elements/4.webp)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-            }}
-          />
-        </div>
+          aria-label="Decorative cone"
+          role="img"
+          className="h-full w-full"
+          style={HERO_MASK_4}
+        />
+      </div>
 
       <div
         className="pointer-events-none absolute z-10"
-        style={{
-          left: 'calc(50% - 330px/2 + 547px)',
-          top: '69%',
-          bottom: '-1.23%',
-          width: '330px',
-        }}
+        style={HERO_CONTAINER_5}
       >
         <div
           aria-label="Decorative lower-right shape"
           role="img"
           className="h-full w-full"
-          style={{
-            backgroundColor: '#F5F5F6',
-            maskImage: 'url(/elements/5.webp)',
-            WebkitMaskImage: 'url(/elements/5.webp)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-          }}
+          style={HERO_MASK_5}
         />
       </div>
 
       <div
         className="pointer-events-none absolute z-10"
-        style={{
-          left: 'calc(50% - 370px/2 + 771px)',
-          top: '17.58%',
-          bottom: '46.29%',
-          width: '370px',
-        }}
+        style={HERO_CONTAINER_6}
       >
         <div
           aria-label="Decorative lime shape"
           role="img"
           className="h-full w-full"
-          style={{
-            backgroundColor: '#D4FB20',
-            maskImage: 'url(/elements/6.webp)',
-            WebkitMaskImage: 'url(/elements/6.webp)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-            transform: 'scale(1.14)',
-            transformOrigin: 'center',
-          }}
+          style={HERO_MASK_6}
         />
       </div>
 

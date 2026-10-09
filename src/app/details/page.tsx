@@ -17,6 +17,19 @@ import {
 import { Navbar } from '@/src/components/navbar'
 import { Footer } from '@/src/components/footer'
 
+const BLUEPRINT_GRID_STYLE: React.CSSProperties = {
+  backgroundImage:
+    'linear-gradient(rgba(255, 255, 255, 0.9) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.9) 2px, transparent 2px)',
+  backgroundSize: '120px 120px',
+}
+
+const PLAY_BUTTON_STYLE: React.CSSProperties = {
+  background: 'rgba(61, 61, 61, 0.24)',
+  border: '1px solid #4F4F4F',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+}
+
 export default function CourseDetailsPage() {
   const [activeTab, setActiveTab] = useState<'About' | 'Lessons' | 'Reviews'>('About')
   const [isPlaying, setIsPlaying] = useState(false)
@@ -47,11 +60,7 @@ export default function CourseDetailsPage() {
         {/* Blueprint Grid Lines (120px increments, 0.12 opacity) */}
         <div
           className="pointer-events-none absolute inset-0 opacity-12"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255, 255, 255, 0.9) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.9) 2px, transparent 2px)',
-            backgroundSize: '120px 120px',
-          }}
+          style={BLUEPRINT_GRID_STYLE}
         />
 
         {/* Navbar */}
@@ -61,98 +70,19 @@ export default function CourseDetailsPage() {
         <div className="relative z-10 mx-auto w-full max-w-[1283px] px-4 pt-[140px] sm:px-6 lg:pt-[172px]">
           <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-start lg:justify-between">
             {/* Left Title and Details Stack (Exact Figma Auto Layout: 769px × 185px, gap: 24px) */}
-            <div
-              className="flex w-full flex-col items-start gap-6 lg:w-[769px] lg:h-[185px] shrink-0"
-              style={{
-                boxSizing: 'border-box',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                padding: '0px',
-                gap: '24px',
-                flex: 'none',
-                order: 0,
-                flexGrow: 0,
-              }}
-            >
+            <div className="flex w-full flex-col items-start gap-6 lg:w-[769px] lg:h-[185px] shrink-0 p-0">
               {/* Titles Stack (769px × 75px, gap: 8px) */}
-              <div
-                className="flex w-full flex-col items-start gap-2 lg:w-[769px] lg:h-[75px]"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-start',
-                  padding: '0px',
-                  gap: '8px',
-                  flex: 'none',
-                  order: 0,
-                  flexGrow: 0,
-                }}
-              >
-                <h1
-                  className="whitespace-nowrap font-semibold text-[#F5F5F6]"
-                  style={{
-                    width: '769px',
-                    maxWidth: '100%',
-                    height: '43px',
-                    fontFamily: "'Poppins', sans-serif",
-                    fontStyle: 'normal',
-                    fontWeight: 600,
-                    fontSize: '36px',
-                    lineHeight: '120%',
-                    letterSpacing: '-0.01em',
-                    color: '#F5F5F6',
-                    display: 'flex',
-                    alignItems: 'center',
-                    whiteSpace: 'nowrap',
-                    flex: 'none',
-                    order: 0,
-                    flexGrow: 0,
-                  }}
-                >
+              <div className="flex w-full flex-col items-start gap-2 lg:w-[769px] lg:h-[75px] p-0">
+                <h1 className="whitespace-nowrap font-['Poppins'] font-semibold text-[36px] leading-[120%] tracking-[-0.01em] text-[#F5F5F6] w-[769px] max-w-full h-[43px] flex items-center">
                   Build Digital Asset: A Comprehensive Guide
                 </h1>
-                <p
-                  className="whitespace-nowrap font-semibold text-[#F5F5F6]"
-                  style={{
-                    width: '571px',
-                    maxWidth: '100%',
-                    height: '24px',
-                    fontFamily: "'Poppins', sans-serif",
-                    fontStyle: 'normal',
-                    fontWeight: 600,
-                    fontSize: '20px',
-                    lineHeight: '120%',
-                    letterSpacing: '-0.01em',
-                    color: '#F5F5F6',
-                    display: 'flex',
-                    alignItems: 'center',
-                    whiteSpace: 'nowrap',
-                    flex: 'none',
-                    order: 1,
-                    flexGrow: 0,
-                  }}
-                >
+                <p className="whitespace-nowrap font-['Poppins'] font-semibold text-[20px] leading-[120%] tracking-[-0.01em] text-[#F5F5F6] w-[571px] max-w-full h-[24px] flex items-center">
                   Unlock the Power of Digital Creation with Expert Guidance
                 </p>
               </div>
 
               {/* Creator: by purepearl studio */}
-              <p
-                style={{
-                  height: '22px',
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontWeight: 500,
-                  fontSize: '18px',
-                  lineHeight: '120%',
-                  color: '#F1F4FE',
-                  display: 'flex',
-                  alignItems: 'center',
-                  flex: 'none',
-                  order: 1,
-                  flexGrow: 0,
-                }}
-              >
+              <p className="h-[22px] font-['Satoshi'] font-medium text-[18px] leading-[120%] text-[#F1F4FE] flex items-center">
                 by{' '}
                 <Link
                   href="/creator_profile"
@@ -162,155 +92,28 @@ export default function CourseDetailsPage() {
                 </Link>
               </p>
 
-              {/* Meta Badges Row (576px × 40px, gap: 16px) */}
               {/* Meta Badges Row (576px × 40px, gap: 16px, order: 2) */}
-              <div
-                className="flex flex-wrap items-center gap-4 lg:w-[576px] lg:h-[40px]"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'flex-start',
-                  padding: '0px',
-                  gap: '16px',
-                  width: '576px',
-                  maxWidth: '100%',
-                  height: '40px',
-                  flex: 'none',
-                  order: 2,
-                  flexGrow: 0,
-                }}
-              >
+              <div className="flex flex-wrap items-center gap-4 lg:w-[576px] lg:h-[40px] p-0">
                 {/* Level Badge (171px × 40px) */}
-                <div
-                  className="shadow-sm"
-                  style={{
-                    boxSizing: 'border-box',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '8px 24px',
-                    gap: '8px',
-                    width: '171px',
-                    height: '40px',
-                    background: '#FFFFFF',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    borderRadius: '24px',
-                    flex: 'none',
-                    order: 0,
-                    flexGrow: 0,
-                  }}
-                >
+                <div className="flex h-[40px] w-[171px] items-center justify-center gap-2 rounded-[24px] bg-white px-6 py-2 shadow-sm backdrop-blur-[20px]">
                   <BarChart3 className="size-6 shrink-0 text-[#003BE2]" />
-                  <span
-                    style={{
-                      width: '91px',
-                      height: '19px',
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 500,
-                      fontSize: '16px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                      display: 'flex',
-                      alignItems: 'center',
-                      whiteSpace: 'nowrap',
-                      flex: 'none',
-                      order: 1,
-                      flexGrow: 0,
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#242528] whitespace-nowrap">
                     Intermediate
                   </span>
                 </div>
 
                 {/* Rating Badge (200px × 40px) */}
-                <div
-                  className="shadow-sm"
-                  style={{
-                    boxSizing: 'border-box',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '8px 24px',
-                    gap: '8px',
-                    width: '200px',
-                    height: '40px',
-                    background: '#FFFFFF',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    borderRadius: '24px',
-                    flex: 'none',
-                    order: 1,
-                    flexGrow: 0,
-                  }}
-                >
+                <div className="flex h-[40px] w-[200px] items-center justify-center gap-2 rounded-[24px] bg-white px-6 py-2 shadow-sm backdrop-blur-[20px]">
                   <Star className="size-6 shrink-0 fill-[#003BE2] text-[#003BE2]" />
-                  <span
-                    style={{
-                      width: '120px',
-                      height: '19px',
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 500,
-                      fontSize: '16px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                      display: 'flex',
-                      alignItems: 'center',
-                      whiteSpace: 'nowrap',
-                      flex: 'none',
-                      order: 1,
-                      flexGrow: 0,
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#242528] whitespace-nowrap">
                     4.8 (172 reviews)
                   </span>
                 </div>
 
                 {/* Students Badge (173px × 40px) */}
-                <div
-                  className="shadow-sm"
-                  style={{
-                    boxSizing: 'border-box',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '8px 24px',
-                    gap: '8px',
-                    width: '173px',
-                    height: '40px',
-                    background: '#FFFFFF',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    borderRadius: '24px',
-                    flex: 'none',
-                    order: 2,
-                    flexGrow: 0,
-                  }}
-                >
+                <div className="flex h-[40px] w-[173px] items-center justify-center gap-2 rounded-[24px] bg-white px-6 py-2 shadow-sm backdrop-blur-[20px]">
                   <Users className="size-6 shrink-0 text-[#003BE2]" />
-                  <span
-                    style={{
-                      width: '93px',
-                      height: '19px',
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 500,
-                      fontSize: '16px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                      display: 'flex',
-                      alignItems: 'center',
-                      whiteSpace: 'nowrap',
-                      flex: 'none',
-                      order: 1,
-                      flexGrow: 0,
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#242528] whitespace-nowrap">
                     199 Students
                   </span>
                 </div>
@@ -323,15 +126,7 @@ export default function CourseDetailsPage() {
               className="flex h-[40px] w-[122px] shrink-0 items-center justify-center gap-2 rounded-[24px] bg-[#D4FB20] px-6 py-2 transition-transform hover:scale-105 active:scale-95 shadow-sm"
             >
               <Share2 className="size-5 text-[#242528]" />
-              <span
-                style={{
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontWeight: 500,
-                  fontSize: '16px',
-                  lineHeight: '24px',
-                  color: '#242528',
-                }}
-              >
+              <span className="font-['Satoshi'] text-[16px] font-medium leading-6 text-[#242528]">
                 Share
               </span>
             </button>
@@ -361,26 +156,8 @@ export default function CourseDetailsPage() {
                 type="button"
                 onClick={() => setIsPlaying(!isPlaying)}
                 aria-label="Play course preview"
-                className="group transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl"
-                style={{
-                  boxSizing: 'border-box',
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  padding: '16px',
-                  gap: '8px',
-                  position: 'absolute',
-                  width: '104px',
-                  height: '104px',
-                  left: 'calc(50% - 104px/2)',
-                  top: 'calc(50% - 104px/2)',
-                  background: 'rgba(61, 61, 61, 0.24)',
-                  border: '1px solid #4F4F4F',
-                  backdropFilter: 'blur(20px)',
-                  WebkitBackdropFilter: 'blur(20px)',
-                  borderRadius: '24px',
-                }}
+                className="group absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex size-[104px] items-center justify-center rounded-[24px] p-4 transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl"
+                style={PLAY_BUTTON_STYLE}
               >
                 <Play className="size-12 fill-[#F5F2FF] text-[#F5F2FF] translate-x-1 group-hover:scale-110 transition-transform" />
               </button>

@@ -48,45 +48,12 @@ export function Testimonials() {
       <div className="relative z-10 mx-auto max-w-[1280px]">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-16">
-          <h2
-            className="w-[577px] max-w-full font-heading font-semibold text-[44px] leading-[120%] tracking-[-0.01em] text-[#000000]"
-            style={{
-              width: '577px',
-              maxWidth: '100%',
-              minHeight: '106px',
-              fontFamily: "'Poppins', sans-serif",
-              fontStyle: 'normal',
-              fontWeight: 600,
-              fontSize: '44px',
-              lineHeight: '120%',
-              letterSpacing: '-0.01em',
-              color: '#000000',
-              flex: 'none',
-              order: 0,
-              flexGrow: 0,
-            }}
-          >
+          <h2 className="w-[577px] max-w-full font-['Poppins'] font-semibold text-[44px] leading-[120%] tracking-[-0.01em] text-[#000000]">
             Discover What Our
             <br />
             Community Is Saying
           </h2>
-          <p
-            className="w-[580px] max-w-full font-sans text-[18px] font-normal leading-[160%] text-[#4F4F4F]"
-            style={{
-              width: '580px',
-              maxWidth: '100%',
-              minHeight: '145px',
-              fontFamily: "'Satoshi', sans-serif",
-              fontStyle: 'normal',
-              fontWeight: 400,
-              fontSize: '18px',
-              lineHeight: '160%',
-              color: '#4F4F4F',
-              flex: 'none',
-              order: 1,
-              flexGrow: 0,
-            }}
-          >
+          <p className="w-[580px] max-w-full font-['Satoshi'] text-[18px] font-normal leading-[160%] text-[#4F4F4F]">
             At ByteSpace, our vibrant community of learners and creators is at
             the heart of what we do. Hear directly from those who have experienced
             the transformative journey of learning and creating on our platform.
@@ -97,119 +64,30 @@ export function Testimonials() {
 
         {/* Testimonial cards */}
         <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-stretch gap-6">
-          {testimonials.map((person, index) => (
+          {testimonials.map((person) => (
             <article
               key={person.name}
-              className="relative z-10 flex flex-col items-start bg-white rounded-[24px] border border-black/[0.03] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_16px_32px_-8px_rgba(0,0,0,0.08)] hover:border-black/[0.07]"
-              style={{
-                width: '374px',
-                maxWidth: '100%',
-                height: '432px',
-                background: '#FFFFFF',
-                borderRadius: '24px',
-                padding: '24px',
-                gap: '24px',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                flex: 'none',
-                order: index,
-                flexGrow: 0,
-              }}
+              className="relative z-10 flex w-[374px] max-w-full h-[432px] flex-col items-start gap-6 rounded-[24px] border border-black/[0.03] bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_16px_32px_-8px_rgba(0,0,0,0.08)] hover:border-black/[0.07]"
             >
               {/* Ellipse */}
               <img
                 src={person.image}
                 alt={person.name}
-                className="w-[80px] h-[80px] rounded-full object-cover shrink-0"
-                style={{
-                  width: '80px',
-                  height: '80px',
-                  borderRadius: '9999px',
-                  objectFit: 'cover',
-                  flex: 'none',
-                  order: 0,
-                  flexGrow: 0,
-                }}
+                className="size-20 rounded-full object-cover shrink-0"
               />
 
-              {/* Auto Layout Vertical */}
-              <div
-                className="flex flex-col items-start p-0"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-start',
-                  padding: '0px',
-                  width: '158px',
-                  height: '53px',
-                  flex: 'none',
-                  order: 1,
-                  flexGrow: 0,
-                }}
-              >
-                {/* Name */}
-                <h3
-                  className="font-heading font-semibold text-[20px] leading-[120%] tracking-[-0.01em] text-[#000000] whitespace-nowrap"
-                  style={{
-                    width: 'auto',
-                    minWidth: 'max-content',
-                    height: '24px',
-                    fontFamily: "'Poppins', sans-serif",
-                    fontStyle: 'normal',
-                    fontWeight: 600,
-                    fontSize: '20px',
-                    lineHeight: '120%',
-                    letterSpacing: '-0.01em',
-                    whiteSpace: 'nowrap',
-                    color: '#000000',
-                    flex: 'none',
-                    order: 0,
-                    flexGrow: 0,
-                  }}
-                >
+              {/* Title & Role */}
+              <div className="flex flex-col items-start p-0">
+                <h3 className="font-['Poppins'] font-semibold text-[20px] leading-[120%] tracking-[-0.01em] text-[#000000] whitespace-nowrap">
                   {person.name}
                 </h3>
-
-                {/* Role */}
-                <p
-                  className="font-sans font-normal text-[18px] leading-[160%] text-[#003BE2]"
-                  style={{
-                    width: index === 0 ? '158px' : 'auto',
-                    height: '29px',
-                    fontFamily: "'Satoshi', sans-serif",
-                    fontStyle: 'normal',
-                    fontWeight: 400,
-                    fontSize: '18px',
-                    lineHeight: '160%',
-                    color: '#003BE2',
-                    flex: 'none',
-                    order: 1,
-                    flexGrow: 0,
-                  }}
-                >
+                <p className="font-['Satoshi'] font-normal text-[18px] leading-[160%] text-[#003BE2]">
                   {person.role}
                 </p>
               </div>
 
               {/* Quote */}
-              <p
-                className="font-sans font-normal text-[18px] leading-[160%] text-[#4F4F4F]"
-                style={{
-                  width: '326px',
-                  maxWidth: '100%',
-                  height: '203px',
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontStyle: 'normal',
-                  fontWeight: 400,
-                  fontSize: '18px',
-                  lineHeight: '160%',
-                  color: '#4F4F4F',
-                  flex: 'none',
-                  order: 2,
-                  flexGrow: 0,
-                }}
-              >
+              <p className="w-[326px] max-w-full font-['Satoshi'] font-normal text-[18px] leading-[160%] text-[#4F4F4F]">
                 {person.text}
               </p>
             </article>

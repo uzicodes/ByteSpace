@@ -100,6 +100,12 @@ const creatorCourses: CourseCard[] = [
   },
 ]
 
+const BLUEPRINT_GRID_STYLE: React.CSSProperties = {
+  backgroundImage:
+    'linear-gradient(rgba(255, 255, 255, 0.9) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.9) 2px, transparent 2px)',
+  backgroundSize: '120px 120px',
+}
+
 export default function CreatorProfilePage() {
   const [isFollowing, setIsFollowing] = useState(false)
   const [activeFilter, setActiveFilter] = useState<string | null>(null)
@@ -113,11 +119,7 @@ export default function CreatorProfilePage() {
         {/* Blueprint Grid Lines Background (120px increments, 0.12 opacity) */}
         <div
           className="pointer-events-none absolute inset-0 opacity-12"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255, 255, 255, 0.9) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.9) 2px, transparent 2px)',
-            backgroundSize: '120px 120px',
-          }}
+          style={BLUEPRINT_GRID_STYLE}
         />
 
         {/* Global Navbar */}
@@ -139,73 +141,26 @@ export default function CreatorProfilePage() {
 
                 <div className="flex flex-col items-start gap-2">
                   <div className="flex flex-wrap items-center gap-3">
-                    <h1
-                      style={{
-                        fontFamily: "'Poppins', sans-serif",
-                        fontWeight: 600,
-                        fontSize: '36px',
-                        lineHeight: '120%',
-                        letterSpacing: '-0.01em',
-                        color: '#F5F5F6',
-                      }}
-                    >
+                    <h1 className="font-['Poppins'] font-semibold text-[36px] leading-[120%] tracking-[-0.01em] text-[#F5F5F6]">
                       PurePearl Studio
                     </h1>
 
                     {/* Creator Badge (103px × 35px) */}
-                    <div
-                      className="shadow-sm"
-                      style={{
-                        boxSizing: 'border-box',
-                        display: 'flex',
-                        flexDirection: 'row',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        padding: '8px 24px',
-                        height: '35px',
-                        background: '#D4FB20',
-                        borderRadius: '24px',
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontFamily: "'Satoshi', sans-serif",
-                          fontWeight: 500,
-                          fontSize: '16px',
-                          lineHeight: '120%',
-                          color: '#242528',
-                        }}
-                      >
+                    <div className="flex h-[35px] items-center justify-center rounded-[24px] bg-[#D4FB20] px-6 py-2 shadow-sm">
+                      <span className="font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#242528]">
                         Creator
                       </span>
                     </div>
                   </div>
 
-                  <p
-                    style={{
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '18px',
-                      lineHeight: '160%',
-                      color: '#F5F5F6',
-                    }}
-                  >
+                  <p className="font-['Satoshi'] font-normal text-[18px] leading-[160%] text-[#F5F5F6]">
                     Passionate UI/UX, Web designer
                   </p>
                 </div>
               </div>
 
               {/* Bio Description (1197px in Figma) */}
-              <p
-                className="max-w-[1197px]"
-                style={{
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '18px',
-                  lineHeight: '160%',
-                  color: '#F5F5F6',
-                }}
-              >
+              <p className="max-w-[1197px] font-['Satoshi'] font-normal text-[18px] leading-[160%] text-[#F5F5F6]">
                 Welcome to the creative world of PurePearl Studio. Here, you&apos;ll discover the passion,
                 expertise, and inspiration that drive my creative journey. Let&apos;s explore and learn together!
                 Dive into my creative portfolio, showcasing a glimpse of my artistic endeavors. From digital
@@ -219,81 +174,21 @@ export default function CreatorProfilePage() {
               {/* Left Stats Row: Products & Followers */}
               <div className="flex items-center gap-4">
                 {/* 3 Products Pill */}
-                <div
-                  className="shadow-sm"
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '12px 24px',
-                    gap: '8px',
-                    width: '140px',
-                    height: '46px',
-                    background: '#FFFFFF',
-                    borderRadius: '24px',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontWeight: 500,
-                      fontSize: '18px',
-                      lineHeight: '120%',
-                      color: '#003BE2',
-                    }}
-                  >
+                <div className="flex h-[46px] w-[140px] items-center justify-center gap-2 rounded-[24px] bg-white px-6 py-3 shadow-sm">
+                  <span className="font-['Satoshi'] text-[18px] font-medium leading-[120%] text-[#003BE2]">
                     3
                   </span>
-                  <span
-                    style={{
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontWeight: 500,
-                      fontSize: '18px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[18px] font-medium leading-[120%] text-[#242528]">
                     Products
                   </span>
                 </div>
 
                 {/* 12 Followers Pill */}
-                <div
-                  className="shadow-sm"
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '12px 24px',
-                    gap: '8px',
-                    width: '150px',
-                    height: '46px',
-                    background: '#FFFFFF',
-                    borderRadius: '24px',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontWeight: 500,
-                      fontSize: '18px',
-                      lineHeight: '120%',
-                      color: '#003BE2',
-                    }}
-                  >
+                <div className="flex h-[46px] w-[150px] items-center justify-center gap-2 rounded-[24px] bg-white px-6 py-3 shadow-sm">
+                  <span className="font-['Satoshi'] text-[18px] font-medium leading-[120%] text-[#003BE2]">
                     12
                   </span>
-                  <span
-                    style={{
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontWeight: 500,
-                      fontSize: '18px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[18px] font-medium leading-[120%] text-[#242528]">
                     Followers
                   </span>
                 </div>
@@ -303,29 +198,11 @@ export default function CreatorProfilePage() {
               <button
                 type="button"
                 onClick={() => setIsFollowing(!isFollowing)}
-                className="transition-all duration-200 hover:scale-105 active:scale-95 shadow-sm"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  padding: '12px 24px',
-                  gap: '8px',
-                  minWidth: '101px',
-                  height: '46px',
-                  background: isFollowing ? '#FFFFFF' : '#D4FB20',
-                  borderRadius: '24px',
-                }}
+                className={`flex h-[46px] min-w-[101px] items-center justify-center gap-2 rounded-[24px] px-6 py-3 shadow-sm transition-all duration-200 hover:scale-105 active:scale-95 ${
+                  isFollowing ? 'bg-white' : 'bg-[#D4FB20]'
+                }`}
               >
-                <span
-                  style={{
-                    fontFamily: "'Satoshi', sans-serif",
-                    fontWeight: 500,
-                    fontSize: '18px',
-                    lineHeight: '120%',
-                    color: '#040819',
-                  }}
-                >
+                <span className="font-['Satoshi'] text-[18px] font-medium leading-[120%] text-[#040819]">
                   {isFollowing ? 'Following' : 'Follow'}
                 </span>
               </button>

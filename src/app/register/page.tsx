@@ -4,6 +4,45 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { BarChart3, Star } from 'lucide-react'
 
+const TORUS_STYLE: React.CSSProperties = {
+  width: '146.72px',
+  height: '146.72px',
+  backgroundColor: '#D4FB20',
+  maskImage: 'url(/elements/3.webp)',
+  WebkitMaskImage: 'url(/elements/3.webp)',
+  maskSize: 'contain',
+  WebkitMaskSize: 'contain',
+  maskRepeat: 'no-repeat',
+  WebkitMaskRepeat: 'no-repeat',
+}
+
+const PYRAMID_STYLE: React.CSSProperties = {
+  width: '188.93px',
+  height: '188.93px',
+  backgroundColor: '#D4FB20',
+  maskImage: 'url(/elements/4.webp)',
+  WebkitMaskImage: 'url(/elements/4.webp)',
+  maskSize: 'contain',
+  WebkitMaskSize: 'contain',
+  maskRepeat: 'no-repeat',
+  WebkitMaskRepeat: 'no-repeat',
+}
+
+const SPIRAL_STYLE: React.CSSProperties = {
+  width: '175.81px',
+  height: '175.81px',
+  left: '298px',
+  top: '288px',
+  backgroundColor: '#F5F5F6',
+  maskImage: 'url(/elements/2.webp)',
+  WebkitMaskImage: 'url(/elements/2.webp)',
+  maskSize: 'contain',
+  WebkitMaskSize: 'contain',
+  maskRepeat: 'no-repeat',
+  WebkitMaskRepeat: 'no-repeat',
+  transform: 'scaleY(-1)',
+}
+
 export default function RegisterPage() {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
@@ -41,43 +80,10 @@ export default function RegisterPage() {
 
         {/* Left Side: Sign up and come in & Description */}
         <div className="flex flex-col items-start gap-3 pt-6 lg:absolute lg:left-[120px] lg:top-[120px] lg:w-[500px] lg:p-0">
-          <h2
-            className="whitespace-nowrap font-heading text-[20px] font-semibold leading-[120%] tracking-[-0.01em] text-[#F5F5F6]"
-            style={{
-              width: 'auto',
-              minWidth: 'max-content',
-              height: '24px',
-              fontFamily: "'Poppins', sans-serif",
-              fontStyle: 'normal',
-              fontWeight: 600,
-              fontSize: '20px',
-              lineHeight: '120%',
-              letterSpacing: '-0.01em',
-              whiteSpace: 'nowrap',
-              color: '#F5F5F6',
-              flex: 'none',
-              order: 0,
-              flexGrow: 0,
-            }}
-          >
+          <h2 className="flex h-[24px] items-center whitespace-nowrap font-['Poppins'] text-[20px] font-semibold leading-[120%] tracking-[-0.01em] text-[#F5F5F6]">
             Sign up and come in
           </h2>
-          <p
-            className="w-[475px] max-w-full font-sans text-[18px] font-normal leading-[160%] text-[#F5F5F6]"
-            style={{
-              width: '475px',
-              maxWidth: '100%',
-              fontFamily: "'Satoshi', sans-serif",
-              fontStyle: 'normal',
-              fontWeight: 400,
-              fontSize: '18px',
-              lineHeight: '160%',
-              color: '#F5F5F6',
-              flex: 'none',
-              order: 1,
-              flexGrow: 0,
-            }}
-          >
+          <p className="w-[475px] max-w-full font-['Satoshi'] text-[18px] font-normal leading-[160%] text-[#F5F5F6]">
             The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost
           </p>
         </div>
@@ -87,37 +93,13 @@ export default function RegisterPage() {
           {/* 3D Element: Lime Torus (Top Left) */}
           <div
             className="pointer-events-none absolute -left-4 top-8 z-30"
-            style={{
-              width: '146.72px',
-              height: '146.72px',
-              backgroundColor: '#D4FB20',
-              maskImage: 'url(/elements/3.webp)',
-              WebkitMaskImage: 'url(/elements/3.webp)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-              opacity: 1,
-              transform: 'rotate(0deg)',
-            }}
+            style={TORUS_STYLE}
           />
 
           {/* 3D Element: Lime Pyramid/Tetrahedron (Bottom Left) */}
           <div
             className="pointer-events-none absolute -bottom-1 -left-15 z-30"
-            style={{
-              width: '188.93px',
-              height: '188.93px',
-              backgroundColor: '#D4FB20',
-              maskImage: 'url(/elements/4.webp)',
-              WebkitMaskImage: 'url(/elements/4.webp)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-              opacity: 1,
-              transform: 'rotate(0deg)',
-            }}
+            style={PYRAMID_STYLE}
           />
 
           {/* Card 2: Build Digital Asset (Positioned Behind) */}
@@ -251,21 +233,7 @@ export default function RegisterPage() {
           </div>
 
           {/* Happy Students Floating Badge (Bottom Right) */}
-          <div
-            className="z-30 flex flex-col items-start rounded-[16px] bg-[#D4FB20] shadow-[0_16px_36px_rgba(0,0,0,0.14)] sm:absolute"
-            style={{
-              width: '258px',
-              height: '123px',
-              left: '160px',
-              top: '390px',
-              padding: '16px',
-              gap: '8px',
-              borderRadius: '16px',
-              opacity: 1,
-              transform: 'rotate(0deg)',
-              boxSizing: 'border-box',
-            }}
-          >
+          <div className="z-30 box-border flex w-[258px] h-[123px] flex-col items-start gap-2 rounded-[16px] bg-[#D4FB20] p-4 shadow-[0_16px_36px_rgba(0,0,0,0.14)] sm:absolute sm:left-[160px] sm:top-[390px]">
             <div className="font-heading text-[14px] font-semibold leading-none text-[#242528]">
               Happy Students
             </div>
@@ -296,157 +264,43 @@ export default function RegisterPage() {
           {/* 3D Element: White Spiral (Overlaying Happy Students Badge) */}
           <div
             className="pointer-events-none absolute z-40"
-            style={{
-              width: '175.81px',
-              height: '175.81px',
-              left: '298px',
-              top: '288px',
-              backgroundColor: '#F5F5F6',
-              maskImage: 'url(/elements/2.webp)',
-              WebkitMaskImage: 'url(/elements/2.webp)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-              opacity: 1,
-              transform: 'scaleY(-1)',
-            }}
+            style={SPIRAL_STYLE}
           />
         </div>
 
         {/* Register_Frame (Registration Form) */}
-        <div
-          className="relative mx-auto mb-16 w-full max-w-[579px] rounded-[24px] bg-[#FFFFFF] shadow-2xl lg:absolute lg:left-[741px] lg:top-[120px] lg:mb-0 lg:h-[784px] lg:w-[579px]"
-          style={{
-            boxSizing: 'border-box',
-            isolation: 'isolate',
-            background: '#FFFFFF',
-            borderRadius: '24px',
-            width: '579px',
-            height: '784px',
-          }}
-        >
+        <div className="relative mx-auto mb-16 box-border w-full max-w-[579px] isolate rounded-[24px] bg-[#FFFFFF] shadow-2xl lg:absolute lg:left-[741px] lg:top-[120px] lg:mb-0 lg:h-[784px] lg:w-[579px]">
           {/* Content Auto Layout */}
-          <div
-            className="flex w-full flex-col items-center px-6 py-10 sm:px-12 lg:absolute lg:left-[63px] lg:top-[61px] lg:w-[453px] lg:p-0"
-            style={{
-              width: '453px',
-              height: '672px',
-              gap: '122px',
-            }}
-          >
+          <div className="flex w-full flex-col items-center px-6 py-10 sm:px-12 lg:absolute lg:left-[63px] lg:top-[61px] lg:w-[453px] lg:p-0">
             {/* Auto Layout Vertical (Form Fields & Title) */}
             <form
               onSubmit={handleSubmit}
-              className="flex w-full flex-col items-start"
-              style={{
-                width: '453px',
-                height: '524px',
-                gap: '40px',
-              }}
+              className="flex w-full max-w-[453px] flex-col items-start gap-[40px]"
             >
               {/* Header Auto Layout Vertical (Create an Account & Welcome to ByteSpace) */}
-              <div
-                className="flex w-full flex-col items-start"
-                style={{
-                  width: '453px',
-                  height: '135px',
-                }}
-              >
+              <div className="flex w-full max-w-[453px] flex-col items-start">
                 {/* Create an Account */}
-                <span
-                  style={{
-                    width: '148px',
-                    height: '29px',
-                    fontFamily: "'Satoshi', sans-serif",
-                    fontStyle: 'normal',
-                    fontWeight: 400,
-                    fontSize: '18px',
-                    lineHeight: '160%',
-                    color: '#003BE2',
-                    flex: 'none',
-                    order: 0,
-                    flexGrow: 0,
-                  }}
-                >
+                <span className="font-['Satoshi'] text-[18px] font-normal leading-[160%] text-[#003BE2]">
                   Create an Account
                 </span>
 
                 {/* Welcome to ByteSpace */}
-                <h1
-                  style={{
-                    width: '453px',
-                    height: '106px',
-                    fontFamily: "'Poppins', sans-serif",
-                    fontStyle: 'normal',
-                    fontWeight: 600,
-                    fontSize: '44px',
-                    lineHeight: '120%',
-                    letterSpacing: '-0.01em',
-                    color: '#242528',
-                    flex: 'none',
-                    order: 1,
-                    flexGrow: 0,
-                  }}
-                >
+                <h1 className="w-full max-w-[453px] font-['Poppins'] text-[44px] font-semibold leading-[120%] tracking-[-0.01em] text-[#242528]">
                   Welcome to ByteSpace
                 </h1>
               </div>
 
               {/* Form Input Fields & Submit Button Auto Layout */}
-              <div
-                className="flex w-full flex-col items-end"
-                style={{
-                  width: '453px',
-                  height: '349px',
-                  gap: '24px',
-                }}
-              >
+              <div className="flex w-full max-w-[453px] flex-col items-end gap-[24px]">
                 {/* Full Name field */}
-                <div
-                  className="flex w-full flex-col items-start gap-[8px]"
-                  style={{
-                    width: '453px',
-                    height: '77px',
-                    flex: 'none',
-                    order: 0,
-                    flexGrow: 0,
-                  }}
-                >
+                <div className="flex w-full max-w-[453px] flex-col items-start gap-2">
                   <label
                     htmlFor="register-fullname"
-                    style={{
-                      width: '64px',
-                      height: '17px',
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 500,
-                      fontSize: '14px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                      flex: 'none',
-                      order: 0,
-                      flexGrow: 0,
-                    }}
+                    className="font-['Satoshi'] text-[14px] font-medium leading-[120%] text-[#242528]"
                   >
                     Full Name
                   </label>
-                  <div
-                    className="box-border flex h-[52px] w-full items-center rounded-[12px] border border-[#E5E6E8] bg-[#FFFFFF] px-[24px] py-[12px] transition-colors focus-within:border-[#242528]"
-                    style={{
-                      width: '453px',
-                      maxWidth: '100%',
-                      height: '52px',
-                      background: '#FFFFFF',
-                      border: '1px solid #E5E6E8',
-                      borderRadius: '12px',
-                      padding: '12px 24px',
-                      gap: '8px',
-                      flex: 'none',
-                      order: 1,
-                      flexGrow: 0,
-                    }}
-                  >
+                  <div className="box-border flex h-[52px] w-full max-w-[453px] items-center rounded-[12px] border border-[#E5E6E8] bg-[#FFFFFF] px-6 py-3 transition-colors focus-within:border-[#242528]">
                     <input
                       id="register-fullname"
                       type="text"
@@ -454,63 +308,20 @@ export default function RegisterPage() {
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="Jamie Davis"
-                      className="w-full bg-transparent text-[18px] leading-[160%] text-[#242528] placeholder:text-[#82868E] outline-none"
-                      style={{
-                        fontFamily: "'Satoshi', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '18px',
-                        lineHeight: '160%',
-                        color: fullName ? '#242528' : '#82868E',
-                      }}
+                      className="w-full bg-transparent font-['Satoshi'] text-[18px] leading-[160%] text-[#242528] placeholder:text-[#82868E] outline-none"
                     />
                   </div>
                 </div>
 
                 {/* Email field */}
-                <div
-                  className="flex w-full flex-col items-start gap-[8px]"
-                  style={{
-                    width: '453px',
-                    height: '77px',
-                    flex: 'none',
-                    order: 1,
-                    flexGrow: 0,
-                  }}
-                >
+                <div className="flex w-full max-w-[453px] flex-col items-start gap-2">
                   <label
                     htmlFor="register-email"
-                    style={{
-                      width: '35px',
-                      height: '17px',
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 500,
-                      fontSize: '14px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                      flex: 'none',
-                      order: 0,
-                      flexGrow: 0,
-                    }}
+                    className="font-['Satoshi'] text-[14px] font-medium leading-[120%] text-[#242528]"
                   >
                     Email
                   </label>
-                  <div
-                    className="box-border flex h-[52px] w-full items-center rounded-[12px] border border-[#E5E6E8] bg-[#FFFFFF] px-[24px] py-[12px] transition-colors focus-within:border-[#242528]"
-                    style={{
-                      width: '453px',
-                      maxWidth: '100%',
-                      height: '52px',
-                      background: '#FFFFFF',
-                      border: '1px solid #E5E6E8',
-                      borderRadius: '12px',
-                      padding: '12px 24px',
-                      gap: '8px',
-                      flex: 'none',
-                      order: 1,
-                      flexGrow: 0,
-                    }}
-                  >
+                  <div className="box-border flex h-[52px] w-full max-w-[453px] items-center rounded-[12px] border border-[#E5E6E8] bg-[#FFFFFF] px-6 py-3 transition-colors focus-within:border-[#242528]">
                     <input
                       id="register-email"
                       type="email"
@@ -518,63 +329,20 @@ export default function RegisterPage() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="designer@example.com"
-                      className="w-full bg-transparent text-[18px] leading-[160%] text-[#242528] placeholder:text-[#82868E] outline-none"
-                      style={{
-                        fontFamily: "'Satoshi', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '18px',
-                        lineHeight: '160%',
-                        color: email ? '#242528' : '#82868E',
-                      }}
+                      className="w-full bg-transparent font-['Satoshi'] text-[18px] leading-[160%] text-[#242528] placeholder:text-[#82868E] outline-none"
                     />
                   </div>
                 </div>
 
                 {/* Password field */}
-                <div
-                  className="flex w-full flex-col items-start gap-[8px]"
-                  style={{
-                    width: '453px',
-                    height: '77px',
-                    flex: 'none',
-                    order: 2,
-                    flexGrow: 0,
-                  }}
-                >
+                <div className="flex w-full max-w-[453px] flex-col items-start gap-2">
                   <label
                     htmlFor="register-password"
-                    style={{
-                      width: '61px',
-                      height: '17px',
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 500,
-                      fontSize: '14px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                      flex: 'none',
-                      order: 0,
-                      flexGrow: 0,
-                    }}
+                    className="font-['Satoshi'] text-[14px] font-medium leading-[120%] text-[#242528]"
                   >
                     Password
                   </label>
-                  <div
-                    className="box-border flex h-[52px] w-full items-center rounded-[12px] border border-[#E5E6E8] bg-[#FFFFFF] px-[24px] py-[12px] transition-colors focus-within:border-[#242528]"
-                    style={{
-                      width: '453px',
-                      maxWidth: '100%',
-                      height: '52px',
-                      background: '#FFFFFF',
-                      border: '1px solid #E5E6E8',
-                      borderRadius: '12px',
-                      padding: '12px 24px',
-                      gap: '8px',
-                      flex: 'none',
-                      order: 1,
-                      flexGrow: 0,
-                    }}
-                  >
+                  <div className="box-border flex h-[52px] w-full max-w-[453px] items-center rounded-[12px] border border-[#E5E6E8] bg-[#FFFFFF] px-6 py-3 transition-colors focus-within:border-[#242528]">
                     <input
                       id="register-password"
                       type="password"
@@ -582,14 +350,7 @@ export default function RegisterPage() {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="********"
-                      className="w-full bg-transparent text-[18px] leading-[160%] text-[#242528] placeholder:text-[#82868E] outline-none"
-                      style={{
-                        fontFamily: "'Satoshi', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '18px',
-                        lineHeight: '160%',
-                        color: password ? '#242528' : '#82868E',
-                      }}
+                      className="w-full bg-transparent font-['Satoshi'] text-[18px] leading-[160%] text-[#242528] placeholder:text-[#82868E] outline-none"
                     />
                   </div>
                 </div>
@@ -597,34 +358,9 @@ export default function RegisterPage() {
                 {/* Continue button */}
                 <button
                   type="submit"
-                  className="box-border flex h-[46px] w-[123px] items-center justify-center gap-[8px] rounded-[24px] bg-[#D4FB20] px-[24px] py-[12px] transition-all hover:opacity-90 active:scale-95"
-                  style={{
-                    width: '123px',
-                    height: '46px',
-                    background: '#D4FB20',
-                    borderRadius: '24px',
-                    padding: '12px 24px',
-                    gap: '8px',
-                    flex: 'none',
-                    order: 3,
-                    flexGrow: 0,
-                  }}
+                  className="box-border flex h-[46px] w-[123px] items-center justify-center gap-2 rounded-[24px] bg-[#D4FB20] px-6 py-3 transition-all hover:opacity-90 active:scale-95 shadow-sm"
                 >
-                  <span
-                    style={{
-                      width: '75px',
-                      height: '22px',
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 500,
-                      fontSize: '18px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                      flex: 'none',
-                      order: 0,
-                      flexGrow: 0,
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[18px] font-medium leading-[120%] text-[#242528]">
                     Continue
                   </span>
                 </button>
@@ -632,49 +368,13 @@ export default function RegisterPage() {
             </form>
 
             {/* Already have an account? Login */}
-            <div
-              className="flex items-start justify-center gap-[4px]"
-              style={{
-                width: '224px',
-                height: '26px',
-                flex: 'none',
-                order: 1,
-                flexGrow: 0,
-              }}
-            >
-              <span
-                style={{
-                  width: '181px',
-                  height: '26px',
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontStyle: 'normal',
-                  fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: '160%',
-                  color: '#4B4C53',
-                  flex: 'none',
-                  order: 0,
-                  flexGrow: 0,
-                }}
-              >
+            <div className="mt-12 flex items-center justify-center gap-1">
+              <span className="font-['Satoshi'] text-[16px] font-normal leading-[160%] text-[#4B4C53]">
                 Already have an account?
               </span>
               <Link
                 href="/login"
-                className="transition-all hover:underline"
-                style={{
-                  width: '39px',
-                  height: '26px',
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontStyle: 'normal',
-                  fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: '160%',
-                  color: '#003BE2',
-                  flex: 'none',
-                  order: 1,
-                  flexGrow: 0,
-                }}
+                className="font-['Satoshi'] text-[16px] font-normal leading-[160%] text-[#003BE2] transition-all hover:underline"
               >
                 Login
               </Link>

@@ -16,6 +16,19 @@ import {
 import { Navbar } from '@/src/components/navbar';
 import { Footer } from '@/src/components/footer';
 
+const BLUEPRINT_GRID_STYLE: React.CSSProperties = {
+  backgroundImage:
+    'linear-gradient(rgba(255, 255, 255, 0.9) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.9) 2px, transparent 2px)',
+  backgroundSize: '120px 120px',
+};
+
+const PLAY_BUTTON_STYLE: React.CSSProperties = {
+  background: 'rgba(61, 61, 61, 0.24)',
+  border: '1px solid #4F4F4F',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+};
+
 export default function CourseReviewsPage() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedRating, setSelectedRating] = useState<string>('All');
@@ -86,11 +99,7 @@ export default function CourseReviewsPage() {
         {/* Blueprint Grid Lines (120px increments, 0.12 opacity) */}
         <div
           className="pointer-events-none absolute inset-0 opacity-12"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255, 255, 255, 0.9) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.9) 2px, transparent 2px)',
-            backgroundSize: '120px 120px',
-          }}
+          style={BLUEPRINT_GRID_STYLE}
         />
 
         {/* Navbar */}
@@ -100,98 +109,19 @@ export default function CourseReviewsPage() {
         <div className="relative z-10 mx-auto w-full max-w-[1283px] px-4 pt-[140px] sm:px-6 lg:pt-[172px]">
           <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-start lg:justify-between">
             {/* Left Title and Details Stack (Exact Figma Auto Layout: 769px × 185px, gap: 24px) */}
-            <div
-              className="flex w-full flex-col items-start gap-6 lg:w-[769px] lg:h-[185px] shrink-0"
-              style={{
-                boxSizing: 'border-box',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                padding: '0px',
-                gap: '24px',
-                flex: 'none',
-                order: 0,
-                flexGrow: 0,
-              }}
-            >
+            <div className="flex w-full flex-col items-start gap-6 lg:w-[769px] lg:h-[185px] shrink-0 p-0">
               {/* Titles Stack (769px × 75px, gap: 8px) */}
-              <div
-                className="flex w-full flex-col items-start gap-2 lg:w-[769px] lg:h-[75px]"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-start',
-                  padding: '0px',
-                  gap: '8px',
-                  flex: 'none',
-                  order: 0,
-                  flexGrow: 0,
-                }}
-              >
-                <h1
-                  className="whitespace-nowrap font-semibold text-[#F5F5F6]"
-                  style={{
-                    width: '769px',
-                    maxWidth: '100%',
-                    height: '43px',
-                    fontFamily: "'Poppins', sans-serif",
-                    fontStyle: 'normal',
-                    fontWeight: 600,
-                    fontSize: '36px',
-                    lineHeight: '120%',
-                    letterSpacing: '-0.01em',
-                    color: '#F5F5F6',
-                    display: 'flex',
-                    alignItems: 'center',
-                    whiteSpace: 'nowrap',
-                    flex: 'none',
-                    order: 0,
-                    flexGrow: 0,
-                  }}
-                >
+              <div className="flex w-full flex-col items-start gap-2 lg:w-[769px] lg:h-[75px] p-0">
+                <h1 className="whitespace-nowrap font-['Poppins'] font-semibold text-[36px] leading-[120%] tracking-[-0.01em] text-[#F5F5F6] w-[769px] max-w-full h-[43px] flex items-center">
                   Build Digital Asset: A Comprehensive Guide
                 </h1>
-                <p
-                  className="whitespace-nowrap font-semibold text-[#F5F5F6]"
-                  style={{
-                    width: '571px',
-                    maxWidth: '100%',
-                    height: '24px',
-                    fontFamily: "'Poppins', sans-serif",
-                    fontStyle: 'normal',
-                    fontWeight: 600,
-                    fontSize: '20px',
-                    lineHeight: '120%',
-                    letterSpacing: '-0.01em',
-                    color: '#F5F5F6',
-                    display: 'flex',
-                    alignItems: 'center',
-                    whiteSpace: 'nowrap',
-                    flex: 'none',
-                    order: 1,
-                    flexGrow: 0,
-                  }}
-                >
+                <p className="whitespace-nowrap font-['Poppins'] font-semibold text-[20px] leading-[120%] tracking-[-0.01em] text-[#F5F5F6] w-[571px] max-w-full h-[24px] flex items-center">
                   Unlock the Power of Digital Creation with Expert Guidance
                 </p>
               </div>
 
               {/* Creator: by purepearl studio */}
-              <p
-                style={{
-                  height: '22px',
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontWeight: 500,
-                  fontSize: '18px',
-                  lineHeight: '120%',
-                  color: '#F1F4FE',
-                  display: 'flex',
-                  alignItems: 'center',
-                  flex: 'none',
-                  order: 1,
-                  flexGrow: 0,
-                }}
-              >
+              <p className="flex h-[22px] items-center font-['Satoshi'] text-[18px] font-medium leading-[120%] text-[#F1F4FE]">
                 by{' '}
                 <Link
                   href="/creator_profile"
@@ -202,153 +132,27 @@ export default function CourseReviewsPage() {
               </p>
 
               {/* Meta Badges Row (576px × 40px, gap: 16px, order: 2) */}
-              <div
-                className="flex flex-wrap items-center gap-4 lg:w-[576px] lg:h-[40px]"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'flex-start',
-                  padding: '0px',
-                  gap: '16px',
-                  width: '576px',
-                  maxWidth: '100%',
-                  height: '40px',
-                  flex: 'none',
-                  order: 2,
-                  flexGrow: 0,
-                }}
-              >
+              <div className="flex flex-wrap items-center gap-4 lg:w-[576px] lg:h-[40px] p-0">
                 {/* Level Badge (171px × 40px) */}
-                <div
-                  className="shadow-sm"
-                  style={{
-                    boxSizing: 'border-box',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '8px 24px',
-                    gap: '8px',
-                    width: '171px',
-                    height: '40px',
-                    background: '#FFFFFF',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    borderRadius: '24px',
-                    flex: 'none',
-                    order: 0,
-                    flexGrow: 0,
-                  }}
-                >
+                <div className="flex h-[40px] w-[171px] items-center justify-center gap-2 rounded-[24px] bg-white px-6 py-2 shadow-sm backdrop-blur-[20px]">
                   <BarChart3 className="size-6 shrink-0 text-[#003BE2]" />
-                  <span
-                    style={{
-                      width: '91px',
-                      height: '19px',
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 500,
-                      fontSize: '16px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                      display: 'flex',
-                      alignItems: 'center',
-                      whiteSpace: 'nowrap',
-                      flex: 'none',
-                      order: 1,
-                      flexGrow: 0,
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#242528] whitespace-nowrap">
                     Intermediate
                   </span>
                 </div>
 
                 {/* Rating Badge (200px × 40px) */}
-                <div
-                  className="shadow-sm"
-                  style={{
-                    boxSizing: 'border-box',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '8px 24px',
-                    gap: '8px',
-                    width: '200px',
-                    height: '40px',
-                    background: '#FFFFFF',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    borderRadius: '24px',
-                    flex: 'none',
-                    order: 1,
-                    flexGrow: 0,
-                  }}
-                >
+                <div className="flex h-[40px] w-[200px] items-center justify-center gap-2 rounded-[24px] bg-white px-6 py-2 shadow-sm backdrop-blur-[20px]">
                   <Star className="size-6 shrink-0 fill-[#003BE2] text-[#003BE2]" />
-                  <span
-                    style={{
-                      width: '120px',
-                      height: '19px',
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 500,
-                      fontSize: '16px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                      display: 'flex',
-                      alignItems: 'center',
-                      whiteSpace: 'nowrap',
-                      flex: 'none',
-                      order: 1,
-                      flexGrow: 0,
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#242528] whitespace-nowrap">
                     4.8 (172 reviews)
                   </span>
                 </div>
 
                 {/* Students Badge (173px × 40px) */}
-                <div
-                  className="shadow-sm"
-                  style={{
-                    boxSizing: 'border-box',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '8px 24px',
-                    gap: '8px',
-                    width: '173px',
-                    height: '40px',
-                    background: '#FFFFFF',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    borderRadius: '24px',
-                    flex: 'none',
-                    order: 2,
-                    flexGrow: 0,
-                  }}
-                >
+                <div className="flex h-[40px] w-[173px] items-center justify-center gap-2 rounded-[24px] bg-white px-6 py-2 shadow-sm backdrop-blur-[20px]">
                   <Users className="size-6 shrink-0 text-[#003BE2]" />
-                  <span
-                    style={{
-                      width: '93px',
-                      height: '19px',
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 500,
-                      fontSize: '16px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                      display: 'flex',
-                      alignItems: 'center',
-                      whiteSpace: 'nowrap',
-                      flex: 'none',
-                      order: 1,
-                      flexGrow: 0,
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#242528] whitespace-nowrap">
                     199 Students
                   </span>
                 </div>
@@ -361,15 +165,7 @@ export default function CourseReviewsPage() {
               className="flex h-[40px] w-[122px] shrink-0 items-center justify-center gap-2 rounded-[24px] bg-[#D4FB20] px-6 py-2 transition-transform hover:scale-105 active:scale-95 shadow-sm"
             >
               <Share2 className="size-5 text-[#242528]" />
-              <span
-                style={{
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontWeight: 500,
-                  fontSize: '16px',
-                  lineHeight: '24px',
-                  color: '#242528',
-                }}
-              >
+              <span className="font-['Satoshi'] text-[16px] font-medium leading-6 text-[#242528]">
                 Share
               </span>
             </button>
@@ -399,26 +195,8 @@ export default function CourseReviewsPage() {
                 type="button"
                 onClick={() => setIsPlaying(!isPlaying)}
                 aria-label="Play course preview"
-                className="group transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl"
-                style={{
-                  boxSizing: 'border-box',
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  padding: '16px',
-                  gap: '8px',
-                  position: 'absolute',
-                  width: '104px',
-                  height: '104px',
-                  left: 'calc(50% - 104px/2)',
-                  top: 'calc(50% - 104px/2)',
-                  background: 'rgba(61, 61, 61, 0.24)',
-                  border: '1px solid #4F4F4F',
-                  backdropFilter: 'blur(20px)',
-                  WebkitBackdropFilter: 'blur(20px)',
-                  borderRadius: '24px',
-                }}
+                className="group absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-[104px] w-[104px] items-center justify-center rounded-[24px] p-4 transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl"
+                style={PLAY_BUTTON_STYLE}
               >
                 <Play className="size-12 fill-[#F5F2FF] text-[#F5F2FF] translate-x-1 group-hover:scale-110 transition-transform" />
               </button>
@@ -428,40 +206,21 @@ export default function CourseReviewsPage() {
             <div className="flex items-center gap-4 pt-12 sm:pt-16 lg:pt-20">
               <Link
                 href="/details"
-                className="flex h-[43px] w-[76px] items-center justify-center rounded-[24px] bg-[#F5F5F6] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
-                style={{
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontWeight: 500,
-                  fontSize: '16px',
-                  lineHeight: '120%',
-                }}
+                className="flex h-[43px] w-[76px] items-center justify-center rounded-[24px] bg-[#F5F5F6] font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
               >
                 About
               </Link>
 
               <Link
                 href="/lessons"
-                className="flex h-[43px] w-[82px] items-center justify-center rounded-[24px] bg-[#F5F5F6] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
-                style={{
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontWeight: 500,
-                  fontSize: '16px',
-                  lineHeight: '120%',
-                }}
+                className="flex h-[43px] w-[82px] items-center justify-center rounded-[24px] bg-[#F5F5F6] font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#4B4C53] transition-all hover:bg-[#E5E6E8]"
               >
                 Lesson
               </Link>
 
               <button
                 type="button"
-                className="flex h-[43px] w-[90px] items-center justify-center rounded-[24px] bg-[#D4FB20] text-[#242528] transition-all"
-                style={{
-                  boxSizing: 'border-box',
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontWeight: 500,
-                  fontSize: '16px',
-                  lineHeight: '120%',
-                }}
+                className="flex h-[43px] w-[90px] items-center justify-center rounded-[24px] bg-[#D4FB20] font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#242528] transition-all"
               >
                 Reviews
               </button>
@@ -471,35 +230,10 @@ export default function CourseReviewsPage() {
             <div className="flex w-full flex-col items-start gap-6 lg:w-[723px]">
               {/* 1. What Learners Are Saying */}
               <div className="flex flex-col items-start gap-2">
-                <h2
-                  className="font-semibold text-[#242528]"
-                  style={{
-                    width: '257px',
-                    height: '24px',
-                    fontFamily: "'Poppins', sans-serif",
-                    fontStyle: 'normal',
-                    fontWeight: 600,
-                    fontSize: '20px',
-                    lineHeight: '120%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    letterSpacing: '-0.01em',
-                  }}
-                >
+                <h2 className="flex h-[24px] w-[257px] items-center font-['Poppins'] text-[20px] font-semibold leading-[120%] tracking-[-0.01em] text-[#242528]">
                   What Learners Are Saying
                 </h2>
-                <p
-                  className="text-[#4B4C53]"
-                  style={{
-                    width: '100%',
-                    maxWidth: '723px',
-                    fontFamily: "'Satoshi', sans-serif",
-                    fontStyle: 'normal',
-                    fontWeight: 400,
-                    fontSize: '16px',
-                    lineHeight: '160%',
-                  }}
-                >
+                <p className="w-full max-w-[723px] font-['Satoshi'] text-[16px] font-normal leading-[160%] text-[#4B4C53]">
                   Discover what our learners have to say about their experience with &apos;Build Digital
                   Assets: A Comprehensive Guide.&apos; Read reviews and ratings from individuals who have
                   embarked on the transformative journey of mastering digital asset creation.
@@ -507,96 +241,26 @@ export default function CourseReviewsPage() {
               </div>
 
               {/* 2. Rating Breakdown Card (723px × 226px) */}
-              <div
-                className="w-full shadow-sm"
-                style={{
-                  boxSizing: 'border-box',
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  padding: '40px',
-                  gap: '24px',
-                  width: '100%',
-                  maxWidth: '723px',
-                  minHeight: '226px',
-                  background: '#FFFFFF',
-                  border: '1px solid #CED0D3',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  borderRadius: '16px',
-                }}
-              >
+              <div className="box-border flex min-h-[226px] w-full max-w-[723px] flex-row items-center justify-center gap-6 rounded-[16px] border border-[#CED0D3] bg-white p-10 shadow-sm backdrop-blur-[10px]">
                 {/* Left Ratings Score Pill (129px × 140px, #D4FB20) */}
-                <div
-                  className="shrink-0 shadow-sm"
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '24px 20px',
-                    width: '129px',
-                    height: '140px',
-                    background: '#D4FB20',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    borderRadius: '8px',
-                    flex: 'none',
-                    order: 0,
-                    flexGrow: 0,
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 500,
-                      fontSize: '14px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                    }}
-                  >
+                <div className="flex h-[140px] w-[129px] shrink-0 flex-col items-center justify-center rounded-[8px] bg-[#D4FB20] p-6 shadow-sm backdrop-blur-[20px]">
+                  <span className="font-['Satoshi'] text-[14px] font-medium leading-[120%] text-[#242528]">
                     Ratings
                   </span>
-                  <span
-                    style={{
-                      fontFamily: "'Poppins', sans-serif",
-                      fontStyle: 'normal',
-                      fontWeight: 600,
-                      fontSize: '36px',
-                      lineHeight: '120%',
-                      letterSpacing: '-0.01em',
-                      color: '#242528',
-                      marginTop: '4px',
-                    }}
-                  >
+                  <span className="mt-1 font-['Poppins'] text-[36px] font-semibold leading-[120%] tracking-[-0.01em] text-[#242528]">
                     4.7
                   </span>
                 </div>
 
                 {/* Right Breakdown Rows (490px × 146px) */}
-                <div
-                  className="flex w-full flex-col justify-between gap-1"
-                  style={{
-                    maxWidth: '490px',
-                    minHeight: '146px',
-                    flex: 'none',
-                    order: 1,
-                    flexGrow: 1,
-                  }}
-                >
+                <div className="flex min-h-[146px] w-full max-w-[490px] flex-col justify-between gap-1 grow">
                   {ratingBars.map((bar) => (
                     <div
                       key={bar.stars}
-                      className="flex w-full items-center justify-between gap-4"
-                      style={{ height: '26px' }}
+                      className="flex h-[26px] w-full items-center justify-between gap-4"
                     >
                       {/* Bar Track (282px × 8px) */}
-                      <div
-                        className="relative h-2 w-full overflow-hidden rounded-full bg-[#E5E6E8]"
-                        style={{ maxWidth: '282px' }}
-                      >
+                      <div className="relative h-2 w-full max-w-[282px] overflow-hidden rounded-full bg-[#E5E6E8]">
                         <div
                           className="h-full rounded-full bg-[#D4FB20]"
                           style={{ width: bar.widthPx }}
@@ -604,10 +268,7 @@ export default function CourseReviewsPage() {
                       </div>
 
                       {/* 5 Stars Icons Stack (136px × 24px) */}
-                      <div
-                        className="flex shrink-0 items-center gap-1"
-                        style={{ width: '136px' }}
-                      >
+                      <div className="flex w-[136px] shrink-0 items-center gap-1">
                         {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
@@ -621,16 +282,7 @@ export default function CourseReviewsPage() {
                       </div>
 
                       {/* Count (40px) */}
-                      <span
-                        className="w-10 text-right"
-                        style={{
-                          fontFamily: "'Satoshi', sans-serif",
-                          fontWeight: 400,
-                          fontSize: '16px',
-                          lineHeight: '160%',
-                          color: '#4B4C53',
-                        }}
-                      >
+                      <span className="w-10 text-right font-['Satoshi'] text-[16px] font-normal leading-[160%] text-[#4B4C53]">
                         {bar.count}
                       </span>
                     </div>
@@ -640,50 +292,22 @@ export default function CourseReviewsPage() {
 
               {/* 3. Individual Reviews Header */}
               <div className="pt-2">
-                <h2
-                  className="font-semibold text-[#242528]"
-                  style={{
-                    width: '190px',
-                    height: '24px',
-                    fontFamily: "'Poppins', sans-serif",
-                    fontStyle: 'normal',
-                    fontWeight: 600,
-                    fontSize: '20px',
-                    lineHeight: '120%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    letterSpacing: '-0.01em',
-                  }}
-                >
+                <h2 className="flex h-[24px] w-[190px] items-center font-['Poppins'] text-[20px] font-semibold leading-[120%] tracking-[-0.01em] text-[#242528]">
                   Individual Reviews:
                 </h2>
               </div>
 
               {/* 4. Filter Pills Row (723px × 48px, gap: 16px) */}
-              <div
-                className="flex flex-wrap items-center gap-4"
-                style={{
-                  width: '100%',
-                  maxWidth: '723px',
-                  minHeight: '48px',
-                }}
-              >
+              <div className="flex min-h-[48px] w-full max-w-[723px] flex-wrap items-center gap-4">
                 {/* All Rating Pill */}
                 <button
                   type="button"
                   onClick={() => setSelectedRating('All')}
-                  className={`flex h-[43px] items-center justify-center rounded-[24px] px-4 py-3 transition-all ${
+                  className={`flex h-[43px] w-[97px] items-center justify-center rounded-[24px] px-4 py-3 font-['Satoshi'] text-[16px] font-medium leading-[120%] transition-all ${
                     selectedRating === 'All'
                       ? 'bg-[#D4FB20] text-[#242528]'
                       : 'bg-[#F5F5F6] text-[#4B4C53] hover:bg-[#E5E6E8]'
                   }`}
-                  style={{
-                    width: '97px',
-                    fontFamily: "'Satoshi', sans-serif",
-                    fontWeight: 500,
-                    fontSize: '16px',
-                    lineHeight: '120%',
-                  }}
                 >
                   All rating
                 </button>
@@ -694,18 +318,13 @@ export default function CourseReviewsPage() {
                     key={starNum}
                     type="button"
                     onClick={() => setSelectedRating(starNum)}
-                    className={`flex h-12 items-center justify-center gap-1 rounded-[24px] px-4 py-3 transition-all ${
+                    className={`flex h-12 items-center justify-center gap-1 rounded-[24px] px-4 py-3 font-['Satoshi'] text-[16px] font-medium leading-[120%] transition-all ${
+                      starNum === '1' ? 'min-w-[66px]' : starNum === '4' ? 'min-w-[71px]' : 'min-w-[70px]'
+                    } ${
                       selectedRating === starNum
                         ? 'bg-[#D4FB20] text-[#242528]'
                         : 'bg-[#F5F5F6] text-[#4B4C53] hover:bg-[#E5E6E8]'
                     }`}
-                    style={{
-                      minWidth: starNum === '1' ? '66px' : starNum === '4' ? '71px' : '70px',
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontWeight: 500,
-                      fontSize: '16px',
-                      lineHeight: '120%',
-                    }}
                   >
                     <Star
                       className={`size-5 fill-current ${
@@ -722,12 +341,7 @@ export default function CourseReviewsPage() {
                 {reviewsList.map((review) => (
                   <div
                     key={review.id}
-                    className="box-border flex w-full flex-col items-start gap-6 rounded-[24px] border border-[#CED0D3] bg-[#FFFFFF] p-8 sm:p-10 shadow-sm transition-shadow hover:shadow-md"
-                    style={{
-                      width: '100%',
-                      maxWidth: '723px',
-                      minHeight: '276px',
-                    }}
+                    className="box-border flex min-h-[276px] w-full max-w-[723px] flex-col items-start gap-6 rounded-[24px] border border-[#CED0D3] bg-[#FFFFFF] p-8 sm:p-10 shadow-sm transition-shadow hover:shadow-md"
                   >
                     {/* Header Row: User Info + Stars + Timestamp */}
                     <div className="flex w-full flex-col justify-between gap-4 sm:flex-row sm:items-center">
@@ -738,25 +352,10 @@ export default function CourseReviewsPage() {
                           className="size-[52px] rounded-full object-cover border border-[#CED0D3]"
                         />
                         <div className="flex flex-col items-start">
-                          <h4
-                            className="font-medium text-[#242528]"
-                            style={{
-                              fontFamily: "'Satoshi', sans-serif",
-                              fontSize: '18px',
-                              lineHeight: '120%',
-                            }}
-                          >
+                          <h4 className="font-['Satoshi'] text-[18px] font-medium leading-[120%] text-[#242528]">
                             {review.name}
                           </h4>
-                          <span
-                            className="text-[#4B4C53]"
-                            style={{
-                              fontFamily: "'Satoshi', sans-serif",
-                              fontWeight: 400,
-                              fontSize: '16px',
-                              lineHeight: '160%',
-                            }}
-                          >
+                          <span className="font-['Satoshi'] text-[16px] font-normal leading-[160%] text-[#4B4C53]">
                             {review.role}
                           </span>
                         </div>
@@ -772,29 +371,14 @@ export default function CourseReviewsPage() {
                             />
                           ))}
                         </div>
-                        <span
-                          className="text-[#4B4C53]"
-                          style={{
-                            fontFamily: "'Satoshi', sans-serif",
-                            fontSize: '16px',
-                            lineHeight: '150%',
-                          }}
-                        >
+                        <span className="font-['Satoshi'] text-[16px] leading-[150%] text-[#4B4C53]">
                           {review.time}
                         </span>
                       </div>
                     </div>
 
                     {/* Review Body */}
-                    <p
-                      className="text-[#4B4C53]"
-                      style={{
-                        fontFamily: "'Satoshi', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '16px',
-                        lineHeight: '150%',
-                      }}
-                    >
+                    <p className="font-['Satoshi'] text-[16px] font-normal leading-[150%] text-[#4B4C53]">
                       {review.comment}
                     </p>
                   </div>
@@ -810,15 +394,7 @@ export default function CourseReviewsPage() {
             <div className="box-border flex w-full flex-col items-start gap-6 rounded-[24px] border border-[#CED0D3] bg-[#FFFFFF] p-8 sm:p-10 shadow-xl">
               {/* Syllabus Header */}
               <div className="flex w-full flex-col items-start gap-6">
-                <h3
-                  className="font-semibold text-[#242528]"
-                  style={{
-                    fontFamily: "'Poppins', sans-serif",
-                    fontSize: '20px',
-                    lineHeight: '120%',
-                    letterSpacing: '-0.01em',
-                  }}
-                >
+                <h3 className="font-['Poppins'] text-[20px] font-semibold leading-[120%] tracking-[-0.01em] text-[#242528]">
                   112 Lessons (24 hours)
                 </h3>
 
@@ -830,49 +406,21 @@ export default function CourseReviewsPage() {
                       className="flex w-full items-start justify-between gap-2 border-b border-[#F5F5F6] pb-2 last:border-b-0"
                     >
                       <div className="flex items-start gap-2">
-                        <span
-                          className="font-medium text-[#242528]"
-                          style={{
-                            fontFamily: "'Satoshi', sans-serif",
-                            fontSize: '16px',
-                            lineHeight: '120%',
-                          }}
-                        >
+                        <span className="font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#242528]">
                           {lesson.num}
                         </span>
-                        <span
-                          className="font-medium text-[#242528]"
-                          style={{
-                            fontFamily: "'Satoshi', sans-serif",
-                            fontSize: '16px',
-                            lineHeight: '120%',
-                          }}
-                        >
+                        <span className="font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#242528]">
                           {lesson.title}
                         </span>
                       </div>
-                      <span
-                        className="shrink-0 text-[#003BE2]"
-                        style={{
-                          fontFamily: "'Satoshi', sans-serif",
-                          fontWeight: 400,
-                          fontSize: '16px',
-                          lineHeight: '160%',
-                        }}
-                      >
+                      <span className="shrink-0 font-['Satoshi'] text-[16px] font-normal leading-[160%] text-[#003BE2]">
                         {lesson.duration}
                       </span>
                     </div>
                   ))}
                   <button
                     type="button"
-                    className="pt-1 text-left text-[#4B4C53] hover:text-[#003BE2] transition-colors"
-                    style={{
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '16px',
-                      lineHeight: '160%',
-                    }}
+                    className="pt-1 text-left font-['Satoshi'] text-[16px] font-normal leading-[160%] text-[#4B4C53] hover:text-[#003BE2] transition-colors"
                   >
                     99 more videos
                   </button>
@@ -881,39 +429,15 @@ export default function CourseReviewsPage() {
 
               {/* Pricing & CTA */}
               <div className="flex w-full flex-col items-start gap-4 pt-2">
-                <p
-                  className="text-[#4B4C53]"
-                  style={{
-                    fontFamily: "'Satoshi', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '16px',
-                    lineHeight: '160%',
-                  }}
-                >
+                <p className="font-['Satoshi'] text-[16px] font-normal leading-[160%] text-[#4B4C53]">
                   Ready to Dive In? Enroll Now and Start Building Your Digital Future!
                 </p>
 
                 <div className="flex items-baseline gap-2">
-                  <span
-                    className="font-semibold text-[#003BE2]"
-                    style={{
-                      fontFamily: "'Poppins', sans-serif",
-                      fontSize: '36px',
-                      lineHeight: '120%',
-                      letterSpacing: '-0.01em',
-                    }}
-                  >
+                  <span className="font-['Poppins'] text-[36px] font-semibold leading-[120%] tracking-[-0.01em] text-[#003BE2]">
                     $25
                   </span>
-                  <span
-                    className="text-[#4B4C53]"
-                    style={{
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '16px',
-                      lineHeight: '160%',
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[16px] font-normal leading-[160%] text-[#4B4C53]">
                     /lifetime
                   </span>
                 </div>
@@ -923,15 +447,7 @@ export default function CourseReviewsPage() {
                   type="button"
                   className="flex h-[46px] w-full items-center justify-center rounded-[24px] bg-[#D4FB20] px-6 py-3 transition-all hover:bg-[#c6ec1d] active:scale-95 shadow-sm"
                 >
-                  <span
-                    style={{
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontWeight: 500,
-                      fontSize: '18px',
-                      lineHeight: '120%',
-                      color: '#242528',
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[18px] font-medium leading-[120%] text-[#242528]">
                     Enroll Now
                   </span>
                 </button>
@@ -939,71 +455,35 @@ export default function CourseReviewsPage() {
 
               {/* This course include Features */}
               <div className="flex w-full flex-col items-start gap-3 pt-2">
-                <h3
-                  className="font-semibold text-[#242528]"
-                  style={{
-                    fontFamily: "'Poppins', sans-serif",
-                    fontSize: '20px',
-                    lineHeight: '120%',
-                    letterSpacing: '-0.01em',
-                  }}
-                >
+                <h3 className="font-['Poppins'] text-[20px] font-semibold leading-[120%] tracking-[-0.01em] text-[#242528]">
                   This course include
                 </h3>
 
                 <div className="flex flex-col items-start gap-3 text-[#4B4C53]">
                   <div className="flex items-center gap-2">
                     <FileText className="size-6 text-[#003BE2]" />
-                    <span
-                      style={{
-                        fontFamily: "'Satoshi', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '16px',
-                        lineHeight: '160%',
-                      }}
-                    >
+                    <span className="font-['Satoshi'] text-[16px] font-normal leading-[160%]">
                       Learning Resources
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2">
                     <Video className="size-6 text-[#003BE2]" />
-                    <span
-                      style={{
-                        fontFamily: "'Satoshi', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '16px',
-                        lineHeight: '160%',
-                      }}
-                    >
+                    <span className="font-['Satoshi'] text-[16px] font-normal leading-[160%]">
                       Quality Lesson Videos
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2">
                     <Award className="size-6 text-[#003BE2]" />
-                    <span
-                      style={{
-                        fontFamily: "'Satoshi', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '16px',
-                        lineHeight: '160%',
-                      }}
-                    >
+                    <span className="font-['Satoshi'] text-[16px] font-normal leading-[160%]">
                       Certificate of Completion
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2">
                     <MessageSquare className="size-6 text-[#003BE2]" />
-                    <span
-                      style={{
-                        fontFamily: "'Satoshi', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '16px',
-                        lineHeight: '160%',
-                      }}
-                    >
+                    <span className="font-['Satoshi'] text-[16px] font-normal leading-[160%]">
                       Private Consultation
                     </span>
                   </div>
@@ -1024,14 +504,7 @@ export default function CourseReviewsPage() {
                     />
                   </Link>
                   <div className="flex flex-col items-start">
-                    <h4
-                      className="font-medium text-[#242528]"
-                      style={{
-                        fontFamily: "'Satoshi', sans-serif",
-                        fontSize: '18px',
-                        lineHeight: '120%',
-                      }}
-                    >
+                    <h4 className="font-['Satoshi'] text-[18px] font-medium leading-[120%] text-[#242528]">
                       <Link
                         href="/creator_profile"
                         className="hover:text-[#003BE2] transition-colors"
@@ -1039,29 +512,13 @@ export default function CourseReviewsPage() {
                         PurePearl Studio
                       </Link>
                     </h4>
-                    <span
-                      className="text-[#4B4C53]"
-                      style={{
-                        fontFamily: "'Satoshi', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '16px',
-                        lineHeight: '160%',
-                      }}
-                    >
+                    <span className="font-['Satoshi'] text-[16px] font-normal leading-[160%] text-[#4B4C53]">
                       Professional Creator
                     </span>
                   </div>
                 </div>
 
-                <p
-                  className="text-[#4B4C53]"
-                  style={{
-                    fontFamily: "'Satoshi', sans-serif",
-                    fontWeight: 400,
-                    fontSize: '16px',
-                    lineHeight: '160%',
-                  }}
-                >
+                <p className="font-['Satoshi'] text-[16px] font-normal leading-[160%] text-[#4B4C53]">
                   Ready to Dive In? Enroll Now and Start Building Your Digital Future!
                 </p>
 
@@ -1069,15 +526,7 @@ export default function CourseReviewsPage() {
                   type="button"
                   className="flex h-[35px] items-center justify-center rounded-[24px] border border-[#CED0D3] bg-[#FFFFFF] px-4 py-2 transition-colors hover:bg-[#F5F5F6]"
                 >
-                  <span
-                    style={{
-                      fontFamily: "'Satoshi', sans-serif",
-                      fontWeight: 500,
-                      fontSize: '16px',
-                      lineHeight: '120%',
-                      color: '#4B4C53',
-                    }}
-                  >
+                  <span className="font-['Satoshi'] text-[16px] font-medium leading-[120%] text-[#4B4C53]">
                     See Full Profile
                   </span>
                 </button>

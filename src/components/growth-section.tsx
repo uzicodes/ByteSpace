@@ -8,6 +8,24 @@ const creatorBenefits = [
   'Build a Community',
 ]
 
+const SPIRAL_CONTAINER_STYLE_1: React.CSSProperties = {
+  left: 'calc(50% - 215px/2 + 490px)',
+  top: '10.64%',
+  bottom: '50.41%',
+  width: '215px',
+}
+
+const SPIRAL_MASK_STYLE_1: React.CSSProperties = {
+  backgroundColor: '#D4FB20',
+  maskImage: 'url(/elements/1.webp)',
+  WebkitMaskImage: 'url(/elements/1.webp)',
+  maskSize: 'contain',
+  WebkitMaskSize: 'contain',
+  maskRepeat: 'no-repeat',
+  WebkitMaskRepeat: 'no-repeat',
+  transform: 'scaleX(-1)',
+  transformOrigin: 'center',
+}
 
 export function Growth() {
   return (
@@ -23,26 +41,11 @@ export function Growth() {
         aria-label="Decorative lime spiral"
         role="img"
         className="pointer-events-none absolute z-30"
-        style={{
-          left: 'calc(50% - 215px/2 + 490px)',
-          top: '10.64%',
-          bottom: '50.41%',
-          width: '215px',
-        }}
+        style={SPIRAL_CONTAINER_STYLE_1}
       >
         <div
           className="h-full w-full"
-          style={{
-            backgroundColor: '#D4FB20',
-            maskImage: 'url(/elements/1.webp)',
-            WebkitMaskImage: 'url(/elements/1.webp)',
-            maskSize: 'contain',
-            WebkitMaskSize: 'contain',
-            maskRepeat: 'no-repeat',
-            WebkitMaskRepeat: 'no-repeat',
-            transform: 'scaleX(-1)',
-            transformOrigin: 'center',
-          }}
+          style={SPIRAL_MASK_STYLE_1}
         />
       </div>
 

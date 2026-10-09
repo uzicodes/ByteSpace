@@ -1,5 +1,76 @@
 'use client'
 
+import React from 'react'
+
+const createMaskStyle = (imagePath: string, bgColor: string): React.CSSProperties => ({
+  backgroundColor: bgColor,
+  mixBlendMode: 'hard-light',
+  maskImage: `url(${imagePath})`,
+  WebkitMaskImage: `url(${imagePath})`,
+  maskSize: 'contain',
+  WebkitMaskSize: 'contain',
+  maskRepeat: 'no-repeat',
+  WebkitMaskRepeat: 'no-repeat',
+})
+
+const MASK_STYLE_1 = createMaskStyle('/elements/1.webp', '#D4FB20')
+const MASK_STYLE_2 = createMaskStyle('/elements/2.webp', '#F5F5F6')
+const MASK_STYLE_7 = createMaskStyle('/elements/7.webp', '#F5F5F6')
+const MASK_STYLE_3 = createMaskStyle('/elements/3.webp', '#D4FB20')
+const MASK_STYLE_4 = createMaskStyle('/elements/4.webp', '#D4FB20')
+const MASK_STYLE_6 = createMaskStyle('/elements/6.webp', '#F5F5F6')
+const MASK_STYLE_5 = createMaskStyle('/elements/5.webp', '#D4FB20')
+
+const CONTAINER_STYLE_1: React.CSSProperties = {
+  width: '385px',
+  height: '385px',
+  left: 'calc(50% - 385px/2 - 680.5px)',
+  top: '-145px',
+}
+
+const CONTAINER_STYLE_2: React.CSSProperties = {
+  width: '175px',
+  height: '175px',
+  left: 'calc(50% - 175px/2 - 454.5px)',
+  top: '1.02%',
+  transform: 'matrix(-1, 0, 0, 1, 0, 0)',
+}
+
+const CONTAINER_STYLE_7: React.CSSProperties = {
+  width: '188px',
+  height: '188px',
+  left: 'calc(50% - 188px/2 - 715px)',
+  top: '225px',
+}
+
+const CONTAINER_STYLE_3: React.CSSProperties = {
+  width: '342px',
+  height: '342px',
+  left: 'calc(50% - 342px/2 - 529px)',
+  top: '61.27%',
+}
+
+const CONTAINER_STYLE_4: React.CSSProperties = {
+  width: '188px',
+  height: '188px',
+  left: 'calc(50% - 188px/2 + 454px)',
+  top: '0px',
+}
+
+const CONTAINER_STYLE_6: React.CSSProperties = {
+  width: '370px',
+  height: '370px',
+  left: 'calc(50% - 370px/2 + 691px)',
+  top: '1.23%',
+}
+
+const CONTAINER_STYLE_5: React.CSSProperties = {
+  width: '330px',
+  height: '330px',
+  left: 'calc(50% - 330px/2 + 555px)',
+  top: '59.22%',
+}
+
 export function CTA() {
   return (
     <section className="hero-grid relative min-h-[488px] overflow-hidden bg-[#003BE2] px-6 py-20 text-white lg:px-10">
@@ -8,12 +79,7 @@ export function CTA() {
         aria-label="Decorative lime spiral"
         role="img"
         className="pointer-events-none absolute z-10"
-        style={{
-          width: '385px',
-          height: '385px',
-          left: 'calc(50% - 385px/2 - 680.5px)',
-          top: '-145px',
-        }}
+        style={CONTAINER_STYLE_1}
       >
         <div className="relative h-full w-full isolate">
           <img
@@ -23,16 +89,7 @@ export function CTA() {
           />
           <div
             className="pointer-events-none absolute inset-0"
-            style={{
-              backgroundColor: '#D4FB20',
-              mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/1.webp)',
-              WebkitMaskImage: 'url(/elements/1.webp)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-            }}
+            style={MASK_STYLE_1}
           />
         </div>
       </div>
@@ -42,13 +99,7 @@ export function CTA() {
         aria-label="Decorative small white spiral"
         role="img"
         className="pointer-events-none absolute z-10"
-        style={{
-          width: '175px',
-          height: '175px',
-          left: 'calc(50% - 175px/2 - 454.5px)',
-          top: '1.02%',
-          transform: 'matrix(-1, 0, 0, 1, 0, 0)',
-        }}
+        style={CONTAINER_STYLE_2}
       >
         <div className="relative h-full w-full isolate">
           <img
@@ -58,16 +109,7 @@ export function CTA() {
           />
           <div
             className="pointer-events-none absolute inset-0"
-            style={{
-              backgroundColor: '#F5F5F6',
-              mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/2.webp)',
-              WebkitMaskImage: 'url(/elements/2.webp)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-            }}
+            style={MASK_STYLE_2}
           />
         </div>
       </div>
@@ -77,12 +119,7 @@ export function CTA() {
         aria-label="Decorative cone"
         role="img"
         className="pointer-events-none absolute z-10"
-        style={{
-          width: '188px',
-          height: '188px',
-          left: 'calc(50% - 188px/2 - 715px)',
-          top: '225px',
-        }}
+        style={CONTAINER_STYLE_7}
       >
         <div className="relative h-full w-full isolate">
           <img
@@ -92,16 +129,7 @@ export function CTA() {
           />
           <div
             className="pointer-events-none absolute inset-0"
-            style={{
-              backgroundColor: '#F5F5F6',
-              mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/7.webp)',
-              WebkitMaskImage: 'url(/elements/7.webp)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-            }}
+            style={MASK_STYLE_7}
           />
         </div>
       </div>
@@ -111,12 +139,7 @@ export function CTA() {
         aria-label="Decorative lime ring"
         role="img"
         className="pointer-events-none absolute z-10"
-        style={{
-          width: '342px',
-          height: '342px',
-          left: 'calc(50% - 342px/2 - 529px)',
-          top: '61.27%',
-        }}
+        style={CONTAINER_STYLE_3}
       >
         <div className="relative h-full w-full isolate">
           <img
@@ -126,16 +149,7 @@ export function CTA() {
           />
           <div
             className="pointer-events-none absolute inset-0"
-            style={{
-              backgroundColor: '#D4FB20',
-              mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/3.webp)',
-              WebkitMaskImage: 'url(/elements/3.webp)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-            }}
+            style={MASK_STYLE_3}
           />
         </div>
       </div>
@@ -145,12 +159,7 @@ export function CTA() {
         aria-label="Decorative lime pyramid"
         role="img"
         className="pointer-events-none absolute z-10"
-        style={{
-          width: '188px',
-          height: '188px',
-          left: 'calc(50% - 188px/2 + 454px)',
-          top: '0px',
-        }}
+        style={CONTAINER_STYLE_4}
       >
         <div className="relative h-full w-full isolate">
           <img
@@ -160,16 +169,7 @@ export function CTA() {
           />
           <div
             className="pointer-events-none absolute inset-0"
-            style={{
-              backgroundColor: '#D4FB20',
-              mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/4.webp)',
-              WebkitMaskImage: 'url(/elements/4.webp)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-            }}
+            style={MASK_STYLE_4}
           />
         </div>
       </div>
@@ -179,12 +179,7 @@ export function CTA() {
         aria-label="Decorative cylinder"
         role="img"
         className="pointer-events-none absolute z-10"
-        style={{
-          width: '370px',
-          height: '370px',
-          left: 'calc(50% - 370px/2 + 691px)',
-          top: '1.23%',
-        }}
+        style={CONTAINER_STYLE_6}
       >
         <div className="relative h-full w-full isolate">
           <img
@@ -194,16 +189,7 @@ export function CTA() {
           />
           <div
             className="pointer-events-none absolute inset-0"
-            style={{
-              backgroundColor: '#F5F5F6',
-              mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/6.webp)',
-              WebkitMaskImage: 'url(/elements/6.webp)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-            }}
+            style={MASK_STYLE_6}
           />
         </div>
       </div>
@@ -213,12 +199,7 @@ export function CTA() {
         aria-label="Decorative lime spiral"
         role="img"
         className="pointer-events-none absolute z-10"
-        style={{
-          width: '330px',
-          height: '330px',
-          left: 'calc(50% - 330px/2 + 555px)',
-          top: '59.22%',
-        }}
+        style={CONTAINER_STYLE_5}
       >
         <div className="relative h-full w-full isolate">
           <img
@@ -228,16 +209,7 @@ export function CTA() {
           />
           <div
             className="pointer-events-none absolute inset-0"
-            style={{
-              backgroundColor: '#D4FB20',
-              mixBlendMode: 'hard-light',
-              maskImage: 'url(/elements/5.webp)',
-              WebkitMaskImage: 'url(/elements/5.webp)',
-              maskSize: 'contain',
-              WebkitMaskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-            }}
+            style={MASK_STYLE_5}
           />
         </div>
       </div>
